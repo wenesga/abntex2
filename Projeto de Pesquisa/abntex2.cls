@@ -1,22 +1,3 @@
-%% abntex2.cls, v-1.9.7 laurocesar
-%% Copyright 2012-2018 by abnTeX2 group at https://www.abntex.net.br/ 
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%% 
-%% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on 
-%% https://www.abntex.net.br/
-%%
-%% This work consists of the file abntex2.cls.
-
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % Declaracao da classe abntex2 como uma extensao da classe memoir
@@ -238,10 +219,16 @@
 \newcommand{\abnTeX}{abn\TeX2}
 % ---
 
-% ---
+% -------------------------------------------------------------------------------
 % Fontes padroes de part, chapter, section, subsection e subsubsection
-\newcommand{\ABNTEXchapterfont}{\sffamily}
-\newcommand{\ABNTEXchapterfontsize}{\Huge}
+% -------------------------------------------------------------------------------
+%\newcommand{\ABNTEXchapterfont}{\sffamily}                             % TIPO ORIGINAL (abntex2)
+%\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO ORIGINAL (abntex2)
+\newcommand{\ABNTEXchapterfont}{\bfseries}                              % TIPO PERSONALIZADO (volta para o padão latex)
+\newcommand{\ABNTEXchapterfontsize}{\LARGE}                             % TAMANHO MENOR 
+%\newcommand{\ABNTEXchapterfontsize}{\fontsize{22pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
+% -------------------------------------------------------------------------------
+
 
 \newcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
 \newcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
@@ -1032,53 +1019,67 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
-% ---
+% ------------------------------------------------------------------------
 % Impressão da Capa
+% ------------------------------------------------------------------------
 \newcommand{\imprimircapa}{%
-  \begin{capa}%
-    \center
-    \ABNTEXchapterfont\large\imprimirautor
-
-    \vfill
-    \begin{center}
-    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
-    \end{center}
-    \vfill
-    
-    \large\imprimirlocal
-
-    \large\imprimirdata
-    
-    \vspace*{1cm}
-  \end{capa}
+    \begin{capa}%
+        \center
+        \vspace*{-2cm}
+        \begin{center}
+            \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
+            \textsc{\large
+                Universidade Federal do Tocantins\\
+                Campus Universitário de Palmas\\
+                Curso de Licenciatura em Computação\\
+            }
+        \end{center}
+        
+        \vspace{3cm}
+        
+        \begin{center}
+            \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+        \end{center}
+        \vfill
+            \ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}
+        \vfill
+        \large\imprimirlocal\\
+        \large\imprimirdata
+    \end{capa}
 }
-% ---
+% ------------------------------------------------------------------------
 
 
-% ---
+
+
+
+% ------------------------------------------------------------------------
 % Folha de rosto
 %   usar \imprimirfolhaderosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
+% ------------------------------------------------------------------------
 \newenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
 \newenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
+% ------------------------------------------------------------------------
 
-% ---
+
+
+
+
+% ------------------------------------------------------------------------
 % Conteudo padrao da Folha de Rosto
+% ------------------------------------------------------------------------
 \makeatletter
 \newcommand{\folhaderostocontent}{
   \begin{center}
-
-    %\vspace*{1cm}
-    {\ABNTEXchapterfont\large\imprimirautor}
-	
+    {\ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}}
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
       \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
     \end{center}
     \vspace*{\fill}
-	
     \abntex@ifnotempty{\imprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
@@ -1086,24 +1087,24 @@
          \imprimirpreambulo
        \end{minipage}%
        \vspace*{\fill}
-    }%
-
+    }
+    \vfill
     {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
 
     {\large\imprimirorientadorRotulo~\imprimirorientador\par}
     \abntex@ifnotempty{\imprimircoorientador}{%
        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-    }%
+    }
     \vspace*{\fill}
-
     {\large\imprimirlocal}
     \par
     {\large\imprimirdata}
-    \vspace*{1cm}
-
   \end{center}
 }
 \makeatother
+% ------------------------------------------------------------------------
+
+
 
 \newcommand{\imprimirfolhaderostostar}[1]{%
   \begin{folhaderosto*}{#1}
@@ -1122,4 +1123,4 @@
      \imprimirfolhaderostonostar
 }
 \makeatother
-% ---
+% ------------------------------------------------------------------------
