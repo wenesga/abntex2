@@ -1,5 +1,3 @@
-Libertário, aqui vai um comentário curto, direto e profissional para colocar no **README.md** do GitHub:
-
 ---
 
 ### Sobre esta adaptação
