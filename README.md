@@ -1,6 +1,6 @@
 # Sobre esta adaptação
 
-Este repositório contém uma versão customizada dos modelos oficiais do abnTeX2, adaptada para atender ao padrão visual e às necessidades da UFT.  
+Este repositório contém uma versão customizada dos modelos oficiais do abnTeX2, adaptada para atender ao padrão visual e às necessidades da Universidade Federal do Tocantins (UFT).  
 Foram feitos ajustes nos três modelos principais:
 
 - Projeto de Pesquisa
@@ -9,13 +9,13 @@ Foram feitos ajustes nos três modelos principais:
 
 ## Principais melhorias
 
-- Inclusão do logo da UFT nas capas
+- Inclusão do logo da Universidade Federal do Tocantins (UFT) nas capas
 - Ajustes no título, formatação e elementos pré-textuais
 - Melhorias na listagem das referências:
   - Títulos de artigos em **negrito**
   - Justificação total das referências
 - Correção do uso de `\nocite{*}`
-- Padronização geral segundo diretrizes utilizadas na UFT
+- Padronização geral segundo diretrizes utilizadas na Universidade Federal do Tocantins (UFT)
 
 ## Observação
 
