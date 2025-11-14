@@ -117,18 +117,16 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 % ELEMENTOS PRÉ-TEXTUAIS
 % -----------------------------------------------
 % \pretextual
-
 % -----------------------------------------------
 % Capa
 % -----------------------------------------------
 \imprimircapa
 % -----------------------------------------------
-
-% -----------------------------------------------
 % Folha de rosto
 % -----------------------------------------------
 \imprimirfolhaderosto
 % -----------------------------------------------
+
 
 
 % inserir lista de ilustrações
@@ -138,6 +136,8 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \cleardoublepage
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
 % inserir lista de tabelas
 % -----------------------------------------------
@@ -145,6 +145,8 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \listoftables*
 \cleardoublepage
 % -----------------------------------------------
+
+
 
 % -----------------------------------------------
 % inserir lista de abreviaturas e siglas
@@ -154,6 +156,8 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
   \item[abnTeX] ABsurdas Normas para TeX
 \end{siglas}
 % -----------------------------------------------
+
+
 
 % -----------------------------------------------
 % inserir lista de símbolos
@@ -166,6 +170,8 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \end{simbolos}
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
 % inserir o sumario
 % -----------------------------------------------
@@ -173,6 +179,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \tableofcontents*
 \cleardoublepage
 % -----------------------------------------------
+
 
 
 % -----------------------------------------------
@@ -183,84 +190,65 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 
-
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
 
-Este documento e seu código-fonte são exemplos de referência de uso da classe
-\textsf{abntex2} e do pacote \textsf{abntex2cite}. O documento 
-exemplifica a elaboração de projetos de pesquisa produzidos
-conforme a ABNT NBR 15287:2011 \emph{Informação e documentação - Projeto de
-pesquisa - Apresentação}. 
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\lipsum[2] \footnote{\url{http://www.latex-project.org/lppl.txt}}.
 
-A expressão ``Modelo canônico'' é utilizada para indicar que \abnTeX\ não é
-modelo específico de nenhuma universidade ou instituição, mas que implementa tão
-somente os requisitos das normas da ABNT. Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em \cite{abntex2classe}.
 
-Sinta-se convidado a participar do projeto \abnTeX! Acesse o site do projeto em
-\url{http://www.abntex.net.br/}. Também fique livre para conhecer,
-estudar, alterar e redistribuir o trabalho do \abnTeX, desde que os arquivos
-modificados tenham seus nomes alterados e que os créditos sejam dados aos
-autores originais, nos termos da ``The \LaTeX\ Project Public
-License''\footnote{\url{http://www.latex-project.org/lppl.txt}}.
-
-Encorajamos que sejam realizadas customizações específicas deste exemplo para
-universidades e outras instituições --- como capas, folhas de rosto, etc.
-Porém, recomendamos que ao invés de se alterar diretamente os arquivos do
-\abnTeX, distribua-se arquivos com as respectivas customizações.
-Isso permite que futuras versões do \abnTeX~não se tornem automaticamente
-incompatíveis com as customizações promovidas. Consulte
-\cite{abntex2-wiki-como-customizar} para mais informações.
-
-Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
-\cite{memoir}. Consulte \cite{abntex2modelo} para obter
-exemplos e informações adicionais de uso de \abnTeX\ e de \LaTeX.
-
-Esperamos, sinceramente, que o \abnTeX\ aprimore a qualidade do trabalho que
-você produzirá, de modo que o principal esforço seja concentrado no principal:
-na contribuição científica.
-
-Equipe \abnTeX 
-
-Lauro César Araujo
 
 % ----------------------------------------------------------
 % Capitulo de textual  
 % ----------------------------------------------------------
 \chapter{Elementos textuais}
 
-\index{elementos textuais}A norma ABNT NBR 15287:2011, p. 5, apresenta a
-seguinte orientação quanto aos elementos textuais:
+\section{Morbi orci nisl hendrerit}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página. 
+\cite{abntex2classe}.
 
-\begin{citacao}
-O texto deve ser constituído de uma parte introdutória, na qual devem ser
-expostos o tema do projeto, o problema a ser abordado, a(s) hipótese(s),
-quando couber(em), bem como o(s) objetivo(s) a ser(em) atingido(s) e a(s)
-justificativa(s). É necessário que sejam indicados o referencial teórico que
-o embasa, a metodologia a ser utilizada, assim como os recursos e o cronograma
-necessários à sua consecução.
-\end{citacao}
+\section{Nam dui ligula fringilla euismod sodales, sollicitudin}
+\lipsum[3-4] % Gera texto de exemplo para preencher a página. 
 
-Consulte as demais normas da série ``Informação e documentação'' da ABNT
-para outras informações. Uma lista com as principais normas dessa série, todas
-observadas pelo \abnTeX, é apresentada em \cite{abntex2classe}.
+\section{Donec felis eratcongue non}
+\lipsum[4-5] % Gera texto de exemplo para preencher a página. 
+
+
+
+\chapter{Suspendisse vel felis}
+
+\section{Praesent enim elit}
+\lipsum[6-7] % Gera texto de exemplo para preencher a página. 
+\cite{abntex2classe}.
+
+\section{Curabitur et nunc}
+\lipsum[8-9] % Gera texto de exemplo para preencher a página. 
+
+
+
+\chapter{Cras non urna. Morbi eros pede}
+
+\section{Nullam at lectus}
+\lipsum[10-11] % Gera texto de exemplo para preencher a página. 
+\cite{abntex2classe}.
+
+\section{Praesent pretium}
+\lipsum[12-13] % Gera texto de exemplo para preencher a página. 
+
+
+
+
+
+
 
 % ----------------------------------------------------------
-% Capitulo com exemplos de comandos inseridos de arquivo externo 
-% ----------------------------------------------------------
-
-%\include{abntex2-modelo-include-comandos}
-
-% ---
 % Finaliza a parte no bookmark do PDF
 % para que se inicie o bookmark na raiz
 % e adiciona espaço de parte no Sumário
-% ---
+% ----------------------------------------------------------
 \phantompart
 
 % ---
