@@ -107,7 +107,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 % Início do documento
 % -----------------------------------------------
 \begin{document}
-\nocite{*}
+\nocite{*} % Inclui todas referências na página de referencia mesmo se não for citada
 \selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
@@ -242,8 +242,6 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 
-
-
 % ----------------------------------------------------------
 % Finaliza a parte no bookmark do PDF
 % para que se inicie o bookmark na raiz
@@ -251,13 +249,17 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 % ----------------------------------------------------------
 \phantompart
 
-% ---
+% ----------------------------------------------------------
 % Conclusão
-% ---
+% ----------------------------------------------------------
 \chapter*[Considerações finais]{Considerações finais}
 \addcontentsline{toc}{chapter}{Considerações finais}
 
 \lipsum[31-33]
+
+
+
+
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -274,83 +276,54 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \printbibliography[heading=none]                                     % Imprime a bibliografia.
 % ----------------------------------------------------------
 
-% ----------------------------------------------------------
-% Glossário
-% ----------------------------------------------------------
-%
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
-%\glossary
+
 
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
-
-% ---
 % Inicia os apêndices
-% ---
+% ----------------------------------------------------------
 \begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-\partapendices
+\partapendices % Imprime uma página indicando o início dos apêndices
 
 % ----------------------------------------------------------
 \chapter{Quisque libero justo}
-% ----------------------------------------------------------
-
 \lipsum[50]
 
 % ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales}
 \lipsum[55-57]
-
 \end{apendicesenv}
-% ---
+% ----------------------------------------------------------
+
+
 
 
 % ----------------------------------------------------------
 % Anexos
 % ----------------------------------------------------------
-
-% ---
 % Inicia os anexos
-% ---
+% ----------------------------------------------------------
 \begin{anexosenv}
+\partanexos % Imprime uma página indicando o início dos anexos
 
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-% ---
+% ----------------------------------------------------------
 \chapter{Morbi ultrices rutrum lorem.}
-% ---
 \lipsum[30]
 
-% ---
+
+
+% ----------------------------------------------------------
 \chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
 parturient montes nascetur ridiculus mus}
-% ---
-
 \lipsum[31]
 
-% ---
+
+
+% ----------------------------------------------------------
 \chapter{Fusce facilisis lacinia dui}
-% ---
-
 \lipsum[32]
-
 \end{anexosenv}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -361,9 +334,7 @@ parturient montes nascetur ridiculus mus}
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %---------------------------------------------------------------------
-
 \phantompart
-
 \printindex
 
 

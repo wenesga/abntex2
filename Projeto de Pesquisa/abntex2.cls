@@ -1029,8 +1029,8 @@
         \begin{center}
             \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
                 \textbf{
-                    UNIVERSIDADE FEDERAL DO TOCANTINS\\
-                    CAMPUS UNIVERSITÁRIO DE PALMAS\\
+                    UNIVERSIDADE FEDERAL DO TOCANTINS\\[0.15cm]
+                    CAMPUS UNIVERSITÁRIO DE PALMAS\\[0.15cm]
                     CURSO DE LICENCIATURA EM COMPUTAÇÃO\\
                 }
         \end{center}
