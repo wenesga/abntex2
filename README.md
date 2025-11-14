@@ -1,27 +1,27 @@
 ---
 
-### Sobre esta adaptação
+### Sobre esta adaptacao
 
-Este repositório contém uma versão customizada dos modelos oficiais do **abnTeX2**, adaptada para atender ao padrão visual e às necessidades da **UFT**.
-Foram feitos ajustes nos três modelos principais:
+Este repositorio contem uma versao customizada dos modelos oficiais do abnTeX2, adaptada para atender ao padrao visual e as necessidades da UFT.
+Foram feitos ajustes nos tres modelos principais:
 
-* **Projeto de Pesquisa**
-* **Relatório Técnico**
-* **Trabalho Acadêmico**
+* Projeto de Pesquisa
+* Relatorio Tecnico
+* Trabalho Academico
 
 #### Principais melhorias
 
-* Inclusão do **logo da UFT** nas capas.
-* Ajustes no **título**, formatação e elementos pré-textuais.
-* Correção na **listagem de referências**, incluindo:
+* Inclusao do logo da UFT nas capas
+* Ajustes no titulo, formatacao e elementos pre-textuais
+* Melhorias na listagem das referencias, incluindo
 
-  * Títulos de artigos em **negrito** (antes estavam em itálico).
-  * **Justificação total** das referências (inclusive margem direita).
-* Correção do uso de **`\nocite{*}`**, que não funcionava corretamente no modelo original.
-* Padronização geral para maior compatibilidade com diretrizes utilizadas na UFT.
+  * Titulos de artigos em **negrito**
+  * Justificacao total das referencias
+* Correcao do uso de `\nocite{*}`, que nao funcionava no modelo original
+* Padronizacao geral para maior compatibilidade com diretrizes da UFT
 
-#### Observação
+#### Observacao
 
-A adaptação ainda está em evolução. Sugestões de melhorias, correções e otimizações são bem-vindas.
+A adaptacao ainda esta em evolucao. Sugestoes de melhorias e correcoes sao bem-vindas.
 
 ---
