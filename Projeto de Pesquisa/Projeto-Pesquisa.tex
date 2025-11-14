@@ -103,33 +103,38 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \makeindex
 % -----------------------------------------------
 
+
+
+
 % -----------------------------------------------
-% Início do documento
+\begin{document} % Início do documento
 % -----------------------------------------------
-\begin{document}
-\nocite{*} % Inclui todas referências na página de referencia mesmo se não for citada
+\nocite{*} % Inclui todas referências na página
 \selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing 
 
+
+
 % -----------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % -----------------------------------------------
 % \pretextual
+
+
 % -----------------------------------------------
-% Capa
+% ----------FOLHA DE ROSTO E CONTRACAPA----------
 % -----------------------------------------------
-\imprimircapa
+\imprimircapa % Está é Folha de Rosto
 % -----------------------------------------------
-% Folha de rosto
-% -----------------------------------------------
-\imprimirfolhaderosto
+\imprimirfolhaderosto % Esta é Contracapa
 % -----------------------------------------------
 
 
 
-% inserir lista de ilustrações
+% -----------------------------------------------
+% -----------------ILUSTRAÇÕES-------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
@@ -139,7 +144,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % -----------------------------------------------
-% inserir lista de tabelas
+% ------------------TABELAS----------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
@@ -149,7 +154,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % -----------------------------------------------
-% inserir lista de abreviaturas e siglas
+% ------------ABREVIATURAS E SIGLAS--------------
 % -----------------------------------------------
 \begin{siglas}
   \item[ABNT] Associação Brasileira de Normas Técnicas
@@ -160,7 +165,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % -----------------------------------------------
-% inserir lista de símbolos
+% ------------------SÍMBOLOS---------------------
 % -----------------------------------------------
 \begin{simbolos}
   \item[$ \Gamma $] Letra grega Gama
@@ -173,7 +178,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % -----------------------------------------------
-% inserir o sumario
+% ------------------SUMÁRIO----------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
@@ -183,7 +188,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % -----------------------------------------------
-% ELEMENTOS TEXTUAIS
+% --------------ELEMENTOS TEXTUAIS---------------
 % -----------------------------------------------
 \textual
 
@@ -191,7 +196,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % ----------------------------------------------------------
-% Introdução
+% ----------------------Introdução--------------------------
 % ----------------------------------------------------------
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
@@ -202,7 +207,7 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % ----------------------------------------------------------
-% Capitulo de textual  
+% -----------------Capitulo de textual----------------------  
 % ----------------------------------------------------------
 \chapter{Elementos textuais}
 
@@ -238,7 +243,8 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 \section{Praesent pretium}
 \lipsum[12-13] % Gera texto de exemplo para preencher a página. 
 
-
+\section{Quisque ornare tellus ullamcorper}
+\lipsum[22-23] % Gera texto de exemplo para preencher a página. 
 
 
 
@@ -249,25 +255,25 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 % ----------------------------------------------------------
 \phantompart
 
-% ----------------------------------------------------------
-% Conclusão
-% ----------------------------------------------------------
-\chapter*[Considerações finais]{Considerações finais}
-\addcontentsline{toc}{chapter}{Considerações finais}
 
+
+
+% ----------------------------------------------------------
+% -----------------------Conclusão--------------------------
+% ----------------------------------------------------------
+\chapter*[Considerações Finais]{Considerações Finais}
+\addcontentsline{toc}{chapter}{Considerações Finais}
 \lipsum[31-33]
 
 
 
-
-
 % ----------------------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
+% -----------------ELEMENTOS PÓS-TEXTUAIS-------------------
 % ----------------------------------------------------------
 \postextual
 
 % ----------------------------------------------------------
-% Referências bibliográficas
+% ----------------Referências bibliográficas----------------
 % ----------------------------------------------------------
 \chapter*{Referências}                                               % Insere o título
 \markboth{Referências}{Referências}                                  % Título "Referências" no cabeçalho.
@@ -279,63 +285,77 @@ Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e téc
 
 
 % ----------------------------------------------------------
-% Apêndices
-% ----------------------------------------------------------
-% Inicia os apêndices
+% ---------------------APÊNDICE----------------------------- 
 % ----------------------------------------------------------
 \begin{apendicesenv}
 \partapendices % Imprime uma página indicando o início dos apêndices
 
 % ----------------------------------------------------------
 \chapter{Quisque libero justo}
-\lipsum[50]
+
+\section{Aliquam viverra arcu}
+\lipsum[8-9] % Gera texto de exemplo para preencher a página. 
+
+\section{Mauris consequat}
+\lipsum[24-25] % Gera texto de exemplo para preencher a página. 
+
 
 % ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales}
-\lipsum[55-57]
+\chapter{Nullam elementum}
+
+\section{Quisque facilisis auctor sapien}
+\lipsum[80-81] % Gera texto de exemplo para preencher a página. 
+
+\section{Aliquam quis quam non metus}
+\lipsum[34-35] % Gera texto de exemplo para preencher a página. 
+
 \end{apendicesenv}
 % ----------------------------------------------------------
 
 
 
-
 % ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-% Inicia os anexos
+% -----------------------ANEXOS-----------------------------
 % ----------------------------------------------------------
 \begin{anexosenv}
 \partanexos % Imprime uma página indicando o início dos anexos
 
 % ----------------------------------------------------------
-\chapter{Morbi ultrices rutrum lorem.}
-\lipsum[30]
+\chapter{Morbi ultrices rutrum lorem}
+
+\section{Pellentesque sodales}
+\lipsum[40-41] % Gera texto de exemplo para preencher a página. 
+
+\section{Curabitur diam tortor}
+\lipsum[54-55] % Gera texto de exemplo para preencher a página. 
 
 
 
 % ----------------------------------------------------------
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-\lipsum[31]
+\chapter{Crasnatoque ridiculus}
+
+\section{Mauris congue ligula}
+\lipsum[70-71] % Gera texto de exemplo para preencher a página. 
+
+\section{Aenean tincidunt laoreet dui}
+\lipsum[14-15] % Gera texto de exemplo para preencher a página. 
 
 
 
 % ----------------------------------------------------------
-\chapter{Fusce facilisis lacinia dui}
-\lipsum[32]
+\chapter{Fusce facilisis lacinia duiod}
+\lipsum[10-12]
+
 \end{anexosenv}
+% ----------------------------------------------------------
 
 
 
 
-
-
-
-%---------------------------------------------------------------------
-% INDICE REMISSIVO
-%---------------------------------------------------------------------
+% ----------------------------------------------------------
+% -------------------ÍNDICE REMISSIVO-----------------------
+% ----------------------------------------------------------
 \phantompart
 \printindex
-
 
 \end{document}

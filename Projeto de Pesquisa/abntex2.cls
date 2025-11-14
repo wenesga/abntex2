@@ -125,9 +125,9 @@
 \newcommand{\errataname}{Errata}
 \newcommand{\agradecimentosname}{Agradecimentos}
 \newcommand{\anexoname}{ANEXO}
-\newcommand{\anexosname}{Anexos}
+\newcommand{\anexosname}{ANEXOS}
 \newcommand{\apendicename}{AP\^ENDICE}
-\newcommand{\apendicesname}{Ap\^endices}
+\newcommand{\apendicesname}{AP\^ENDICES}
 \newcommand{\orientadorname}{Orientador:}
 \newcommand{\coorientadorname}{Coorientador:}
 \newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
