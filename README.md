@@ -20,3 +20,7 @@ Foram feitos ajustes nos três modelos principais:
 ## Observação
 
 A adaptação ainda está em evolução. Sugestões de melhorias são bem-vindas.
+
+> **Importante:**  
+> Para que todas as adaptações funcionem corretamente, mantenha o arquivo `abntex2.cls` na **mesma pasta do arquivo principal `.tex`**.  
+> Assim, o projeto sempre usará a versão personalizada da classe, independentemente da instalação global do abnTeX2 no sistema.
