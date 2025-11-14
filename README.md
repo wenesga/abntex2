@@ -39,20 +39,41 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 ## 📸 Visualização dos Modelos
 
 ---
+---
 
-### Folha de Rosto - Projeto de Pesquisa
+# MODELO 1: PROJETO DE PESQUISA (Ordem Corrigida)
 
 ---
 
-![Folha de Rosto UFT - abnTeX2](Imagens/folhaderosto_projeto_uft.png)
+### Folha de Rosto
 
 ---
 
-### Contracapa - Projeto de Pesquisa
+![Projeto de Pesquisa UFT - Folha de Rosto](Imagens/folhaderosto_projeto_uft.png)
 
 ---
 
-![Contracapa UFT - abnTeX2](Imagens/contracapa_projeto_uft.png)
+### Contracapa
 
 ---
 
+![Projeto de Pesquisa UFT - Contracapa](Imagens/contracapa_projeto_uft.png)
+
+---
+
+### Sumário
+
+---
+
+![Projeto de Pesquisa UFT - Sumário](Imagens/sumario_projeto_uft.png)
+
+---
+
+### Referências
+
+---
+
+![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
+
+---
+---
