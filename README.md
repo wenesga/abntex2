@@ -38,7 +38,21 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ## 📸 Visualização dos Modelos
 
-Aqui estão os prints dos modelos customizados para a Universidade Federal do Tocantins (UFT):
+---
 
-### Projeto de Pesquisa
-![Modelo UFT abnTeX2 - Capa Projeto de Pesquisa](Imagens/capa_projeto_uft.png)
+### Folha de Rosto - Projeto de Pesquisa
+
+---
+
+![Folha de Rosto UFT - abnTeX2](Imagens/folhaderosto_projeto_uft.png)
+
+---
+
+### Contracapa - Projeto de Pesquisa
+
+---
+
+![Contracapa UFT - abnTeX2](Imagens/contracapa_projeto_uft.png)
+
+---
+
