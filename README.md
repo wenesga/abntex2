@@ -41,7 +41,7 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 ---
 ---
 
-# MODELO 1: PROJETO DE PESQUISA (Ordem Corrigida)
+# MODELO 1: PROJETO DE PESQUISA
 
 ---
 
