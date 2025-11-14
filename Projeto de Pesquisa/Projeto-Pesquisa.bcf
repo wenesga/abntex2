@@ -2469,7 +2469,6 @@
     <bcf:citekey order="2" intorder="1">abntex2classe</bcf:citekey>
     <bcf:citekey order="3" intorder="1">abntex2classe</bcf:citekey>
     <bcf:citekey order="4" intorder="1">abntex2classe</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">NBR14724:2005</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
