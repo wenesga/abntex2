@@ -1028,11 +1028,11 @@
         \vspace*{-2cm}
         \begin{center}
             \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-            \textsc{\large
-                Universidade Federal do Tocantins\\
-                Campus Universitário de Palmas\\
-                Curso de Licenciatura em Computação\\
-            }
+                \textbf{
+                    UNIVERSIDADE FEDERAL DO TOCANTINS\\
+                    CAMPUS UNIVERSITÁRIO DE PALMAS\\
+                    CURSO DE LICENCIATURA EM COMPUTAÇÃO\\
+                }
         \end{center}
         
         \vspace{3cm}
@@ -1041,7 +1041,7 @@
             \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
         \end{center}
         \vfill
-            \ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}
+            \ABNTEXchapterfont\large\imprimirautor
         \vfill
         \large\imprimirlocal\\
         \large\imprimirdata
@@ -1074,7 +1074,7 @@
 \makeatletter
 \newcommand{\folhaderostocontent}{
   \begin{center}
-    {\ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}}
+    {\ABNTEXchapterfont\large\imprimirautor}
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
       \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
