@@ -32,8 +32,7 @@
 \usepackage{microtype} 			% para melhorias de justificação
 % -----------------------------------------------
 
-% -----------------------------------------------
-% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+
 % -----------------------------------------------
 \usepackage{lipsum}	% para geração de dummy text
 % -----------------------------------------------
@@ -78,28 +77,26 @@
 % -----------------------------------------------
 
 
+% -----------------------------------------------
 \makeatletter
 \hypersetup{
     colorlinks=false,   % Desativa links coloridos
     pdfborder={0 0 0},  % Remove o retângulo ao redor dos links
 }
 \makeatother
-
-
 % -----------------------------------------------
+
 
 % -----------------------------------------------
 % Espaçamentos entre linhas e parágrafos 
 % -----------------------------------------------
+\setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
+\setlength{\parskip}{0.2cm} % Espaçamento entre parágrafo
+% -----------------------------------------------
 
-% O tamanho do parágrafo é dado por:
-\setlength{\parindent}{1.3cm}
-
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
 
 % -----------------------------------------------
-% compila o indice
+% Compila o índice
 % -----------------------------------------------
 \makeindex
 % -----------------------------------------------
@@ -110,11 +107,10 @@
 % -----------------------------------------------
 \begin{document} % Início do documento
 % -----------------------------------------------
+
 \nocite{*} % Inclui todas referências na página
 \selectlanguage{brazilian}
-
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+\frenchspacing % Retira espaço extra obsoleto entre as frases.
 
 
 
@@ -179,13 +175,6 @@
     % Siglas da Instituição
     \item[UFT] Universidade Federal do Tocantins
     \item[UAB] Universidade Aberta do Brasil
-    
-    ABNTC,Analistas de Burrocracia e Normas Tecnicamente Complicadas
-    ABNTT,Associação Brasileira de Normas Totalmente Travadas
-    ABNTE,Agrupamento Brasileiro de Normas Terrivelmente Escritas
-    ABNTX,Ajustes Básicos de Nomenclatura para Trabalhos Extraordinários
-    
-    
 \end{siglas}
 % -----------------------------------------------
 
@@ -233,9 +222,9 @@
 
 
 
-% ----------------------------------------------------------
-% ----------------------Introdução--------------------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% -----------------Introdução--------------------
+% -----------------------------------------------
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
 
@@ -244,9 +233,9 @@
 
 
 
-% ----------------------------------------------------------
-% -----------------Capitulo de Textual----------------------  
-% ----------------------------------------------------------
+% -----------------------------------------------
+% -------------Capitulo de Textual---------------  
+% -----------------------------------------------
 \chapter{Funções Matemáticas}
 
 \section{Morbi orci nisl hendrerit}
@@ -255,14 +244,14 @@
 
 
 \newpage % Nova Página 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \section{Exemplo de Gráficos de Funções Matemáticas}
 
 \noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % 1. FUNÇÃO LINEAR 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -279,9 +268,9 @@
     \label{fig:funcao_linear}
 \end{figure}
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % 2. FUNÇÃO QUADRÁTICA
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -298,9 +287,9 @@
     \label{fig:funcao_quadratica}
 \end{figure}
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % 3. FUNÇÃO SENOIDE 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -320,9 +309,9 @@
     \label{fig:funcao_senoide}
 \end{figure}
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % 4. FUNÇÃO EXPONENCIAL 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -340,9 +329,9 @@
     \label{fig:funcao_exponencial}
 \end{figure}
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % 5. FUNÇÃO LOGARÍTMICA 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -359,20 +348,20 @@
     \caption{Gráfico da função logarítmica natural $f(x)=\ln(x)$, mostrando o crescimento lento.}
     \label{fig:funcao_logaritmica}
 \end{figure}
-% ----------------------------------------------------------
+% -----------------------------------------------
 % Fim das Funções Matemáticas 
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 
 
 \newpage % Nova Página 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \section{Exemplo de Lista de Tabelas}
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 \noindent Esta seção demonstra a correta formatação ABNT para tabelas e garante o preenchimento da Lista de Tabelas.
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \begin{table}[H]
     \centering
     \caption{Resultados dos Testes de Velocidade (Baseline)}
@@ -457,7 +446,7 @@
         \bottomrule
     \end{tabular}
 \end{table}
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 
 
@@ -486,49 +475,49 @@
 
 
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 % Finaliza a parte no bookmark do PDF
 % para que se inicie o bookmark na raiz
 % e adiciona espaço de parte no Sumário
-% ----------------------------------------------------------
+% -----------------------------------------------
 \phantompart
 
 
 
 
-% ----------------------------------------------------------
-% -----------------------Conclusão--------------------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% ----------------Conclusão----------------------
+% -----------------------------------------------
 \chapter*[Considerações Finais]{Considerações Finais}
 \addcontentsline{toc}{chapter}{Considerações Finais}
 \lipsum[31-33]
 
 
 
-% ----------------------------------------------------------
-% -----------------ELEMENTOS PÓS-TEXTUAIS-------------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% -----------ELEMENTOS PÓS-TEXTUAIS--------------
+% -----------------------------------------------
 \postextual
 
-% ----------------------------------------------------------
-% ----------------Referências bibliográficas----------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% ----------Referências bibliográficas-----------
+% -----------------------------------------------
 \chapter*{Referências}                                               % Insere o título
 \markboth{Referências}{Referências}                                  % Título "Referências" no cabeçalho.
 \addtocontents{toc}{\protect\vspace{\baselineskip}}                  % Adiciona uma linha.
 \addcontentsline{toc}{chapter}{\protect\MakeUppercase{REFERÊNCIAS}}  % Nível 'chapter' para linha grossos.
 \printbibliography[heading=none]                                     % Imprime a bibliografia.
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 
 
-% ----------------------------------------------------------
-% ---------------------APÊNDICE----------------------------- 
-% ----------------------------------------------------------
+% -----------------------------------------------
+% -----------------APÊNDICE---------------------- 
+% -----------------------------------------------
 \begin{apendicesenv}
 \partapendices % Imprime uma página indicando o início dos apêndices
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \chapter{Quisque libero justo}
 
 \section{Aliquam viverra arcu}
@@ -538,7 +527,7 @@
 \lipsum[24-25] % Gera texto de exemplo para preencher a página. 
 
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \chapter{Nullam elementum}
 
 \section{Quisque facilisis auctor sapien}
@@ -548,17 +537,17 @@
 \lipsum[34-35] % Gera texto de exemplo para preencher a página. 
 
 \end{apendicesenv}
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 
 
-% ----------------------------------------------------------
-% -----------------------ANEXOS-----------------------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% ------------------ANEXOS-----------------------
+% -----------------------------------------------
 \begin{anexosenv}
 \partanexos % Imprime uma página indicando o início dos anexos
 
-% ----------------------------------------------------------
+% -----------------------------------------------
 \chapter{Morbi ultrices rutrum lorem}
 
 \section{Pellentesque sodales}
@@ -571,14 +560,14 @@
 \lipsum[56-57] % Gera texto de exemplo para preencher a página. 
 
 \end{anexosenv}
-% ----------------------------------------------------------
+% -----------------------------------------------
 
 
 
 
-% ----------------------------------------------------------
-% -------------------ÍNDICE REMISSIVO-----------------------
-% ----------------------------------------------------------
+% -----------------------------------------------
+% -------------ÍNDICE REMISSIVO------------------
+% -----------------------------------------------
 \phantompart
 \printindex
 

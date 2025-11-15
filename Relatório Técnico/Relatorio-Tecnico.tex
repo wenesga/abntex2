@@ -39,24 +39,36 @@
 \usepackage{multirow}
 % -----------------------------------------------
 	
-% -----------------------------------------------
-% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+
 % -----------------------------------------------
 \usepackage{lipsum}	% para geração de dummy text
 % -----------------------------------------------
 
+
 % -----------------------------------------------
 % Pacotes de citações
 % -----------------------------------------------
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[backend=biber,style=abnt,language=brazil]{biblatex}
+\addbibresource{Referencias.bib}
+\usepackage{csquotes}             % Recomendado pelo biblatex 
+\usepackage{etoolbox}             % Auxilia na justificação da bibliografia
+\AtBeginBibliography{\justifying} % Ativa a justificação da bibliografia
+\usepackage{ragged2e}
+
+
+
+
 
 % -----------------------------------------------
-% CONFIGURAÇÕES DE PACOTES
+% --- PACOTES DE VISUALIZAÇÃO E ESTABILIDADE ---
 % -----------------------------------------------
-
-
-
+\usepackage{tikz}         % Gerar imagem de exemplo
+\usepackage{pgfplots}     % Funções matemática
+\pgfplotsset{compat=1.18} % Garante compatibilidade
+\usepackage{subcaption}   % Permite criar subfaturas
+\usepackage{float}        % Adiciona a opção de posicionamento
+\usepackage{amssymb}      % Necessário para símbolos matemáticos
+\usepackage{amsmath}      % Necessário para comandos como \text{}
 
 
 
@@ -79,7 +91,7 @@
 % -----------------------------------------------
 
 
-
+% -----------------------------------------------
 \makeatletter
 \hypersetup{
     colorlinks=false,   % Desativa links coloridos
@@ -88,15 +100,14 @@
 \makeatother
 % -----------------------------------------------
 
+
 % -----------------------------------------------
 % Espaçamentos entre linhas e parágrafos 
 % -----------------------------------------------
+\setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
+\setlength{\parskip}{0.2cm} % Espaçamento entre parágrafo
+% -----------------------------------------------
 
-% O tamanho do parágrafo é dado por:
-\setlength{\parindent}{1.3cm}
-
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
 
 % -----------------------------------------------
 % compila o indice
@@ -104,41 +115,37 @@
 \makeindex
 % -----------------------------------------------
 
-% -----------------------------------------------
-% Início do documento
-% -----------------------------------------------
-\begin{document}
 
-\selectlanguage{brazil}
 
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+% -----------------------------------------------
+\begin{document} % Início do documento
+% -----------------------------------------------
+
+\nocite{*} % Inclui todas referências na página
+\selectlanguage{brazilian}
+\frenchspacing % Retira espaço extra obsoleto entre as frases.
+
+
 
 % -----------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % -----------------------------------------------
 % \pretextual
 
-% -----------------------------------------------
-% Capa
-% -----------------------------------------------
-\imprimircapa
-% -----------------------------------------------
-
-% -----------------------------------------------
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% -----------------------------------------------
-\imprimirfolhaderosto*
-% -----------------------------------------------
-
-% -----------------------------------------------
-% Anverso da folha de rosto:
-% -----------------------------------------------
 
 
 % -----------------------------------------------
-% Agradecimentos
+% ----------FOLHA DE ROSTO E CONTRACAPA----------
+% -----------------------------------------------
+\imprimircapa % Está é Folha de Rosto
+% -----------------------------------------------
+\imprimirfolhaderosto* % Esta é Contracapa
+% -----------------------------------------------
+
+
+
+% -----------------------------------------------
+% ---------------Agradecimentos------------------
 % -----------------------------------------------
 \begin{agradecimentos}
 \lipsum[1-2] % Gera texto de exemplo para preencher a página.
@@ -150,10 +157,9 @@
 
 
 % -----------------------------------------------
-% RESUMO
+% ------------------RESUMO-----------------------
 % -----------------------------------------------
-% resumo na língua vernácula (obrigatório)
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\setlength{\absparsep}{18pt} % Espaçamento dos parágrafos do resumo
 \begin{resumo}
 \lipsum[1-2] % Gera texto de exemplo para preencher a página.
 
@@ -162,44 +168,84 @@
 \end{resumo}
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
-% inserir lista de ilustrações
+% -----------------ILUSTRAÇÕES-------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
-% inserir lista de tabelas
+% ------------------TABELAS----------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
-% inserir lista de abreviaturas e siglas
+% ------------ABREVIATURAS E SIGLAS--------------
 % -----------------------------------------------
 \begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
+    % Siglas Originais
+    \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[abnTeX] ABsurdas Normas para TeX
+    \item[ABNTC] Analistas de Burrocracia e Normas Tecnicamente Complicadas
+    \item[ABNTT] Associação Brasileira de Normas Totalmente Travadas
+    \item[ABNTE] Agrupamento Brasileiro de Normas Terrivelmente Escritas
+    \item[ABNTX] Ajustes Básicos de Nomenclatura para Trabalhos Extraordinários
+    
+    % Siglas de Computação/TI
+    \item[UML] Unified Modeling Language (Linguagem de Modelagem Unificada)
+    \item[VBA] Visual Basic for Applications (Conhecimento em automação de planilhas)
+    \item[BIOS] Basic Input/Output System (Sistema Básico de Entrada/Saída)
+    
+    % Siglas de Energia Solar (Sistemas Fotovoltaicos)
+    \item[UFV] Usina Fotovoltaica
+    \item[MPPT] Maximum Power Point Tracking (Rastreamento do Ponto de Máxima Potência)
+    \item[PVS] Photovoltaic System (Sistema Fotovoltaico)
+    
+    % Siglas da Instituição
+    \item[UFT] Universidade Federal do Tocantins
+    \item[UAB] Universidade Aberta do Brasil
 \end{siglas}
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
-% inserir lista de símbolos
+% ------------------ SÍMBOLOS -------------------
 % -----------------------------------------------
 \begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
+    % --- Matemática/Computação ---
+    \item[$ \mathbb{N} $] Conjunto dos números naturais (Nomenclatura Padrão).
+    \item[$ \Sigma $] Símbolo de Somatório ou Sigma (Usado em Análise de Dados).
+    \item[$ \land $] Operador Lógico AND (Conjunção).
+    \item[$ \lor $] Operador Lógico OR (Disjunção).
+    \item[$ \nabla $] Operador Nabla (Usado em Cálculo Vetorial).
+    
+    % --- Eletrônica/Sistemas Fotovoltaicos ---
+    \item[$ \Omega $] Ohm (Unidade de resistência elétrica).
+    \item[$ \text{V} $] Volt (Unidade de Tensão Elétrica, $V=R \cdot I$).
+    \item[$ I_L $] Corrente de Carga (Load Current) em Sistemas Fotovoltaicos.
+    \item[$ \text{P}_{\text{MPP}} $] Ponto de Máxima Potência (Maximum Power Point).
+    
+    % --- LaTeX/Documentação (Sua Expertise) ---
+    \item[$ \texttt{\symbol{92}} $] Símbolo de Barra Invertida (Backslash) (Comando fundamental do \LaTeX).
 \end{simbolos}
 % -----------------------------------------------
 
+
+
 % -----------------------------------------------
-% inserir o sumario
+% ------------------SUMÁRIO----------------------
 % -----------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
@@ -208,45 +254,297 @@
 
 
 % -----------------------------------------------
-% ELEMENTOS TEXTUAIS
+% --------------ELEMENTOS TEXTUAIS---------------
 % -----------------------------------------------
 \textual
 
+
+
+
+
 % -----------------------------------------------
-% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% -----------------Introdução--------------------
 % -----------------------------------------------
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
 
 \lipsum[1-2] % Gera texto de exemplo para preencher a página.
-
-
-
-
-
-
-
-% -----------------------------------------------
-% PARTE - preparação da pesquisa
-% -----------------------------------------------
-\part{Preparação do relatório}
+\lipsum[2] \footnote{\url{http://www.latex-project.org/lppl.txt}}.
 
 
 
 % -----------------------------------------------
-% Parte de resultados
+% -------PARTE - Preparação do Relatório---------
+% -----------------------------------------------
+\part{Preparação do Relatório}
+
+
+
+% -----------------------------------------------
+% -------------PARTE - Resultados---------------
 % -----------------------------------------------
 \part{Resultados}
 
-% -----------------------------------------------
-% Capitulo de revisão de literatura
-% -----------------------------------------------
-\chapter{Lorem ipsum dolor sit amet}
+
 
 % -----------------------------------------------
-\section{Aliquam vestibulum fringilla lorem}
+% ------------------Capítulos--------------------
 % -----------------------------------------------
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\chapter{Funções Matemáticas}
+
+\section{Morbi orci nisl hendrerit}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página. 
+\cite{talbot2012}
+
+
+\newpage % Nova Página 
+% -----------------------------------------------
+\section{Exemplo de Gráficos de Funções Matemáticas}
+
+\noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
+
+% -----------------------------------------------
+% 1. FUNÇÃO LINEAR 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Linear $f(x)=x$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=-2, ymax=2]
+    \addplot[blue, thick] {x};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função linear $f(x)=x$.}
+    \label{fig:funcao_linear}
+\end{figure}
+
+% -----------------------------------------------
+% 2. FUNÇÃO QUADRÁTICA
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Quadrática $f(x)=x^2$ (Parábola)},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=0, ymax=4]
+    \addplot[red, thick, domain=-2:2] {x^2};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função quadrática $f(x)=x^2$, representando uma parábola.}
+    \label{fig:funcao_quadratica}
+\end{figure}
+
+% -----------------------------------------------
+% 3. FUNÇÃO SENOIDE 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Senoide $f(x)=\sin(x)$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=0, xmax=360, ymin=-1.5, ymax=1.5,
+        xtick={0, 90, 180, 270, 360},
+        xticklabels={0, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$}
+    ]
+    \addplot[violet, thick, domain=0:360] ({x}, {sin(x)});
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico da função senoide $f(x)=\sin(x)$, demonstrando periodicidade.}
+    \label{fig:funcao_senoide}
+\end{figure}
+
+% -----------------------------------------------
+% 4. FUNÇÃO EXPONENCIAL 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Exponencial $f(x)=e^x$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=0, ymax=8,
+        domain=-2:2]
+    \addplot[green!60!black, thick] {exp(x)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função exponencial $f(x)=e^x$, representando crescimento acentuado.}
+    \label{fig:funcao_exponencial}
+\end{figure}
+
+% -----------------------------------------------
+% 5. FUNÇÃO LOGARÍTMICA 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Logarítmica $f(x)=\ln(x)$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=0, xmax=5, ymin=-2, ymax=2,
+        domain=0.01:5]
+    \addplot[orange, thick] {ln(x)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico da função logarítmica natural $f(x)=\ln(x)$, mostrando o crescimento lento.}
+    \label{fig:funcao_logaritmica}
+\end{figure}
+% -----------------------------------------------
+% Fim das Funções Matemáticas 
+% -----------------------------------------------
+
+
+
+\newpage % Nova Página 
+% -----------------------------------------------
+\section{Exemplo de Lista de Tabelas}
+% -----------------------------------------------
+
+\noindent Esta seção demonstra a correta formatação ABNT para tabelas e garante o preenchimento da Lista de Tabelas.
+
+% -----------------------------------------------
+\begin{table}[H]
+    \centering
+    \caption{Resultados dos Testes de Velocidade (Baseline)}
+    \label{tab:velocidade_baseline}
+    \begin{tabular}{lcc}
+        \toprule
+        Módulo & Tempo (ms) & Status \\
+        \midrule
+        Login & 120 & OK \\
+        Busca & 450 & Crítico \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Recursos Utilizados por Componente}
+    \label{tab:recursos_comp}
+    \begin{tabular}{lrr}
+        \toprule
+        Componente & RAM (MB) & CPU (\%) \\
+        \midrule
+        Backend API & 512 & 30 \\
+        Frontend UI & 128 & 15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Cronograma de Implementação (Fase Alpha)}
+    \label{tab:cronograma_alpha}
+    \begin{tabular}{llr}
+        \toprule
+        Tarefa & Responsável & Prazo (Dias) \\
+        \midrule
+        Setup Inicial & Equipe T.I. & 5 \\
+        Desenvolvimento & Programador & 15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Classificação de Bugs por Prioridade}
+    \label{tab:bugs_prioridade}
+    \begin{tabular}{lc}
+        \toprule
+        Prioridade & Incidência \\
+        \midrule
+        Crítica & 3 \\
+        Média & 8 \\
+        Baixa & 12 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Comparativo de Linguagens de Programação}
+    \label{tab:linguagens_comp}
+    \begin{tabular}{ccc}
+        \toprule
+        Linguagem & Desempenho & Curva de Aprendizado \\
+        \midrule
+        Python & Médio & Baixa \\
+        C++ & Alta & Alta \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Especificações do Painel Fotovoltaico}
+    \label{tab:painel_foto}
+    \begin{tabular}{lc}
+        \toprule
+        Parâmetro & Valor \\
+        \midrule
+        Potência Máx. & 350 W \\
+        Eficiência & 20.5\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+% -----------------------------------------------
+
+
+
+
+
+
+\chapter{Suspendisse vel felis}
+
+\section{Praesent enim elit}
+\lipsum[6-7] % Gera texto de exemplo para preencher a página. 
+
+
+\section{Curabitur et nunc}
+\lipsum[8-10] % Gera texto de exemplo para preencher a página. 
+
+
+
+\chapter{Cras non urna. Morbi eros pede}
+
+\section{Nullam at lectus}
+\lipsum[10-11] % Gera texto de exemplo para preencher a página. 
+
+\section{Praesent pretium}
+\lipsum[12-13] % Gera texto de exemplo para preencher a página. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -272,10 +570,22 @@
 % -----------------------------------------------
 \postextual
 
+
+
+
 % -----------------------------------------------
-% Referências bibliográficas
+% ----------Referências bibliográficas-----------
 % -----------------------------------------------
-\bibliography{Referencias}
+\chapter*{Referências}                                               % Insere o título
+\markboth{Referências}{Referências}                                  % Título "Referências" no cabeçalho.
+\addtocontents{toc}{\protect\vspace{\baselineskip}}                  % Adiciona uma linha.
+\addcontentsline{toc}{chapter}{\protect\MakeUppercase{REFERÊNCIAS}}  % Nível 'chapter' para linha grossos.
+\printbibliography[heading=none]                                     % Imprime a bibliografia.
+% -----------------------------------------------
+
+
+
+
 
 % -----------------------------------------------
 % Glossário
