@@ -259,9 +259,6 @@
 \textual
 
 
-
-
-
 % -----------------------------------------------
 % -----------------Introdução--------------------
 % -----------------------------------------------
@@ -281,27 +278,17 @@
 
 
 % -----------------------------------------------
-% -------------PARTE - Resultados---------------
-% -----------------------------------------------
-\part{Resultados}
-
-
-
-% -----------------------------------------------
 % ------------------Capítulos--------------------
 % -----------------------------------------------
 \chapter{Funções Matemáticas}
 
-\section{Morbi orci nisl hendrerit}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página. 
-\cite{talbot2012}
-
-
-\newpage % Nova Página 
 % -----------------------------------------------
 \section{Exemplo de Gráficos de Funções Matemáticas}
 
-\noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
+\lipsum[1] % Gera texto de exemplo para preencher a página. 
+\cite{talbot2012}
+
+
 
 % -----------------------------------------------
 % 1. FUNÇÃO LINEAR 
@@ -321,6 +308,8 @@
     \caption{Gráfico de uma função linear $f(x)=x$.}
     \label{fig:funcao_linear}
 \end{figure}
+
+\noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
 
 % -----------------------------------------------
 % 2. FUNÇÃO QUADRÁTICA
@@ -503,50 +492,18 @@
 % -----------------------------------------------
 
 
-
-
-
+% -----------------------------------------------
+% -------------PARTE - Resultados---------------
+% -----------------------------------------------
+\part{Resultados}
 
 \chapter{Suspendisse vel felis}
 
 \section{Praesent enim elit}
 \lipsum[6-7] % Gera texto de exemplo para preencher a página. 
 
-
 \section{Curabitur et nunc}
 \lipsum[8-10] % Gera texto de exemplo para preencher a página. 
-
-
-
-\chapter{Cras non urna. Morbi eros pede}
-
-\section{Nullam at lectus}
-\lipsum[10-11] % Gera texto de exemplo para preencher a página. 
-
-\section{Praesent pretium}
-\lipsum[12-13] % Gera texto de exemplo para preencher a página. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -557,19 +514,21 @@
 % -----------------------------------------------
 \phantompart
 
+
+
 % -----------------------------------------------
-% Conclusão
+% ----------------Conclusão----------------------
 % -----------------------------------------------
 \chapter{Conclusão}
 % -----------------------------------------------
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\lipsum[31-33] % Gera texto de exemplo para preencher a página.
+
 
 
 % -----------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
+% -----------ELEMENTOS PÓS-TEXTUAIS--------------
 % -----------------------------------------------
 \postextual
-
 
 
 
@@ -585,124 +544,53 @@
 
 
 
-
-
 % -----------------------------------------------
-% Glossário
+% -----------------APÊNDICE---------------------- 
 % -----------------------------------------------
-%
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
-%\glossary
-
-% -----------------------------------------------
-% Apêndices
-% -----------------------------------------------
-
-% ---
-% Inicia os apêndices
-% ---
 \begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-\partapendices
+\partapendices % Imprime uma página indicando o início dos apêndices
 
 % -----------------------------------------------
 \chapter{Quisque libero justo}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+\section{Aliquam viverra arcu}
+\lipsum[8-9] % Gera texto de exemplo para preencher a página. 
+
+\section{Mauris consequat}
+\lipsum[24] % Gera texto de exemplo para preencher a página. 
 
 
 % -----------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\chapter{Nullam elementum}
 
+\section{Quisque facilisis auctor sapien}
+\lipsum[80-81] % Gera texto de exemplo para preencher a página. 
+
+\section{Aliquam quis quam non metus}
+\lipsum[34] % Gera texto de exemplo para preencher a página. 
 
 \end{apendicesenv}
 % -----------------------------------------------
 
 
-% -----------------------------------------------
-% Anexos
-% -----------------------------------------------
 
 % -----------------------------------------------
-% Inicia os anexos
+% ------------------ANEXOS-----------------------
 % -----------------------------------------------
 \begin{anexosenv}
+\partanexos % Imprime uma página indicando o início dos anexos
 
-% Imprime uma página indicando o início dos anexos
-\partanexos
+% -----------------------------------------------
+\chapter{Morbi ultrices rutrum lorem}
 
-% ---
-\chapter{Morbi ultrices rutrum lorem.}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\section{Pellentesque sodales}
+\lipsum[40-41] % Gera texto de exemplo para preencher a página. 
 
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\section{Curabitur diam tortor}
+\lipsum[54-55] % Gera texto de exemplo para preencher a página. 
 
 \end{anexosenv}
-
-% -----------------------------------------------
-% INDICE REMISSIVO
 % -----------------------------------------------
 
-\phantompart
-
-\printindex
-
-% -----------------------------------------------
-% Formulário de Identificação (opcional)
-% -----------------------------------------------
-\chapter*[Formulário de Identificação]{Formulário de Identificação}
-\addcontentsline{toc}{chapter}{Exemplo de Formulário de Identificação}
-\label{formulado-identificacao}
-
-Exemplo de Formulário de Identificação, compatível com o Anexo A (informativo)
-da ABNT NBR 10719:2015. Este formulário não é um anexo. Conforme definido na
-norma, ele é o último elemento pós-textual e opcional do relatório.
-
-\bigskip
-
-\begin{tabular}{|p{9cm}|p{5cm}|}
-\hline
-\multicolumn{2}{|c|}{\textbf{\large Dados do Relatório Técnico e/ou científico}}\\
-\hline
-\multirow{4}{10cm}[24pt]{Título e subtítulo}& Classificação de segurança\\
-                   & \\
-                   \cline{2-2}
-                   & No.\\
-                   & \\
-				
-\hline
-Tipo de relatório & Data\\
-\hline
-Título do projeto/programa/plano & No.\\
-\hline
-\multicolumn{2}{|l|}{Autor(es)} \\
-\hline
-\multicolumn{2}{|l|}{Instituição executora e endereço completo} \\
-\hline
-\multicolumn{2}{|l|}{Instituição patrocinadora e endereço completo} \\
-\hline
-\multicolumn{2}{|l|}{Resumo}\\[3cm]
-\hline
-\multicolumn{2}{|l|}{Palavras-chave/descritores}\\
-\hline
-\multicolumn{2}{|l|}{
-Edição \hfill No. de páginas \hfill No. do volume \hfill Nº de classificação \phantom{XXXX}} \\
-\hline
-\multicolumn{2}{|l|}{
-ISSN \hfill \hfill Tiragem \hfill Preço \phantom{XXXXXXXX}} \\
-\hline
-\multicolumn{2}{|l|}{Distribuidor} \\
-\hline
-\multicolumn{2}{|l|}{Observações/notas}\\[3cm]
-\hline
-\end{tabular}
 
 \end{document}
