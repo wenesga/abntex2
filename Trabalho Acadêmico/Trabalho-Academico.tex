@@ -1,19 +1,19 @@
+% -----------------------------------------------
+% Modelo UFT para Trabalhos Acadêmicos
+% Adaptado e mantido por Wenes (Libertário)
+% Baseado no projeto abnTeX2, porém modificado para atender às diretrizes
+% visuais e estruturais da Universidade Federal do Tocantins (UFT).
+% Esta versão não é oficial e não substitui os modelos originais do abnTeX2.
+% -----------------------------------------------
+
 \documentclass[
-	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em recto e verso. Oposto a oneside
+	12pt,				% Tamanho da fonte
+    oneside,            % Garante margens iguais (não alternadas)
 	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
 	french,				% idioma adicional para hifenização
 	spanish,			% idioma adicional para hifenização
-	brazil				% o último idioma é o principal do documento
+	brazilian,		    % o último idioma é o principal do documento
 	]{abntex2}
 
 % ---
@@ -64,50 +64,36 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Modelo Canônico de\\ Trabalho Acadêmico com \abnTeX}
-\autor{Equipe \abnTeX}
-\local{Brasil}
-\data{2018, v<VERSION>}
+\titulo{Modelo UFT para Trabalho Acadêmico}
+\autor{Wenes Aquino}
+\local{Tocantins}
+\data{2025}
 \orientador{Lauro César Araujo}
 \coorientador{Equipe \abnTeX}
+
 \instituicao{%
-  Universidade do Brasil -- UBr
-  \par
-  Faculdade de Arquitetura da Informação
-  \par
-  Programa de Pós-Graduação}
-\tipotrabalho{Tese (Doutorado)}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
-\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
-as normas ABNT apresentado à comunidade de usuários \LaTeX.}
+  Universidade Federal do Tocantins - UFT\\
+  Campus Universitário de Palmas\\
+  Curso de Licenciatura em Computação}
+  
+\tipotrabalho{Trabalho de Conclusão de Curso}
+
+\preambulo{Trabalho acadêmico apresentado como parte dos requisitos para avaliação na Universidade Federal do Tocantins (UFT). Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e técnicos, servindo também para testar o espaço disponível e a formatação utilizada na contracapa deste documento.}
 % ---
 
 
-% ---
-% Configurações de aparência do PDF final
-
-% alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{41,5,195}
-
-% informações do PDF
+% -----------------------------------------------
 \makeatletter
 \hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
+    colorlinks=false,   % Desativa links coloridos
+    pdfborder={0 0 0},  % Remove o retângulo ao redor dos links
 }
 \makeatother
-% --- 
+% -----------------------------------------------
+
+
+
+
 
 % ---
 % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
@@ -216,17 +202,17 @@ as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
 	
 	\hspace{0.5cm}
-	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+    \parbox[t]{12.5cm}{\imprimirtipotrabalho~--~\imprimirinstituicao,
 	\imprimirdata.}\\
 	
 	\hspace{0.5cm}
-		1. Palavra-chave1.
-		2. Palavra-chave2.
-		2. Palavra-chave3.
+		1. Inteligência artificial.
+		2. Pensamento computacional.
+		3. Computação desplugado.
 		I. Orientador.
-		II. Universidade xxx.
-		III. Faculdade de xxx.
-		IV. Título 			
+		II. Universidade Federal do Tocantins.
+		III. Curso de Licenciatura em Computação.
+		IV. Título. 			
 	\end{minipage}}
 	\end{center}
 \end{fichacatalografica}
@@ -521,11 +507,7 @@ Lauro César Araujo
 \part{Preparação da pesquisa}
 % ----------------------------------------------------------
 
-% ---
-% Capitulo com exemplos de comandos inseridos de arquivo externo 
-% ---
-\include{abntex2-modelo-include-comandos}
-% ---
+
 
 \chapter{Conteúdos específicos do modelo de trabalho acadêmico}\label{cap_trabalho_academico}
 
@@ -628,7 +610,7 @@ elementum}
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{abntex2-modelo-references}
+\bibliography{Referencias}
 
 % ----------------------------------------------------------
 % Glossário
