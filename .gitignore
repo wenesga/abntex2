@@ -9,6 +9,10 @@
 *.glo
 *.idx
 *.brf
+*.bcf
+*.lof
+*.xml
+*.synctex
 *.nlo
 *.nls
 *.bst
