@@ -5,7 +5,6 @@
 % visuais e estruturais da Universidade Federal do Tocantins (UFT).
 % Esta versão não é oficial e não substitui os modelos originais do abnTeX2.
 % -----------------------------------------------
-
 \documentclass[
 	12pt,				% Tamanho da fonte
     oneside,            % Garante margens iguais (não alternadas)
@@ -15,25 +14,24 @@
 	spanish,			% idioma adicional para hifenização
 	brazilian,		    % o último idioma é o principal do documento
 	]{abntex2}
-
-% -----------------------------------------------
-% PACOTES
 % -----------------------------------------------
 
+
 % -----------------------------------------------
-% Pacotes fundamentais 
+% -------------Pacotes fundamentais-------------- 
 % -----------------------------------------------
 \usepackage{lmodern}			% Usa a fonte Latin Modern
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 % -----------------------------------------------
 
+
 % -----------------------------------------------
-% Pacotes adicionais, usados no anexo do modelo de folha de identificação
+% Usados anexo do modelo de folha de identificação
 % -----------------------------------------------
 \usepackage{multicol}
 \usepackage{multirow}
@@ -41,12 +39,12 @@
 	
 
 % -----------------------------------------------
-\usepackage{lipsum}	% para geração de dummy text
+\usepackage{lipsum}	% para geração de texto------
 % -----------------------------------------------
 
 
 % -----------------------------------------------
-% Pacotes de citações
+% -------------Pacotes de citações---------------
 % -----------------------------------------------
 \usepackage[backend=biber,style=abnt,language=brazil]{biblatex}
 \addbibresource{Referencias.bib}
@@ -78,7 +76,7 @@
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Relatório Técnico em \abnTeX}
 \autor{Editado por Wenes Aquino}
-\local{Tocantins}
+\local{Palmas}
 \data{2025, v-1.0}
 
 \instituicao{%
@@ -103,7 +101,7 @@
 
 
 % -----------------------------------------------
-% Espaçamentos entre linhas e parágrafos 
+% ----Espaçamentos entre linhas e parágrafos----- 
 % -----------------------------------------------
 \setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
 \setlength{\parskip}{0.2cm} % Espaçamento entre parágrafo
@@ -111,7 +109,7 @@
 
 
 % -----------------------------------------------
-% compila o indice
+% ---------------Compila o índice----------------
 % -----------------------------------------------
 \makeindex
 % -----------------------------------------------
@@ -129,7 +127,7 @@
 
 
 % -----------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
+% ------------ELEMENTOS PRÉ-TEXTUAIS-------------
 % -----------------------------------------------
 % \pretextual
 
@@ -292,7 +290,7 @@
 
 
 % -----------------------------------------------
-% 1. FUNÇÃO LINEAR 
+% --------------1. FUNÇÃO LINEAR----------------- 
 % -----------------------------------------------
 \begin{figure}[H]
     \centering
@@ -313,7 +311,7 @@
 \noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
 
 % -----------------------------------------------
-% 2. FUNÇÃO QUADRÁTICA
+% -------------2. FUNÇÃO QUADRÁTICA--------------
 % -----------------------------------------------
 \begin{figure}[H]
     \centering
@@ -332,7 +330,7 @@
 \end{figure}
 
 % -----------------------------------------------
-% 3. FUNÇÃO SENOIDE 
+% ---------------3. FUNÇÃO SENOIDE--------------- 
 % -----------------------------------------------
 \begin{figure}[H]
     \centering
@@ -354,7 +352,7 @@
 \end{figure}
 
 % -----------------------------------------------
-% 4. FUNÇÃO EXPONENCIAL 
+% -------------4. FUNÇÃO EXPONENCIAL------------- 
 % -----------------------------------------------
 \begin{figure}[H]
     \centering
@@ -374,7 +372,7 @@
 \end{figure}
 
 % -----------------------------------------------
-% 5. FUNÇÃO LOGARÍTMICA 
+% -------------5. FUNÇÃO LOGARÍTMICA------------- 
 % -----------------------------------------------
 \begin{figure}[H]
     \centering
@@ -393,8 +391,7 @@
     \label{fig:funcao_logaritmica}
 \end{figure}
 % -----------------------------------------------
-% Fim das Funções Matemáticas 
-% -----------------------------------------------
+
 
 
 
@@ -551,7 +548,6 @@
 \begin{apendicesenv}
 \partapendices % Imprime uma página indicando o início dos apêndices
 
-% -----------------------------------------------
 \chapter{Quisque libero justo}
 
 \section{Aliquam viverra arcu}
@@ -560,8 +556,8 @@
 \section{Mauris consequat}
 \lipsum[24] % Gera texto de exemplo para preencher a página. 
 
-
 % -----------------------------------------------
+
 \chapter{Nullam elementum}
 
 \section{Quisque facilisis auctor sapien}
@@ -581,7 +577,6 @@
 \begin{anexosenv}
 \partanexos % Imprime uma página indicando o início dos anexos
 
-% -----------------------------------------------
 \chapter{Morbi ultrices rutrum lorem}
 
 \section{Pellentesque sodales}

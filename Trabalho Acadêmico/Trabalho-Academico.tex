@@ -5,7 +5,6 @@
 % visuais e estruturais da Universidade Federal do Tocantins (UFT).
 % Esta versão não é oficial e não substitui os modelos originais do abnTeX2.
 % -----------------------------------------------
-
 \documentclass[
 	12pt,				% Tamanho da fonte
     oneside,            % Garante margens iguais (não alternadas)
@@ -15,10 +14,13 @@
 	spanish,			% idioma adicional para hifenização
 	brazilian,		    % o último idioma é o principal do documento
 	]{abntex2}
+% -----------------------------------------------
 
-% ---
+
+
+% -----------------------------------------------
 % Pacotes básicos 
-% ---
+% -----------------------------------------------
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
@@ -26,25 +28,26 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
-% ---
-		
-% ---
-% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-% ---
-\usepackage{lipsum}				% para geração de dummy text
-% ---
+% -----------------------------------------------
 
-% ---
-% Pacotes de citações
-% ---
+
+		
+
+% -----------------------------------------------
+\usepackage{lipsum}				% para geração de dummy text
+% -----------------------------------------------
+
+
+
+% -----------------------------------------------
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% -----------------------------------------------
 
-% --- 
-% CONFIGURAÇÕES DE PACOTES
-% --- 
 
-% ---
+
+
+% -----------------------------------------------
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
@@ -59,14 +62,16 @@
 	\else
 		Citado #1 vezes nas páginas #2.%
 	\fi}%
-% ---
+% -----------------------------------------------
 
-% ---
+
+
+% -----------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
-% ---
+% -----------------------------------------------
 \titulo{Modelo UFT para\\ Projeto de Pesquisa em \abnTeX}
 \autor{Editado por Wenes Aquino}
-\local{Tocantins}
+\local{Palmas}
 \data{2025, v-1.0}
 \orientador{Editado por Wenes Aquino}
 \coorientador{Editado por Wenes Aquino}
@@ -79,7 +84,7 @@
 \tipotrabalho{Trabalho de Conclusão de Curso}
 
 \preambulo{Trabalho de conclusão de curso apresentado como parte dos requisitos para avaliação na Universidade Federal do Tocantins (UFT). Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e técnicos, servindo também para testar o espaço disponível e a formatação utilizada na contracapa deste documento.}
-% ---
+% -----------------------------------------------
 
 
 % -----------------------------------------------
@@ -95,15 +100,16 @@
 
 
 
-% ---
+% -----------------------------------------------
 % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
 % em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
 \makeatletter
 \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 \makeatother
-% ---
+% -----------------------------------------------
 
-% ---
+
+% -----------------------------------------------
 % Possibilita criação de Quadros e Lista de quadros.
 % Ver https://github.com/abntex/abntex2/issues/176
 %
@@ -121,70 +127,68 @@
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
 \setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
-% ---
+% -----------------------------------------------
 
-% --- 
+
+% -----------------------------------------------
 % Espaçamentos entre linhas e parágrafos 
-% --- 
-
+% -----------------------------------------------
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
-
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% -----------------------------------------------
 
-% ---
+
+
+% -----------------------------------------------
 % compila o indice
-% ---
+% -----------------------------------------------
 \makeindex
-% ---
+% -----------------------------------------------
 
-% ----
-% Início do documento
-% ----
+
+
+% -----------------------------------------------
 \begin{document}
-
-% Seleciona o idioma do documento (conforme pacotes do babel)
-%\selectlanguage{english}
-\selectlanguage{brazil}
-
-% Retira espaço extra obsoleto entre as frases.
+% -----------------------------------------------
+\selectlanguage{brazilian} % Idioma do documento 
 \frenchspacing 
+% -----------------------------------------------
 
-% ----------------------------------------------------------
+
+
+
+% -----------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------
 % \pretextual
 
-% ---
-% Capa
-% ---
+
+
+% -----------------------------------------------
 \imprimircapa
-% ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
+% -----------------------------------------------
 \imprimirfolhaderosto*
-% ---
+% -----------------------------------------------
 
-% ---
+
+
+% -----------------------------------------------
 % Inserir a ficha bibliografica
-% ---
-
-% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
+% -----------------------------------------------
+% Isto é um exemplo de Ficha Catalográfico, ou ``Dados internacionais de
 % catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
 % Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
-% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
+% com a ficha catalográfico definitiva após a defesa do trabalho. Quando estiver
 % com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
 % o conteúdo de implementação deste arquivo pelo comando abaixo:
-%
+% -----------------------------------------------
 % \usepackage{pdfpages}		% necessário para comando \includepdf
 % \begin{fichacatalografica}
 %     \includepdf{fig_ficha_catalografica.pdf}
 % \end{fichacatalografica}
-
+% -----------------------------------------------
 \begin{fichacatalografica}
 	\sffamily
 	\vspace*{\fill}					% Posição vertical
@@ -216,36 +220,47 @@
 	\end{minipage}}
 	\end{center}
 \end{fichacatalografica}
-% ---
+% -----------------------------------------------
 
-% ---
-% Inserir errata
-% ---
+
+
+
+% -----------------------------------------------
+% --------------------ERRATA---------------------
+% -----------------------------------------------
 \begin{errata}
-Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
+\textbf{Este é um exemplo de Errata (Elemento Opcional)}
 
-\vspace{\onelineskip}
+\vspace{0.5cm}
 
-FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-Zootecnia, Universidade de São Paulo, São Paulo, 2011.
+A \textbf{Errata} é um elemento pré-textual opcional (em folha avulsa) utilizado para listar as correções necessárias no trabalho após a sua impressão. O seu objetivo é alertar o leitor sobre os erros que passaram pela revisão final.
 
-\begin{table}[htb]
-\center
-\footnotesize
-\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-  \hline
-   \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê}  & \textbf{Leia-se}  \\
-    \hline
-    1 & 10 & auto-conclavo & autoconclavo\\
-   \hline
+\vspace{0.5cm}
+
+Conforme a ABNT, a errata deve indicar de forma clara a folha (página), a linha, o texto incorreto e o texto corrigido.
+
+\vspace{1cm}
+
+\textbf{Exemplo de Estrutura para Correções}
+
+\begin{center}
+\begin{tabular}{|c|c|p{4cm}|p{4cm}|}
+\hline
+\textbf{Folha} & \textbf{Linha} & \textbf{Onde se lê (Texto Incorreto)} & \textbf{Leia-se (Texto Correto)} \\
+\hline
+15 & 8 & A tecnologia é Fotovoltáica. & A tecnologia é Fotovoltaica. \\
+\hline
+42 & 21 & Os algoritmos não corrigidos. & Os algoritmos corrigidos. \\
+\hline
+58 & 5 & A aplicação de computador. & A aplicação de computação. \\
+\hline
 \end{tabular}
-\end{table}
-
+\end{center}
 \end{errata}
-% ---
+
+
+
+
 
 % ---
 % Inserir folha de aprovação
@@ -278,7 +293,7 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
     \vspace*{\fill}
    \end{center}
         
-   Trabalho aprovado. \imprimirlocal, 24 de novembro de 2012:
+   Trabalho aprovado. \imprimirlocal, 15 de novembro de 2025:
 
    \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
    \assinatura{\textbf{Professor} \\ Convidado 1}
@@ -297,56 +312,78 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 \end{folhadeaprovacao}
 % ---
 
-% ---
+
+
+
+% -----------------------------------------------
 % Dedicatória
-% ---
+% -----------------------------------------------
 \begin{dedicatoria}
    \vspace*{\fill}
    \centering
-   \noindent
-   \textit{ Este trabalho é dedicado às crianças adultas que,\\
-   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+   \textit{Dedicado àqueles que compreendem o valor\\ 
+        inestimável do conhecimento e da busca incessante\\ 
+        pela verdade, alicerçando suas conquistas no mérito,\\ 
+        na responsabilidade individual e na liberdade.\\
+        Que esta jornada científica inspire a próxima\\ 
+        geração de construtores, movidos pela lógica\\ 
+        e pela convicção de que o progresso é fruto\\
+        da iniciativa privada e do trabalho honesto.}
+    \vspace*{\fill}
 \end{dedicatoria}
-% ---
+% -----------------------------------------------
 
-% ---
+
+
+
+
+% -----------------------------------------------
 % Agradecimentos
-% ---
+% -----------------------------------------------
 \begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
+À Universidade Federal do Tocantins (UFT) e à 
+Universidade Aberta do Brasil (UAB), por fornecerem 
+o ambiente acadêmico de excelência e o acesso ao 
+conhecimento que tornaram esta jornada possível.
+\par\vspace{0.5em}   
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://www.abntex.net.br/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+Ao Orientador \imprimirorientador, pela rigorosa 
+e fundamental orientação técnica, que assegurou 
+a precisão e a lógica deste trabalho.
+\par\vspace{0.5em} 
 
+Aos meus familiares e amigos mais próximos, 
+pela compreensão e pelo suporte incondicional, 
+que respeitaram a minha responsabilidade individual 
+e o tempo dedicado à execução deste projeto.
+\par\vspace{0.5em}  
+
+A todos que, de forma direta ou indireta, 
+contribuíram com o seu mérito e o seu 
+trabalho para a conclusão desta pesquisa.
 \end{agradecimentos}
-% ---
+% -----------------------------------------------
 
-% ---
+
+
+% -----------------------------------------------
 % Epígrafe
-% ---
+% -----------------------------------------------
 \begin{epigrafe}
     \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Não vos amoldeis às estruturas deste mundo, \\
-		mas transformai-vos pela renovação da mente, \\
-		a fim de distinguir qual é a vontade de Deus: \\
-		o que é bom, o que Lhe é agradável, o que é perfeito.\\
-		(Bíblia Sagrada, Romanos 12, 2)}
-	\end{flushright}
+    \begin{flushright}
+        \textit{``A verdade é o fundamento que sustenta a mente livre.\\
+        Onde há liberdade, nasce a responsabilidade;\\
+        onde há responsabilidade, floresce o mérito;\\
+        e onde o mérito prevalece, nenhum poder arbitrário\\
+        consegue limitar o potencial do indivíduo.\\
+        A busca pela liberdade não é apenas um ideal,\\
+        mas um compromisso diário com a razão, a coragem\\
+        e a defesa daquilo que torna cada ser humano único.''}\\[1em]
+        $\forall$ Libertário \(\infty\) 
+    \end{flushright}
 \end{epigrafe}
-% ---
+% -----------------------------------------------
 
 % ---
 % RESUMOS
@@ -687,4 +724,4 @@ parturient montes nascetur ridiculus mus}
 \printindex
 %---------------------------------------------------------------------
 
-\end{document}
+\end{document} 
