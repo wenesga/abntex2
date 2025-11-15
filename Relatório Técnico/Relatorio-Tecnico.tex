@@ -1,0 +1,398 @@
+% -----------------------------------------------
+% Modelo UFT para Trabalhos Acadêmicos
+% Adaptado e mantido por Wenes (Libertário)
+% Baseado no projeto abnTeX2, porém modificado para atender às diretrizes
+% visuais e estruturais da Universidade Federal do Tocantins (UFT).
+% Esta versão não é oficial e não substitui os modelos originais do abnTeX2.
+% -----------------------------------------------
+
+\documentclass[
+	12pt,				% Tamanho da fonte
+    oneside,            % Garante margens iguais (não alternadas)
+	a4paper,			% tamanho do papel. 
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazilian,		    % o último idioma é o principal do documento
+	]{abntex2}
+
+% -----------------------------------------------
+% PACOTES
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Pacotes fundamentais 
+% -----------------------------------------------
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Pacotes adicionais, usados no anexo do modelo de folha de identificação
+% -----------------------------------------------
+\usepackage{multicol}
+\usepackage{multirow}
+% -----------------------------------------------
+	
+% -----------------------------------------------
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% -----------------------------------------------
+\usepackage{lipsum}	% para geração de dummy text
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Pacotes de citações
+% -----------------------------------------------
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% -----------------------------------------------
+% CONFIGURAÇÕES DE PACOTES
+% -----------------------------------------------
+
+
+
+
+
+
+
+% -----------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% -----------------------------------------------
+\titulo{Modelo UFT para\\ Relatório Técnico em \abnTeX}
+\autor{Editado por Wenes Aquino}
+\local{Tocantins}
+\data{2025, v-1.0}
+\instituicao{%
+  Universidade Federal do Tocantins - UFT\\
+  Campus Universitário de Palmas\\
+  Curso de Licenciatura em Computação}
+\tipotrabalho{Relatório Técnico}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Trabalho acadêmico apresentado como parte dos requisitos para avaliação na Universidade Federal do Tocantins (UFT). Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e técnicos, servindo também para testar o espaço disponível e a formatação utilizada na contracapa deste documento.}
+% -----------------------------------------------
+
+
+
+\makeatletter
+\hypersetup{
+    colorlinks=false,   % Desativa links coloridos
+    pdfborder={0 0 0},  % Remove o retângulo ao redor dos links
+}
+\makeatother
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Espaçamentos entre linhas e parágrafos 
+% -----------------------------------------------
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% -----------------------------------------------
+% compila o indice
+% -----------------------------------------------
+\makeindex
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Início do documento
+% -----------------------------------------------
+\begin{document}
+
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% -----------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% -----------------------------------------------
+% \pretextual
+
+% -----------------------------------------------
+% Capa
+% -----------------------------------------------
+\imprimircapa
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% -----------------------------------------------
+\imprimirfolhaderosto*
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Anverso da folha de rosto:
+% -----------------------------------------------
+
+
+% -----------------------------------------------
+% Agradecimentos
+% -----------------------------------------------
+\begin{agradecimentos}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+\footnote{\url{http://www.cpai.unb.br/}} 
+
+\end{agradecimentos}
+% -----------------------------------------------
+
+
+
+% -----------------------------------------------
+% RESUMO
+% -----------------------------------------------
+% resumo na língua vernácula (obrigatório)
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+ \noindent
+ \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
+% -----------------------------------------------
+
+% -----------------------------------------------
+% inserir lista de ilustrações
+% -----------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% -----------------------------------------------
+
+% -----------------------------------------------
+% inserir lista de tabelas
+% -----------------------------------------------
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% -----------------------------------------------
+
+% -----------------------------------------------
+% inserir lista de abreviaturas e siglas
+% -----------------------------------------------
+\begin{siglas}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+  \item[abnTeX] ABsurdas Normas para TeX
+\end{siglas}
+% -----------------------------------------------
+
+% -----------------------------------------------
+% inserir lista de símbolos
+% -----------------------------------------------
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+% -----------------------------------------------
+
+% -----------------------------------------------
+% inserir o sumario
+% -----------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% -----------------------------------------------
+
+
+% -----------------------------------------------
+% ELEMENTOS TEXTUAIS
+% -----------------------------------------------
+\textual
+
+% -----------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% -----------------------------------------------
+\chapter*[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+
+
+
+
+
+
+% -----------------------------------------------
+% PARTE - preparação da pesquisa
+% -----------------------------------------------
+\part{Preparação do relatório}
+
+
+
+% -----------------------------------------------
+% Parte de resultados
+% -----------------------------------------------
+\part{Resultados}
+
+% -----------------------------------------------
+% Capitulo de revisão de literatura
+% -----------------------------------------------
+\chapter{Lorem ipsum dolor sit amet}
+
+% -----------------------------------------------
+\section{Aliquam vestibulum fringilla lorem}
+% -----------------------------------------------
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+
+
+
+
+% -----------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% -----------------------------------------------
+\phantompart
+
+% -----------------------------------------------
+% Conclusão
+% -----------------------------------------------
+\chapter{Conclusão}
+% -----------------------------------------------
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+
+% -----------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% -----------------------------------------------
+\postextual
+
+% -----------------------------------------------
+% Referências bibliográficas
+% -----------------------------------------------
+\bibliography{Referencias}
+
+% -----------------------------------------------
+% Glossário
+% -----------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% -----------------------------------------------
+% Apêndices
+% -----------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+\partapendices
+
+% -----------------------------------------------
+\chapter{Quisque libero justo}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+
+% -----------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+
+\end{apendicesenv}
+% -----------------------------------------------
+
+
+% -----------------------------------------------
+% Anexos
+% -----------------------------------------------
+
+% -----------------------------------------------
+% Inicia os anexos
+% -----------------------------------------------
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem.}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+\lipsum[1-2] % Gera texto de exemplo para preencher a página.
+
+\end{anexosenv}
+
+% -----------------------------------------------
+% INDICE REMISSIVO
+% -----------------------------------------------
+
+\phantompart
+
+\printindex
+
+% -----------------------------------------------
+% Formulário de Identificação (opcional)
+% -----------------------------------------------
+\chapter*[Formulário de Identificação]{Formulário de Identificação}
+\addcontentsline{toc}{chapter}{Exemplo de Formulário de Identificação}
+\label{formulado-identificacao}
+
+Exemplo de Formulário de Identificação, compatível com o Anexo A (informativo)
+da ABNT NBR 10719:2015. Este formulário não é um anexo. Conforme definido na
+norma, ele é o último elemento pós-textual e opcional do relatório.
+
+\bigskip
+
+\begin{tabular}{|p{9cm}|p{5cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{\large Dados do Relatório Técnico e/ou científico}}\\
+\hline
+\multirow{4}{10cm}[24pt]{Título e subtítulo}& Classificação de segurança\\
+                   & \\
+                   \cline{2-2}
+                   & No.\\
+                   & \\
+				
+\hline
+Tipo de relatório & Data\\
+\hline
+Título do projeto/programa/plano & No.\\
+\hline
+\multicolumn{2}{|l|}{Autor(es)} \\
+\hline
+\multicolumn{2}{|l|}{Instituição executora e endereço completo} \\
+\hline
+\multicolumn{2}{|l|}{Instituição patrocinadora e endereço completo} \\
+\hline
+\multicolumn{2}{|l|}{Resumo}\\[3cm]
+\hline
+\multicolumn{2}{|l|}{Palavras-chave/descritores}\\
+\hline
+\multicolumn{2}{|l|}{
+Edição \hfill No. de páginas \hfill No. do volume \hfill Nº de classificação \phantom{XXXX}} \\
+\hline
+\multicolumn{2}{|l|}{
+ISSN \hfill \hfill Tiragem \hfill Preço \phantom{XXXXXXXX}} \\
+\hline
+\multicolumn{2}{|l|}{Distribuidor} \\
+\hline
+\multicolumn{2}{|l|}{Observações/notas}\\[3cm]
+\hline
+\end{tabular}
+
+\end{document}
