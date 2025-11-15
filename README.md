@@ -72,3 +72,40 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 ---
 
 ![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
+
+---
+---
+
+### 2. MODELO: RELATÓRIO TÉCNICO
+
+---
+
+#### Folha de Rosto
+
+---
+
+![Relatório Técnico UFT - Folha de Rosto](Imagens/folhaderosto_relatorio_uft.png)
+
+---
+
+#### Contracapa
+
+---
+
+![Relatório Técnico UFT - Contracapa](Imagens/contracapa_relatorio_uft.png)
+
+---
+
+#### Sumário
+
+---
+
+![Relatório Técnico UFT - Sumário](Imagens/sumario_relatorio_uft.png)
+
+---
+
+#### Referências
+
+---
+
+![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
