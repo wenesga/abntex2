@@ -1,6 +1,6 @@
 # Sobre esta adaptação
 
-Este repositório contém uma versão customizada dos modelos oficiais do abnTeX2, adaptada para atender ao padrão visual e às necessidades da Universidade Federal do Tocantins (UFT).  
+Este repositório contém uma versão customizada dos modelos oficiais do abnTeX2, adaptada para atender ao padrão visual e às necessidades da Universidade Federal do Tocantins (UFT). 
 Foram feitos ajustes nos três modelos principais:
 
 - Projeto de Pesquisa
@@ -13,9 +13,10 @@ Foram feitos ajustes nos três modelos principais:
 - Inclusão do logo da Universidade Federal do Tocantins (UFT) nas capas
 - Ajustes no título, formatação e elementos pré-textuais
 - Melhorias na listagem das referências:
-  - Títulos de artigos em **negrito**
-  - Justificação total das referências
-- Correção do uso de `\nocite{*}`
+  - Títulos de artigos em **negrito**
+  - Justificação total das referências
+- **Correção da funcionalidade do `\nocite{*}`:** O comando agora opera corretamente no fluxo `biblatex/abnTeX2`, permitindo a visualização de todas as referências para teste (Modo Teste) e, quando desativado, o modo de conformidade ABNT (mostra apenas as citadas).
+- **População de Listas:** Inclusão de exemplos funcionais para Lista de Ilustrações (gráficos `pgfplots`), Lista de Tabelas, Lista de Siglas e Lista de Símbolos, demonstrando a estabilidade do modelo.
 - Padronização geral segundo diretrizes utilizadas na Universidade Federal do Tocantins (UFT)
 
 
@@ -23,8 +24,8 @@ Foram feitos ajustes nos três modelos principais:
 
 A adaptação ainda está em evolução. Sugestões de melhorias são bem-vindas.
 
-> **Importante:**  
-> Para que todas as adaptações funcionem corretamente, mantenha o arquivo `abntex2.cls` na **mesma pasta do arquivo principal `.tex`**.  
+> **Importante:**
+> Para que todas as adaptações funcionem corretamente, mantenha o arquivo `abntex2.cls` na **mesma pasta do arquivo principal `.tex`**.
 > Assim, o projeto sempre usará a versão personalizada da classe, independentemente da instalação global do abnTeX2 no sistema.
 
 
@@ -33,19 +34,16 @@ A adaptação ainda está em evolução. Sugestões de melhorias são bem-vindas
 Nesta edição, foi incluída a configuração para uso do modo `oneside`, mantendo margens fixas e desativando o esquema de margens alternadas para impressão em frente e verso.
 
 
-
-
+---
+---
 
 ## 📸 Visualização dos Modelos
 
----
----
-
-# MODELO 1: PROJETO DE PESQUISA
+### 1. MODELO: PROJETO DE PESQUISA
 
 ---
 
-### Folha de Rosto
+#### Folha de Rosto
 
 ---
 
@@ -53,7 +51,7 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ---
 
-### Contracapa
+#### Contracapa
 
 ---
 
@@ -61,7 +59,7 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ---
 
-### Sumário
+#### Sumário
 
 ---
 
@@ -69,11 +67,8 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ---
 
-### Referências
+#### Referências
 
 ---
 
 ![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
-
----
----
