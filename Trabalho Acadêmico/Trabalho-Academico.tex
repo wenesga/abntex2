@@ -29,7 +29,7 @@
 
 
 % -----------------------------------------------
-\usepackage{lipsum}	% para geração de texto------
+\usepackage{lipsum}	% para geração de texto
 % -----------------------------------------------
 
 
@@ -55,15 +55,17 @@
 \usepackage{float}        % Adiciona a opção de posicionamento
 \usepackage{amssymb}      % Necessário para símbolos matemáticos
 \usepackage{amsmath}      % Necessário para comandos como \text{}
+% -----------------------------------------------
 
 
 % -----------------------------------------------
-% Informações de dados para CAPA e FOLHA DE ROSTO
+% -Informações para Folha de Rosto e Contracapa--
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Trabalha de Conclusão de Curso\\ em \abnTeX}
 \autor{Editado por Wenes Aquino}
 \local{Palmas}
 \data{2025, v-1.0}
+
 \orientador{Editado por Wenes Aquino}
 \coorientador{Editado por Wenes Aquino}
 
@@ -74,7 +76,13 @@
   
 \tipotrabalho{Trabalho de Conclusão de Curso}
 
-\preambulo{Trabalho de conclusão de curso apresentado como parte dos requisitos para avaliação na Universidade Federal do Tocantins (UFT). Este modelo foi adaptado e personalizado com ajustes visuais, estruturais e técnicos, servindo também para testar o espaço disponível e a formatação utilizada na contracapa deste documento.}
+\preambulo{Projeto de pesquisa apresentado como 
+    parte dos requisitos para avaliação na Universidade 
+    Federal do Tocantins (UFT). Este modelo foi adaptado 
+    e personalizado com ajustes visuais, estruturais 
+    e técnicos, servindo também para testar o espaço 
+    disponível e a formatação utilizada na contracapa 
+    deste documento.}
 % -----------------------------------------------
 
 
@@ -82,7 +90,7 @@
 \makeatletter
 \hypersetup{
     colorlinks=false,   % Desativa links coloridos
-    pdfborder={0 0 0},  % Remove o retângulo ao redor dos links
+    pdfborder={0 0 0},  % Remove o retângulo dos links
 }
 \makeatother
 % -----------------------------------------------
@@ -92,7 +100,7 @@
 % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
 % em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
 \makeatletter
-\setlength{\@fptop}{5pt} % Set distance from top of page to first float
+\setlength{\@fptop}{5pt} % Distância da parte superior da página até o primeiro elemento flutuante.
 \makeatother
 % -----------------------------------------------
 
@@ -105,7 +113,6 @@
 % -----------------------------------------------
 
 
-
 % -----------------------------------------------
 % ---------------Compila o Índice----------------
 % -----------------------------------------------
@@ -113,14 +120,13 @@
 % -----------------------------------------------
 
 
-
 % -----------------------------------------------
-\begin{document}
+\begin{document} % Início do documento-----------
 % -----------------------------------------------
-
 \nocite{*} % Inclui todas referências na página
 \selectlanguage{brazilian}
 \frenchspacing % Retira espaço extra obsoleto entre as frases.
+% -----------------------------------------------
 
 
 % -----------------------------------------------

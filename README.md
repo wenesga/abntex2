@@ -109,3 +109,91 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 ---
 
 ![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
+
+
+---
+---
+
+### 3. MODELO: TRABALHO ACADÊMICO
+
+*(Esta é a documentação completa dos elementos pré-textuais e pós-textuais.)*
+
+---
+
+#### Folha de Rosto
+
+---
+
+![Trabalho Acadêmico UFT - Folha de Rosto](Imagens/folhaderosto_academico_uft.png)
+
+---
+
+#### Contracapa
+
+---
+
+![Trabalho Acadêmico UFT - Contracapa](Imagens/contracapa_academico_uft.png)
+
+---
+
+#### Folha de Aprovação
+
+---
+
+![Trabalho Acadêmico UFT - Folha de Aprovação](Imagens/folhadeaprovacao_academico_uft.png)
+
+---
+
+#### Ficha Catalográfica
+
+---
+
+![Trabalho Acadêmico UFT - Ficha Catalográfica](Imagens/fichacatalografica_academico_uft.png)
+
+---
+
+#### Sumário
+
+---
+
+![Trabalho Acadêmico UFT - Sumário](Imagens/sumario_academico_uft.png)
+
+---
+
+#### Funções (Gráficos)
+
+---
+
+![Trabalho Acadêmico UFT - Funções e Gráficos](Imagens/funcoes_academico_uft.png)
+
+---
+
+#### Tabelas
+
+---
+
+![Trabalho Acadêmico UFT - Tabelas](Imagens/tabelas_academico_uft.png)
+
+---
+
+#### Referências
+
+---
+
+![Trabalho Acadêmico UFT - Referências](Imagens/referencias_academico_uft.png)
+
+---
+
+#### Apêndice
+
+---
+
+![Trabalho Acadêmico UFT - Apêndice](Imagens/apendice_academico_uft.png)
+
+---
+
+#### Anexo
+
+---
+
+![Trabalho Acadêmico UFT - Anexo](Imagens/anexo_academico_uft.png)
