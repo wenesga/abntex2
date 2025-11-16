@@ -1,0 +1,58 @@
+name: Auto Commit with Gemini (Override)
+
+on:
+  push:
+    paths:
+      - '**.tex'
+      - '**.md'
+      - '**.txt'
+      - '**.sty'
+      - '**.cls'
+      - '**.bib'
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate diff
+        id: diff
+        run: |
+          git fetch --depth=2
+          DIFF=$(git diff HEAD~1 HEAD || true)
+          echo "diff<<EOF" >> $GITHUB_OUTPUT
+          echo "$DIFF" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Call Gemini API
+        id: gemini
+        run: |
+          DIFF_CONTENT="${{ steps.diff.outputs.diff }}"
+
+          RESPONSE=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "x-goog-api-key: ${{ secrets.GEMINI_API_KEY }}" \
+            -d "{
+              \"contents\": [{
+                \"parts\": [{
+                  \"text\": \"Gere uma mensagem de commit curta, clara e técnica para este diff:\n\n$DIFF_CONTENT\"
+                }]
+              }]
+            }" \
+            https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent)
+
+          MSG=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text')
+          echo "msg=$MSG" >> $GITHUB_OUTPUT
+
+      - name: Override commit message
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # TROCA A MENSAGEM DO COMMIT MAIS RECENTE
+          git commit --amend -m "${{ steps.gemini.outputs.msg }}" || true
+
+          git push --force || true
