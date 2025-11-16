@@ -10,8 +10,6 @@
     oneside,            % Garante margens iguais (não alternadas)
 	a4paper,			% tamanho do papel. 
 	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
 	brazilian,		    % o último idioma é o principal do documento
 	]{abntex2}
 % -----------------------------------------------
@@ -21,9 +19,9 @@
 % -----------------------------------------------
 % Pacotes básicos 
 % -----------------------------------------------
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lmodern}			% Usa a fonte Latin Modern		
+\usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
@@ -40,36 +38,40 @@
 
 
 % -----------------------------------------------
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% -------------Pacotes de citações---------------
 % -----------------------------------------------
+\usepackage[backend=biber,style=abnt,language=brazil]{biblatex}
+\addbibresource{Referencias.bib}
+\usepackage{csquotes}             % Recomendado pelo biblatex 
+\usepackage{etoolbox}             % Auxilia na justificação da bibliografia
+\AtBeginBibliography{\justifying} % Ativa a justificação da bibliografia
+\usepackage{ragged2e}
+
 
 
 
 
 % -----------------------------------------------
-% Configurações do pacote backref
-% Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+% --- PACOTES DE VISUALIZAÇÃO E ESTABILIDADE ---
 % -----------------------------------------------
+\usepackage{tikz}         % Gerar imagem de exemplo
+\usepackage{pgfplots}     % Funções matemática
+\pgfplotsset{compat=1.18} % Garante compatibilidade
+\usepackage{float}        % Adiciona a opção de posicionamento
+\usepackage{subcaption}   % Permite criar subfaturas
+\usepackage{amssymb}      % Necessário para símbolos matemáticos
+\usepackage{amsmath}      % Necessário para comandos como \text{}
+
+
+
+
 
 
 
 % -----------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % -----------------------------------------------
-\titulo{Modelo UFT para\\ Projeto de Pesquisa em \abnTeX}
+\titulo{Modelo UFT para\\ Trabalha de Conclusão de Curso\\ em \abnTeX}
 \autor{Editado por Wenes Aquino}
 \local{Palmas}
 \data{2025, v-1.0}
@@ -109,25 +111,6 @@
 % -----------------------------------------------
 
 
-% -----------------------------------------------
-% Possibilita criação de Quadros e Lista de quadros.
-% Ver https://github.com/abntex/abntex2/issues/176
-%
-\newcommand{\quadroname}{Quadro}
-\newcommand{\listofquadrosname}{Lista de quadros}
-
-\newfloat[chapter]{quadro}{loq}{\quadroname}
-\newlistof{listofquadros}{loq}{\listofquadrosname}
-\newlistentry{quadro}{loq}{0}
-
-% configurações para atender às regras da ABNT
-\setfloatadjustment{quadro}{\centering}
-\counterwithout{quadro}{chapter}
-\renewcommand{\cftquadroname}{\quadroname\space} 
-\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
-
-\setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
-% -----------------------------------------------
 
 
 % -----------------------------------------------
@@ -152,10 +135,10 @@
 % -----------------------------------------------
 \begin{document}
 % -----------------------------------------------
-\selectlanguage{brazilian} % Idioma do documento 
-\frenchspacing 
-% -----------------------------------------------
 
+\nocite{*} % Inclui todas referências na página
+\selectlanguage{brazilian}
+\frenchspacing % Retira espaço extra obsoleto entre as frases.
 
 
 
@@ -388,35 +371,6 @@
 
 
 
-% -----------------------------------------------
-% RESUMOS em Francês
-% -----------------------------------------------
-\begin{resumo}[Résumé]
-    \begin{otherlanguage*}{french}
-    \lipsum[1] % Gera texto de exemplo para preencher a página.
- 
-    \textbf{Mots-clés}: latex. abntex. publication de textes.
-    \end{otherlanguage*}
-\end{resumo}
-% -----------------------------------------------
-
-
-
-% -----------------------------------------------
-% RESUMOS em Espanhol
-% -----------------------------------------------
-\begin{resumo}[Resumen]
-    \begin{otherlanguage*}{spanish}
-    \lipsum[1] % Gera texto de exemplo para preencher a página.
-  
-    \textbf{Palabras clave}: latex. abntex. publicación de textos.
-    \end{otherlanguage*}
-\end{resumo}
-% -----------------------------------------------
-
-
-
-
 
 
 % -----------------------------------------------
@@ -424,17 +378,6 @@
 % -----------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
-\cleardoublepage
-% -----------------------------------------------
-
-
-
-
-% -----------------------------------------------
-% ------------------Quadros----------------------
-% -----------------------------------------------
-\pdfbookmark[0]{\listofquadrosname}{loq}
-\listofquadros*
 \cleardoublepage
 % -----------------------------------------------
 
@@ -456,8 +399,20 @@
 % ------------ABREVIATURAS E SIGLAS--------------
 % -----------------------------------------------
 \begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
+    \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[abnTeX] ABsurdas Normas para TeX
+    \item[ABNTC] Analistas de Burrocracia e Normas Tecnicamente Complicadas
+    \item[ABNTT] Associação Brasileira de Normas Totalmente Travadas
+    \item[ABNTE] Agrupamento Brasileiro de Normas Terrivelmente Escritas
+    \item[ABNTX] Ajustes Básicos de Nomenclatura para Trabalhos Extraordinários
+    \item[UML] Unified Modeling Language (Linguagem de Modelagem Unificada)
+    \item[VBA] Visual Basic for Applications (Conhecimento em automação de planilhas)
+    \item[BIOS] Basic Input/Output System (Sistema Básico de Entrada/Saída)
+    \item[UFV] Usina Fotovoltaica
+    \item[MPPT] Maximum Power Point Tracking (Rastreamento do Ponto de Máxima Potência)
+    \item[PVS] Photovoltaic System (Sistema Fotovoltaico)
+    \item[UFT] Universidade Federal do Tocantins
+    \item[UAB] Universidade Aberta do Brasil
 \end{siglas}
 % -----------------------------------------------
 
@@ -469,12 +424,18 @@
 % ------------------ SÍMBOLOS -------------------
 % -----------------------------------------------
 \begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
+    \item[$ \mathbb{N} $] Conjunto dos números naturais (Nomenclatura Padrão).
+    \item[$ \Sigma $] Símbolo de Somatório ou Sigma (Usado em Análise de Dados).
+    \item[$ \land $] Operador Lógico AND (Conjunção).
+    \item[$ \lor $] Operador Lógico OR (Disjunção).
+    \item[$ \nabla $] Operador Nabla (Usado em Cálculo Vetorial).
+    \item[$ \Omega $] Ohm (Unidade de resistência elétrica).
+    \item[$ \text{V} $] Volt (Unidade de Tensão Elétrica, $V=R \cdot I$).
+    \item[$ I_L $] Corrente de Carga (Load Current) em Sistemas Fotovoltaicos.
+    \item[$ \text{P}_{\text{MPP}} $] Ponto de Máxima Potência (Maximum Power Point).
+    \item[$ \texttt{\symbol{92}} $] Símbolo de Barra Invertida (Backslash) (Comando fundamental do \LaTeX).
 \end{simbolos}
-% ---
+% -----------------------------------------------
 
 
 
@@ -511,175 +472,252 @@
 
 
 
+
 % -----------------------------------------------
-% -------------------PARTE-----------------------
+% -------PARTE - Preparação do Trabalho----------
 % -----------------------------------------------
-\part{Preparação da Trabalho}
-% -----------------------------------------------
-
-\chapter{Conteúdos específicos do modelo de trabalho acadêmico}\label{cap_trabalho_academico}
-
-\section{Quadros}
-\lipsum[1] % Gera texto de exemplo para preencher a página.
-
-\vspace{2em}
-
-% --- QUADRO 1: METODOLOGIA DE PESQUISA ---
-\begin{quadro}
-	\centering
-	\caption{Métodos de Pesquisa Adotados}
-	\begin{tabular}{|p{4cm}|p{8cm}|}
-		\hline
-		\textbf{Fase} & \textbf{Descrição e Ações} \\
-		\hline
-		Revisão Bibliográfica & Levantamento de normas técnicas (ABNT, NBR 5410, NBR 16690) e artigos sobre sistemas fotovoltaicos. \\
-		\hline
-		Estudo de Caso & Análise de um projeto de sistema fotovoltaico real instalado na UFT, incluindo medições de desempenho. \\
-		\hline
-		Simulação & Utilização do software PVsyst para modelagem e comparação de cenários de irradiação. \\
-		\hline
-	\end{tabular}
-	\fonte{Fonte: Elaborado pelo autor (2025).}
-\end{quadro}
-
-\vspace{2em}
-
-% --- QUADRO 2: VANTAGENS DO LATEX ---
-\begin{quadro}
-	\centering
-	\caption{Vantagens do Uso do \LaTeX{} em Trabalhos Técnicos}
-	\begin{tabular}{|p{5cm}|p{7cm}|}
-		\hline
-		\textbf{Vantagem} & \textbf{Relevância para TI/Engenharia} \\
-		\hline
-		Qualidade Tipográfica & Inserção precisa de fórmulas matemáticas e códigos. \\
-		\hline
-		Automatização ABNT & Gerenciamento automático de referências e listas (Quadros, Tabelas, Figuras). \\
-		\hline
-		Portabilidade & Arquivos leves e independentes de plataforma, fáceis de compartilhar e compilar. \\
-		\hline
-	\end{tabular}
-	\fonte{Fonte: Adaptado de Knuth (1984).}
-\end{quadro}
-
-\vspace{2em}
-
-% --- QUADRO 3: COMPONENTES DE UM SISTEMA FOTOVOLTAICO ---
-\begin{quadro}
-	\centering
-	\caption{Principais Componentes de um Sistema Fotovoltaico Conectado à Rede}
-	\begin{tabular}{|c|p{8cm}|}
-		\hline
-		\textbf{Componente} & \textbf{Função no Sistema} \\
-		\hline
-		Módulo PV & Captura a irradiação solar e gera energia em corrente contínua (CC). \\
-		\hline
-		Inversor & Converte a energia de CC para corrente alternada (CA) e sincroniza com a rede elétrica. \\
-		\hline
-		Estrutura de Fixação & Suporta e orienta os módulos no ângulo de inclinação ideal. \\
-		\hline
-		Medidor Bidirecional & Contabiliza a energia injetada na rede e a energia consumida da concessionária. \\
-		\hline
-	\end{tabular}
-	\fonte{Fonte: NBR 16690:2019.}
-\end{quadro}
-
-\vspace{2em}
-
-% --- QUADRO 4: ETAPAS DE MANUTENÇÃO DE COMPUTADORES ---
-\begin{quadro}
-	\centering
-	\caption{Checklist Básico para Manutenção Preventiva de Hardware}
-	\begin{tabular}{|p{4cm}|c|p{5cm}|}
-		\hline
-		\textbf{Tarefa} & \textbf{Status} & \textbf{Observações} \\
-		\hline
-		Limpeza interna (poeira) & OK/Pendente & Foco em ventoinhas e dissipadores de calor. \\
-		\hline
-		Verificação de cabos SATA/Energia & OK/Pendente & Garantir conexões firmes. \\
-		\hline
-		Teste de Memória RAM & OK/Pendente & Executar o MemTest por, no mínimo, 1 ciclo. \\
-		\hline
-	\end{tabular}
-	\fonte{Fonte: Experiência profissional do autor (2025).}
-\end{quadro}
-
-\vspace{2em}
-
-% --- QUADRO 5: FERRAMENTAS DE PROGRAMAÇÃO ---
-\begin{quadro}
-	\centering
-	\caption{Comparativo entre Linguagens de Script para Automação}
-	\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|} % LARGURAS REDUZIDAS (4.5cm + 4.5cm + coluna 'c' cabem melhor)
-		\hline
-		\textbf{Linguagem} & \textbf{Principal Aplicação} & \textbf{Facilidade de Integração} \\
-		\hline
-		VBA & Automação de tarefas no Microsoft Office (Excel) & Alta \\
-		\hline
-		Python & Análise de dados e scripts de sistema & Alta \\
-		\hline
-		Bash & Administração de sistemas Linux & Média \\
-		\hline
-	\end{tabular}
-	\fonte{Fonte: Adaptado de diversos autores.}
-\end{quadro}
-
-
-
-
-
-
+\part{Preparação do Trabalho}
 
 
 
 % -----------------------------------------------
-% -------PARTE - Preparação do Relatório---------
+% ------------------Capítulos--------------------
 % -----------------------------------------------
-\part{Referenciais teóricos}
+\chapter{Funções Matemáticas}
+
+% -----------------------------------------------
+\section{Exemplo de Gráficos de Funções Matemáticas}
+
+\lipsum[1] % Gera texto de exemplo para preencher a página. 
+\cite{talbot2012}
+
+
+
+% -----------------------------------------------
+% --------------1. FUNÇÃO LINEAR----------------- 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Linear $f(x)=x$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=-2, ymax=2]
+    \addplot[blue, thick] {x};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função linear $f(x)=x$.}
+    \label{fig:funcao_linear}
+\end{figure}
+
+\noindent Esta seção demonstra o poder do LaTeX para gerar gráficos vetoriais de alta qualidade, que populam automaticamente a Lista de Ilustrações.
+
+% -----------------------------------------------
+% -------------2. FUNÇÃO QUADRÁTICA--------------
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Quadrática $f(x)=x^2$ (Parábola)},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=0, ymax=4]
+    \addplot[red, thick, domain=-2:2] {x^2};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função quadrática $f(x)=x^2$, representando uma parábola.}
+    \label{fig:funcao_quadratica}
+\end{figure}
+
+% -----------------------------------------------
+% ---------------3. FUNÇÃO SENOIDE--------------- 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Senoide $f(x)=\sin(x)$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=0, xmax=360, ymin=-1.5, ymax=1.5,
+        xtick={0, 90, 180, 270, 360},
+        xticklabels={0, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$}
+    ]
+    \addplot[violet, thick, domain=0:360] ({x}, {sin(x)});
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico da função senoide $f(x)=\sin(x)$, demonstrando periodicidade.}
+    \label{fig:funcao_senoide}
+\end{figure}
+
+% -----------------------------------------------
+% -------------4. FUNÇÃO EXPONENCIAL------------- 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Exponencial $f(x)=e^x$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=-2, xmax=2, ymin=0, ymax=8,
+        domain=-2:2]
+    \addplot[green!60!black, thick] {exp(x)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de uma função exponencial $f(x)=e^x$, representando crescimento acentuado.}
+    \label{fig:funcao_exponencial}
+\end{figure}
+
+% -----------------------------------------------
+% -------------5. FUNÇÃO LOGARÍTMICA------------- 
+% -----------------------------------------------
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        title={Função Logarítmica $f(x)=\ln(x)$},
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        xmin=0, xmax=5, ymin=-2, ymax=2,
+        domain=0.01:5]
+    \addplot[orange, thick] {ln(x)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico da função logarítmica natural $f(x)=\ln(x)$, mostrando o crescimento lento.}
+    \label{fig:funcao_logaritmica}
+\end{figure}
 % -----------------------------------------------
 
-\chapter{Lorem ipsum dolor sit amet}
-% ---
 
-% ---
-\section{Aliquam vestibulum fringilla lorem}
-% ---
 
-\lipsum[1]
 
-\lipsum[2-3]
+\newpage % Nova Página 
+% -----------------------------------------------
+\section{Exemplo de Lista de Tabelas}
+% -----------------------------------------------
 
-% ----------------------------------------------------------
-% PARTE
-% ----------------------------------------------------------
+\noindent Esta seção demonstra a correta formatação ABNT para tabelas e garante o preenchimento da Lista de Tabelas.
+
+% -----------------------------------------------
+\begin{table}[H]
+    \centering
+    \caption{Resultados dos Testes de Velocidade (Baseline)}
+    \label{tab:velocidade_baseline}
+    \begin{tabular}{lcc}
+        \toprule
+        Módulo & Tempo (ms) & Status \\
+        \midrule
+        Login & 120 & OK \\
+        Busca & 450 & Crítico \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Recursos Utilizados por Componente}
+    \label{tab:recursos_comp}
+    \begin{tabular}{lrr}
+        \toprule
+        Componente & RAM (MB) & CPU (\%) \\
+        \midrule
+        Backend API & 512 & 30 \\
+        Frontend UI & 128 & 15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Cronograma de Implementação (Fase Alpha)}
+    \label{tab:cronograma_alpha}
+    \begin{tabular}{llr}
+        \toprule
+        Tarefa & Responsável & Prazo (Dias) \\
+        \midrule
+        Setup Inicial & Equipe T.I. & 5 \\
+        Desenvolvimento & Programador & 15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Classificação de Bugs por Prioridade}
+    \label{tab:bugs_prioridade}
+    \begin{tabular}{lc}
+        \toprule
+        Prioridade & Incidência \\
+        \midrule
+        Crítica & 3 \\
+        Média & 8 \\
+        Baixa & 12 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Comparativo de Linguagens de Programação}
+    \label{tab:linguagens_comp}
+    \begin{tabular}{ccc}
+        \toprule
+        Linguagem & Desempenho & Curva de Aprendizado \\
+        \midrule
+        Python & Médio & Baixa \\
+        C++ & Alta & Alta \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Especificações do Painel Fotovoltaico}
+    \label{tab:painel_foto}
+    \begin{tabular}{lc}
+        \toprule
+        Parâmetro & Valor \\
+        \midrule
+        Potência Máx. & 350 W \\
+        Eficiência & 20.5\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+% -----------------------------------------------
+
+
+% -----------------------------------------------
+% -------------PARTE - Resultados---------------
+% -----------------------------------------------
 \part{Resultados}
-% ----------------------------------------------------------
 
-% ---
-% primeiro capitulo de Resultados
-% ---
-\chapter{Lectus lobortis condimentum}
-% ---
+\chapter{Suspendisse vel felis}
 
-% ---
-\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae}
-% ---
+\section{Praesent enim elit}
+\lipsum[6-7] % Gera texto de exemplo para preencher a página. 
 
-\lipsum[21-22]
+\section{Curabitur et nunc}
+\lipsum[8-10] % Gera texto de exemplo para preencher a página. 
 
-% ---
-% segundo capitulo de Resultados
-% ---
-\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
-elementum}
-% ---
 
-% ---
-\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
-% ---
 
-\lipsum[24]
+
+
+
+
+
+
+
+
+
 
 % ----------------------------------------------------------
 % Finaliza a parte no bookmark do PDF
@@ -688,98 +726,80 @@ elementum}
 % ----------------------------------------------------------
 \phantompart
 
-% ---
-% Conclusão
-% ---
+
+
+% -----------------------------------------------
+% ----------------Conclusão----------------------
+% -----------------------------------------------
 \chapter{Conclusão}
-% ---
+% -----------------------------------------------
+\lipsum[31-33] % Gera texto de exemplo para preencher a página.
 
-\lipsum[31-33]
 
-% ----------------------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
+
+% -----------------------------------------------
+% -----------ELEMENTOS PÓS-TEXTUAIS--------------
+% -----------------------------------------------
 \postextual
-% ----------------------------------------------------------
 
-% ----------------------------------------------------------
-% Referências bibliográficas
-% ----------------------------------------------------------
-\bibliography{Referencias}
 
-% ----------------------------------------------------------
-% Glossário
-% ----------------------------------------------------------
-%
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
-%\glossary
 
-% ----------------------------------------------------------
-% Apêndices
-% ----------------------------------------------------------
+% -----------------------------------------------
+% ----------Referências bibliográficas-----------
+% -----------------------------------------------
+\chapter*{Referências}                                               % Insere o título
+\markboth{Referências}{Referências}                                  % Título "Referências" no cabeçalho.
+\addtocontents{toc}{\protect\vspace{\baselineskip}}                  % Adiciona uma linha.
+\addcontentsline{toc}{chapter}{\protect\MakeUppercase{REFERÊNCIAS}}  % Nível 'chapter' para linha grossos.
+\printbibliography[heading=none]                                     % Imprime a bibliografia.
+% -----------------------------------------------
 
-% ---
-% Inicia os apêndices
-% ---
+
+
+% -----------------------------------------------
+% -----------------APÊNDICE---------------------- 
+% -----------------------------------------------
 \begin{apendicesenv}
+\partapendices % Imprime uma página indicando o início dos apêndices
 
-% Imprime uma página indicando o início dos apêndices
-\partapendices
-
-% ----------------------------------------------------------
 \chapter{Quisque libero justo}
-% ----------------------------------------------------------
 
-\lipsum[50]
+\section{Aliquam viverra arcu}
+\lipsum[8-9] % Gera texto de exemplo para preencher a página. 
 
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-\lipsum[55-57]
+\section{Mauris consequat}
+\lipsum[24] % Gera texto de exemplo para preencher a página. 
+
+% -----------------------------------------------
+
+\chapter{Nullam elementum}
+
+\section{Quisque facilisis auctor sapien}
+\lipsum[80-81] % Gera texto de exemplo para preencher a página. 
+
+\section{Aliquam quis quam non metus}
+\lipsum[34] % Gera texto de exemplo para preencher a página. 
 
 \end{apendicesenv}
-% ---
+% -----------------------------------------------
 
 
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
 
-% ---
-% Inicia os anexos
-% ---
+% -----------------------------------------------
+% ------------------ANEXOS-----------------------
+% -----------------------------------------------
 \begin{anexosenv}
+\partanexos % Imprime uma página indicando o início dos anexos
 
-% Imprime uma página indicando o início dos anexos
-\partanexos
+\chapter{Morbi ultrices rutrum lorem}
 
-% ---
-\chapter{Morbi ultrices rutrum lorem.}
-% ---
-\lipsum[30]
+\section{Pellentesque sodales}
+\lipsum[40-41] % Gera texto de exemplo para preencher a página. 
 
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-% ---
-
-\lipsum[31]
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-% ---
-
-\lipsum[32]
+\section{Curabitur diam tortor}
+\lipsum[54-55] % Gera texto de exemplo para preencher a página. 
 
 \end{anexosenv}
-
-%---------------------------------------------------------------------
-% INDICE REMISSIVO
-%---------------------------------------------------------------------
-\phantompart
-\printindex
-%---------------------------------------------------------------------
+% -----------------------------------------------
 
 \end{document} 
