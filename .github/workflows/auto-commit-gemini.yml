@@ -1,0 +1,56 @@
+name: Auto Commit with Gemini
+
+on:
+  push:
+    paths:
+      - '**.tex'
+      - '**.md'
+      - '**.txt'
+      - '**.sty'
+      - '**.cls'
+      - '**.bib'
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate diff
+        id: diff
+        run: |
+          echo "DIFF<<EOF" >> $GITHUB_ENV
+          git diff HEAD~1 HEAD >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Call Gemini API to create commit message
+        id: gemini
+        run: |
+          DIFF_CONTENT="${DIFF}"
+
+          RESPONSE=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "x-goog-api-key: ${{ secrets.GEMINI_API_KEY }}" \
+            -d "{
+              'contents': [{
+                'parts':[{
+                  'text': 'Gere uma mensagem de commit curta, clara e técnica para este diff:\n\n'"$DIFF_CONTENT"'"
+                }]
+              }]
+            }" \
+            https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent)
+
+          COMMIT_MSG=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text')
+
+          echo "message=$COMMIT_MSG" >> $GITHUB_OUTPUT
+
+      - name: Apply auto commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "${{ steps.gemini.outputs.message }}" || echo "Nada para commitar"
+          git push || echo "Nada para enviar"
