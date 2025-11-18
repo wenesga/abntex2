@@ -1,0 +1,57 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------- FONTES --------
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+
+% --- TEMPLATE 3: DARK MODE ---
+\definecolor{darkbg}{HTML}{202124}
+\definecolor{darkfg}{HTML}{E8EAED}
+\definecolor{darksub}{HTML}{BDC1C6}
+\definecolor{darkblue}{HTML}{8AB4F8}
+
+\setbeamercolor{background canvas}{bg=darkbg}
+\setbeamercolor{normal text}{fg=darkfg}
+\setbeamercolor{frametitle}{fg=darkblue}
+\setbeamercolor{title}{fg=darkblue}
+\setbeamercolor{block title}{fg=darkbg,bg=darkblue}
+\setbeamercolor{block body}{fg=darkfg,bg=white!5}
+
+
+
+\begin{document}
+
+% -------- TÍTULO --------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% -------- SLIDE DE CONTEÚDO --------
+\begin{frame}{\textsc{Título do Slide}}
+  \Large
+  Este é um slide no estilo Google Slides — limpo, direto e elegante.
+
+  \bigskip
+
+  • Layout minimalista  
+  • Muito espaço em branco  
+  • Tipografia moderna  
+  • Excelente legibilidade  
+
+  \bigskip
+
+  \textsc{Versalete sem serifa} funcionando perfeitamente.
+\end{frame}
+
+% -------- SLIDE DE DESTAQUE --------
+\begin{frame}
+  \begin{center}
+    {\fontsize{32}{36}\selectfont\bfseries
+    \textsc{Frase Impactante}}
+    
+    \bigskip
+    {\large Clareza, simplicidade e precisão.}
+  \end{center}
+\end{frame}
+
+\end{document}

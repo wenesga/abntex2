@@ -1,0 +1,89 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------------------------------------------------------
+% BEAMER SUPER MINIMALISTA
+% -------------------------------------------------------
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}   % remove ícones
+\setbeamertemplate{footline}{}             % remove rodapé
+\setbeamertemplate{headline}{}             % remove topo
+\setbeamertemplate{frametitle}[default][center]  % centraliza título
+
+% -------------------------------------------------------
+% FONTE: FIRA SANS
+% -------------------------------------------------------
+\usepackage{fontspec}
+\setmainfont[
+  Ligatures=TeX,
+  UprightFont = *-Regular,
+  BoldFont = *-SemiBold,
+  ItalicFont = *-Italic,
+  SmallCapsFeatures={LetterSpace=3},
+]{Fira Sans}
+
+\setmonofont{Fira Mono}
+
+% -------------------------------------------------------
+% CORES À LA GOOGLE
+% -------------------------------------------------------
+\definecolor{googleblue}{HTML}{1A73E8}
+\definecolor{googledark}{HTML}{202124}
+\definecolor{googlegray}{HTML}{5F6368}
+
+\setbeamercolor{normal text}{fg=googledark}
+\setbeamercolor{frametitle}{fg=googleblue}
+\setbeamercolor{title}{fg=googleblue}
+
+% Títulos grandes como Google Slides
+\setbeamerfont{frametitle}{series=\bfseries,size=\fontsize{26}{28}}
+\setbeamerfont{title}{series=\bfseries,size=\fontsize{30}{34}}
+\setbeamerfont{author}{size=\fontsize{14}{16}}
+\setbeamerfont{date}{size=\fontsize{12}{14}}
+
+% -------------------------------------------------------
+% INFORMAÇÕES
+% -------------------------------------------------------
+\title{\textsc{Apresentação Minimalista}}
+\author{\textsc{Wenes Gomes Aquino}}
+\date{2025}
+
+% -------------------------------------------------------
+% DOCUMENTO
+% -------------------------------------------------------
+\begin{document}
+
+% TÍTULO
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% SLIDE DE CONTEÚDO
+\begin{frame}{\textsc{Título do Slide}}
+  \Large
+  Este é um slide no estilo Google Slides — limpo, direto e elegante.
+
+  \bigskip
+
+  • Layout minimalista  
+  • Muito espaço em branco  
+  • Tipografia moderna  
+  • Excelente legibilidade  
+
+  \bigskip
+
+  \textsc{Versalete sem serifa} funcionando perfeitamente.
+\end{frame}
+
+% SLIDE DE DESTAQUE
+\begin{frame}
+  \begin{center}
+    {\fontsize{32}{36}\selectfont\bfseries
+    \textsc{Frase Impactante}}
+    
+    \bigskip
+    {\large Clareza, simplicidade e precisão.}
+  \end{center}
+\end{frame}
+
+\end{document}

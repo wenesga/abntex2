@@ -1,0 +1,156 @@
+% -----------------------------------------------------
+% Tema Beamer: WenesMinimal v2
+% Autor: Wenes + ChatGPT
+% Arquivo limpo, organizado e funcional
+% -----------------------------------------------------
+
+\ProvidesPackage{beamerthemeWenesMinimal}[2025/11/18 v2.0]
+
+% -----------------------------------------------------
+% Dependências
+% -----------------------------------------------------
+\RequirePackage{ifxetex}
+\RequirePackage{ifluatex}
+\RequirePackage{xcolor}
+\RequirePackage{etoolbox}
+\RequirePackage{graphicx}
+\RequirePackage{xkeyval}
+
+% -----------------------------------------------------
+% Fonte: Fira Sans (XeLaTeX/LuaLaTeX) | fallback Heros
+% -----------------------------------------------------
+
+\ifxetex
+  \RequirePackage{fontspec}
+  \setmainfont[
+    Ligatures=TeX,
+    SmallCapsFeatures={LetterSpace=3}
+  ]{Fira Sans}
+\else\ifluatex
+  \RequirePackage{fontspec}
+  \setmainfont[
+    Ligatures=TeX,
+    SmallCapsFeatures={LetterSpace=3}
+  ]{Fira Sans}
+\else
+  % pdfLaTeX fallback
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{tgheros}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi\fi
+
+% -----------------------------------------------------
+% Paleta de cores
+% -----------------------------------------------------
+
+\definecolor{wm-blue}{HTML}{1A73E8}
+\definecolor{wm-dark}{HTML}{202124}
+\definecolor{wm-light}{HTML}{F5F7FA}
+\definecolor{wm-gray}{HTML}{5F6368}
+\definecolor{wm-muted}{HTML}{9AA0A6}
+\definecolor{wm-white}{HTML}{FFFFFF}
+
+% -----------------------------------------------------
+% Configuração global
+% -----------------------------------------------------
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{normal text}{fg=wm-dark,bg=wm-white}
+\setbeamercolor{frametitle}{fg=wm-blue}
+\setbeamercolor{title}{fg=wm-blue}
+\setbeamercolor{author}{fg=wm-gray}
+\setbeamercolor{date}{fg=wm-muted}
+
+% -----------------------------------------------------
+% Rodapé simples
+% -----------------------------------------------------
+\setbeamertemplate{footline}{
+  \leavevmode
+  \hbox{
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=1ex,left]{author}
+      \hspace{1ex}\insertshortauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=1ex,right]{date}
+      \insertshortdate\hspace{1ex}
+    \end{beamercolorbox}
+  }
+}
+
+% -----------------------------------------------------
+% Título da página inicial (limpo)
+% -----------------------------------------------------
+\defbeamertemplate*{title page}{wenesminimal}{
+  \begin{centering}
+    \vspace{1cm}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+    \vspace{0.5cm}
+    {\usebeamerfont{author}\insertauthor\par}
+    \vspace{0.2cm}
+    {\usebeamerfont{date}\insertdate\par}
+    \vfill
+  \end{centering}
+}
+\setbeamertemplate{title page}[wenesminimal]
+
+% -----------------------------------------------------
+% Template do frame title
+% -----------------------------------------------------
+\setbeamertemplate{frametitle}{
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,sep=1ex,center]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+}
+
+% -----------------------------------------------------
+% Blocks estilizados
+% -----------------------------------------------------
+
+\setbeamertemplate{blocks}[rounded]
+\setbeamercolor{block title}{fg=wm-white,bg=wm-blue}
+\setbeamercolor{block body}{fg=wm-dark,bg=wm-light}
+
+% -----------------------------------------------------
+% Bullets estilizados
+% -----------------------------------------------------
+\setbeamertemplate{itemize item}{\color{wm-blue}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{wm-gray}\small$\blacksquare$}
+
+% -----------------------------------------------------
+% Página de seção
+% -----------------------------------------------------
+\newcommand{\WenesSectionPage}[1]{
+  \begin{frame}[plain]
+    \vfill
+    {\color{wm-blue}\Huge\scshape #1}
+    \vfill
+  \end{frame}
+}
+
+% -----------------------------------------------------
+% Citação estilizada
+% -----------------------------------------------------
+\newcommand{\WenesBigQuote}[2][]{
+  \begin{center}
+    \vspace{0.5cm}
+    {\Large\itshape ``#2''\par}
+    \vspace{0.3cm}
+    {\small\textcolor{wm-muted}{#1}}
+    \vspace{0.5cm}
+  \end{center}
+}
+
+% -----------------------------------------------------
+% Versão DARK
+% -----------------------------------------------------
+\DeclareOptionX{dark}{
+  \setbeamercolor{background canvas}{bg=wm-dark}
+  \setbeamercolor{normal text}{fg=wm-white}
+  \setbeamercolor{frametitle}{fg=wm-blue}
+  \setbeamercolor{block body}{fg=wm-white,bg=black!20}
+}
+\ProcessOptionsX\relax
+
+\endinput

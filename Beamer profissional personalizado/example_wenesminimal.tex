@@ -1,0 +1,393 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{beamerthemeWenesMinimal}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+
+
+
+
+
+\title{\textsc{Demonstração do Tema WenesMinimal}}
+\author{\textsc{Wenes Gomes Aquino}}
+\date{2025}
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+% --------------------------------------------------
+% TÍTULO
+% --------------------------------------------------
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\WenesSectionPage{Exemplos de Layout}
+
+% --------------------------------------------------
+% 1) DUAS COLUNAS LADO A LADO
+% --------------------------------------------------
+
+\begin{frame}{Duas Colunas}
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.48\textwidth}
+  \begin{block}{\textsc{Coluna Esquerda}}
+    Conteúdo organizado, listas, parágrafos, etc.
+    \begin{itemize}
+      \item Item A
+      \item Item B
+      \item Item C
+    \end{itemize}
+  \end{block}
+
+  \column{0.48\textwidth}
+  \begin{block}{\textsc{Coluna Direita}}
+    Texto complementando a explicação:
+    \pause % animação opcional
+    \begin{itemize}
+      \item Informação 1
+      \item Informação 2
+      \item Informação 3
+    \end{itemize}
+  \end{block}
+
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+% 2) CAIXAS PARALELAS (CARDS)
+% --------------------------------------------------
+
+\begin{frame}{Cards Lado a Lado}
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{Card A}}
+      Ideal para pontos fortes ou conceitos.
+    \end{block}
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{Card B}}
+      Excelente para contraste visual.
+    \end{block}
+
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+% 3) QUADRO COM BORDA (ESTILO "BOX")
+% --------------------------------------------------
+
+\begin{frame}{Box com Borda}
+\setbeamercolor{mybox}{fg=wm-dark,bg=wm-white}
+\begin{beamercolorbox}[wd=\textwidth,sep=1ex,rounded=true,shadow=false]{mybox}
+  \Large \textbf{Este é um box com borda e fundo branco.}
+  \medskip
+
+  Útil para destacar avisos, notas e definições.
+\end{beamercolorbox}
+\end{frame}
+
+% --------------------------------------------------
+% 4) BOX DE FUNDO ESCURO
+% --------------------------------------------------
+
+\begin{frame}{Box Forte}
+\setbeamercolor{mydarkbox}{fg=wm-white,bg=wm-blue}
+\begin{beamercolorbox}[wd=.9\textwidth,sep=1.5ex,rounded=true]{mydarkbox}
+  \Large \textbf{Box de Destaque}
+\end{beamercolorbox}
+
+\bigskip
+Use para chamar a atenção em conceitos importantes.
+\end{frame}
+
+% --------------------------------------------------
+% 5) SLIDE DE IMAGEM E TEXTO
+% --------------------------------------------------
+
+\begin{frame}{Imagem + Texto}
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.48\textwidth}
+    \includegraphics[width=\textwidth]{example-image}
+
+  \column{0.48\textwidth}
+    \Large
+    Visual limpo com espaço para descrição.
+    \bigskip
+
+    \begin{itemize}
+      \item Design suave
+      \item Boa hierarquia visual
+      \item Ideal para apresentações modernas
+    \end{itemize}
+
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+% 6) QUOTE CENTRAL (FULL)
+% --------------------------------------------------
+
+\begin{frame}[plain]
+  \WenesBigQuote[Paul Rand]{O design é o embaixador silencioso da sua marca.}
+\end{frame}
+
+% --------------------------------------------------
+% 7) GRID 2x2
+% --------------------------------------------------
+
+\begin{frame}{Grade 2×2}
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{A}}
+      Parte A da grade.
+    \end{block}
+    \begin{block}{\textsc{B}}
+      Parte B da grade.
+    \end{block}
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{C}}
+      Parte C da grade.
+    \end{block}
+    \begin{block}{\textsc{D}}
+      Parte D da grade.
+    \end{block}
+
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+% 8) COMPARAÇÃO VISUAL (VS)
+% --------------------------------------------------
+
+\begin{frame}{Comparação: A vs B}
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{Opção A}}
+      \begin{itemize}
+        \item Simples
+        \item Direta
+        \item Leve
+      \end{itemize}
+    \end{block}
+
+  \column{0.1\textwidth}
+    \centering
+    {\Huge \textbf{VS}}
+
+  \column{0.48\textwidth}
+    \begin{block}{\textsc{Opção B}}
+      \begin{itemize}
+        \item Completa
+        \item Expansiva
+        \item Detalhada
+      \end{itemize}
+    \end{block}
+
+\end{columns}
+\end{frame}
+
+% --------------------------------------------------
+% 9) LISTA NUMERADA ESTILIZADA
+% --------------------------------------------------
+
+\begin{frame}{Lista Numerada}
+\Large
+\begin{enumerate}
+  \item Primeira etapa
+  \item Segunda fase
+  \item Terceiro ponto
+\end{enumerate}
+\end{frame}
+
+% --------------------------------------------------
+% 10) SLIDE DE DESTAQUE TOTAL
+% --------------------------------------------------
+
+\begin{frame}[plain]
+  \centering
+  {\Huge\bfseries\scshape
+  Destaque Supremo}
+  \bigskip
+
+  {\large Clareza + Simplicidade + Força Visual}
+\end{frame}
+
+% --------------------------------------------------
+% 11) SEÇÃO DELUXE
+% --------------------------------------------------
+
+\WenesSectionPage{Encerramento}
+
+\begin{frame}{Obrigado!}
+  \centering
+  {\Large Perguntas?}
+\end{frame}
+
+
+
+
+\begin{frame}{Linha do Tempo}
+\Large
+
+\begin{itemize}
+  \item[2019] Início do projeto.
+  \item[2020] Expansão e testes.
+  \item[2022] Implementação completa.
+  \item[2025] Nova fase estratégica.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Processo em 3 Etapas}
+\Large
+
+\begin{enumerate}
+  \item \textbf{Planejamento} — definição dos objetivos.
+  \item \textbf{Execução} — implementação das ações.
+  \item \textbf{Avaliação} — análise dos resultados.
+\end{enumerate}
+
+\end{frame}
+
+
+
+\begin{frame}{Impacto}
+\centering
+{\Huge\bfseries 98\%}
+\bigskip
+
+{\Large Taxa de satisfação dos usuários.}
+\end{frame}
+
+
+\begin{frame}{Checklist}
+\Large
+
+\begin{itemize}
+  \item[\checkmark] Item verificado
+  \item[\checkmark] Requisito cumprido
+  \item[\checkmark] Documentação validada
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Tabela Comparativa}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\textbf{Recurso} & \textbf{Plano A} & \textbf{Plano B} & \textbf{Plano C} \\ \hline
+Armazenamento     & 10 GB & 50 GB & 1 TB \\
+Suporte           & Básico & Completo & Premium \\
+Relatórios        & — & Parcial & Total \\
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{frame}{Indicadores}
+\begin{columns}[T,onlytextwidth]
+
+\column{0.32\textwidth}
+\centering {\Huge 42\%} \\ Crescimento
+
+\column{0.32\textwidth}
+\centering {\Huge 120k} \\ Usuários
+
+\column{0.32\textwidth}
+\centering {\Huge 9.8} \\ Avaliações
+
+\end{columns}
+\end{frame}
+\begin{frame}{Depoimento}
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.25\textwidth}
+\includegraphics[width=\textwidth]{example-image-a}
+
+\column{0.72\textwidth}
+\Large \textit{“A melhor solução que usamos nos últimos 10 anos.”}
+\bigskip
+
+\hfill — \textsc{Especialista do Setor}
+
+\end{columns}
+
+\end{frame}
+\begin{frame}
+\centering
+{\Huge\bfseries\scshape Título Forte}
+\bigskip
+{\Large Subtítulo Explicativo e Elegante}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{picture}(0,0)
+  \put(-20,-140){\includegraphics[width=\paperwidth]{example-image}}
+\end{picture}
+
+\vspace*{2cm}
+\color{white}
+\Huge\bfseries Texto Sobreposto
+
+\end{frame}
+\begin{frame}{Três Cards}
+
+\begin{columns}[T,onlytextwidth]
+
+  \column{0.32\textwidth}
+    \begin{block}{\textsc{Card 1}} Conteúdo leve. \end{block}
+
+  \column{0.32\textwidth}
+    \begin{block}{\textsc{Card 2}} Explicativo. \end{block}
+
+  \column{0.32\textwidth}
+    \begin{block}{\textsc{Card 3}} Informativo. \end{block}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}[plain]
+\centering
+{\Huge\bfseries Obrigado!}
+\bigskip
+{\Large \textsc{WenesMinimal Theme}}
+\bigskip
+
+\textcolor{wm-muted}{2025}
+\end{frame}
+
+
+
+
+
+
+
+
+\end{document}

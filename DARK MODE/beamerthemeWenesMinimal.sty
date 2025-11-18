@@ -1,0 +1,84 @@
+% beamerthemeWenesMinimal.sty
+\ProvidesPackage{beamerthemeWenesMinimal}[2025/11/18 v2.0 WenesMinimal Dark/Light]
+
+\RequirePackage{ifxetex}
+\RequirePackage{ifluatex}
+\RequirePackage{etoolbox}
+\RequirePackage{xcolor}
+\RequirePackage{xkeyval}
+
+% -------------------------
+% FONTES
+% -------------------------
+\ifluatex
+  \RequirePackage{fontspec}
+  \setmainfont[
+    Ligatures=TeX,
+    SmallCapsFeatures={Letters=SmallCaps,LetterSpace=3},
+  ]{Fira Sans}
+\fi
+
+% -------------------------
+% PALETA LIGHT
+% -------------------------
+\definecolor{wm-blue}{HTML}{8AB4F8}
+\definecolor{wm-dark}{HTML}{202124}
+\definecolor{wm-gray}{HTML}{BDBDBD}
+\definecolor{wm-muted}{HTML}{9AA0A6}
+\definecolor{wm-card}{HTML}{303134}
+\definecolor{wm-white}{HTML}{FFFFFF}
+
+% -------------------------
+% PALETA DARK MODE
+% -------------------------
+\definecolor{wm-bg-dark}{HTML}{202124}
+\definecolor{wm-fg-dark}{HTML}{E8EAED}
+\definecolor{wm-blue-dark}{HTML}{8AB4F8}
+\definecolor{wm-card-dark}{HTML}{303134}
+
+% -------------------------
+% OPCÃO [dark]
+% -------------------------
+\DeclareOptionX{dark}{
+  \setbeamercolor{background canvas}{bg=wm-bg-dark}
+  \setbeamercolor{normal text}{fg=wm-fg-dark}
+  \setbeamercolor{frametitle}{fg=wm-blue-dark}
+  \setbeamercolor{title}{fg=wm-blue-dark}
+  \setbeamercolor{author}{fg=wm-gray}
+  \setbeamercolor{date}{fg=wm-muted}
+  \setbeamercolor{block title}{bg=wm-blue-dark,fg=wm-bg-dark}
+  \setbeamercolor{block body}{bg=wm-card-dark,fg=wm-fg-dark}
+  \setbeamercolor{itemize item}{fg=wm-blue-dark}
+}
+\ProcessOptionsX\relax
+
+% -------------------------
+% BEAMER TEMPLATE BASE
+% -------------------------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+
+\setbeamertemplate{frametitle}{
+  \vspace{0.8em}
+  \begin{beamercolorbox}[wd=\paperwidth,center]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \leavevmode
+  \hbox{
+    \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.5ex,dp=1ex,left]{author}
+      \hspace*{1em}\insertshortauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.5ex,dp=1ex,right]{date}
+      \insertshortdate\hspace*{1em}
+    \end{beamercolorbox}
+  }
+}
+
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamerfont{title}{series=\bfseries,size=\Huge}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{blocks}[rounded]

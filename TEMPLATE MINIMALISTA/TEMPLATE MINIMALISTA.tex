@@ -1,0 +1,57 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------- FONTES --------
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+
+% -------- CORES GOOGLE MATERIAL --------
+\definecolor{googledark}{HTML}{202124}   % Preto/cinza escuro
+\definecolor{googleblue}{HTML}{1A73E8}   % Azul Google
+\definecolor{googlegray}{HTML}{5F6368}   % Cinza médio
+\definecolor{googlelight}{HTML}{E8EAED}  % Cinza claro
+
+% -------- TEMPLATE MINIMALISTA --------
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{normal text}{fg=googledark}
+\setbeamercolor{frametitle}{fg=googleblue}
+
+\begin{document}
+
+% -------- TÍTULO --------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% -------- SLIDE DE CONTEÚDO --------
+\begin{frame}{\textsc{Título do Slide}}
+  \Large
+  Este é um slide no estilo Google Slides — limpo, direto e elegante.
+
+  \bigskip
+
+  • Layout minimalista  
+  • Muito espaço em branco  
+  • Tipografia moderna  
+  • Excelente legibilidade  
+
+  \bigskip
+
+  \textsc{Versalete sem serifa} funcionando perfeitamente.
+\end{frame}
+
+% -------- SLIDE DE DESTAQUE --------
+\begin{frame}
+  \begin{center}
+    {\fontsize{32}{36}\selectfont\bfseries
+    \textsc{Frase Impactante}}
+    
+    \bigskip
+    {\large Clareza, simplicidade e precisão.}
+  \end{center}
+\end{frame}
+
+\end{document}

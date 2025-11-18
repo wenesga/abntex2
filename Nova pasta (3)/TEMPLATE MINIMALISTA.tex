@@ -1,0 +1,56 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------- FONTES --------
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+
+% --- TEMPLATE 4: CORPORATIVO ---
+\definecolor{corpblue}{HTML}{003B73}
+\definecolor{corplight}{HTML}{F5F7FA}
+\definecolor{corptext}{HTML}{2A2A2A}
+
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=corptext}
+\setbeamercolor{frametitle}{fg=corpblue}
+\setbeamercolor{block title}{fg=white,bg=corpblue}
+\setbeamercolor{block body}{fg=corptext,bg=corplight}
+
+
+
+
+\begin{document}
+
+% -------- TÍTULO --------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% -------- SLIDE DE CONTEÚDO --------
+\begin{frame}{\textsc{Título do Slide}}
+  \Large
+  Este é um slide no estilo Google Slides — limpo, direto e elegante.
+
+  \bigskip
+
+  • Layout minimalista  
+  • Muito espaço em branco  
+  • Tipografia moderna  
+  • Excelente legibilidade  
+
+  \bigskip
+
+  \textsc{Versalete sem serifa} funcionando perfeitamente.
+\end{frame}
+
+% -------- SLIDE DE DESTAQUE --------
+\begin{frame}
+  \begin{center}
+    {\fontsize{32}{36}\selectfont\bfseries
+    \textsc{Frase Impactante}}
+    
+    \bigskip
+    {\large Clareza, simplicidade e precisão.}
+  \end{center}
+\end{frame}
+
+\end{document}

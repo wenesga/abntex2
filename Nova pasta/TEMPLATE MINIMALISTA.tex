@@ -1,0 +1,60 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------- FONTES --------
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+
+% --- TEMPLATE 2: MATERIAL DESIGN ---
+\definecolor{mdblue}{HTML}{1A73E8}
+\definecolor{mdgreen}{HTML}{34A853}
+\definecolor{mdyellow}{HTML}{FBBC05}
+\definecolor{mdred}{HTML}{EA4335}
+
+\setbeamercolor{frametitle}{fg=white,bg=mdblue}
+\setbeamercolor{block title}{fg=white,bg=mdgreen}
+\setbeamercolor{block body}{fg=googledark,bg=googlegray!10}
+
+\setbeamertemplate{frametitle}{
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.1em,dp=1em]{frametitle}
+    \hspace*{1em}\insertframetitle
+  \end{beamercolorbox}
+}
+
+
+\begin{document}
+
+% -------- TÍTULO --------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% -------- SLIDE DE CONTEÚDO --------
+\begin{frame}{\textsc{Título do Slide}}
+  \Large
+  Este é um slide no estilo Google Slides — limpo, direto e elegante.
+
+  \bigskip
+
+  • Layout minimalista  
+  • Muito espaço em branco  
+  • Tipografia moderna  
+  • Excelente legibilidade  
+
+  \bigskip
+
+  \textsc{Versalete sem serifa} funcionando perfeitamente.
+\end{frame}
+
+% -------- SLIDE DE DESTAQUE --------
+\begin{frame}
+  \begin{center}
+    {\fontsize{32}{36}\selectfont\bfseries
+    \textsc{Frase Impactante}}
+    
+    \bigskip
+    {\large Clareza, simplicidade e precisão.}
+  \end{center}
+\end{frame}
+
+\end{document}

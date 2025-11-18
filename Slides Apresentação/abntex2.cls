@@ -1,3 +1,4 @@
+
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % Declaracao da classe abntex2 como uma extensao da classe memoir
@@ -219,16 +220,10 @@
 \newcommand{\abnTeX}{abn\TeX2}
 % ---
 
-% -------------------------------------------------------------------------------
+% ---
 % Fontes padroes de part, chapter, section, subsection e subsubsection
-% -------------------------------------------------------------------------------
-%\newcommand{\ABNTEXchapterfont}{\sffamily}                             % TIPO ORIGINAL (abntex2)
-%\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO ORIGINAL (abntex2)
-\newcommand{\ABNTEXchapterfont}{\bfseries}                              % TIPO PERSONALIZADO (volta para o padão latex)
-\newcommand{\ABNTEXchapterfontsize}{\LARGE}                             % TAMANHO MENOR 
-%\newcommand{\ABNTEXchapterfontsize}{\fontsize{22pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
-% -------------------------------------------------------------------------------
-
+\newcommand{\ABNTEXchapterfont}{\sffamily}
+\newcommand{\ABNTEXchapterfontsize}{\Huge}
 
 \newcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
 \newcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
@@ -1019,67 +1014,53 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
-% ------------------------------------------------------------------------
+% ---
 % Impressão da Capa
-% ------------------------------------------------------------------------
 \newcommand{\imprimircapa}{%
-    \begin{capa}%
-        \center
-        \vspace*{-2cm}
-        \begin{center}
-            \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-            \textsc{\large
-                Universidade Federal do Tocantins\\
-                Campus Universitário de Palmas\\
-                Curso de Licenciatura em Computação\\
-            }
-        \end{center}
-        
-        \vspace{3cm}
-        
-        \begin{center}
-            \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
-        \end{center}
-        \vfill
-            \ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}
-        \vfill
-        \large\imprimirlocal\\
-        \large\imprimirdata
-    \end{capa}
+  \begin{capa}%
+    \center
+    \ABNTEXchapterfont\large\imprimirautor
+
+    \vfill
+    \begin{center}
+    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+    \end{center}
+    \vfill
+    
+    \large\imprimirlocal
+
+    \large\imprimirdata
+    
+    \vspace*{1cm}
+  \end{capa}
 }
-% ------------------------------------------------------------------------
+% ---
 
 
-
-
-
-% ------------------------------------------------------------------------
+% ---
 % Folha de rosto
 %   usar \imprimirfolhaderosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-% ------------------------------------------------------------------------
 \newenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
 \newenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
-% ------------------------------------------------------------------------
 
-
-
-
-
-% ------------------------------------------------------------------------
+% ---
 % Conteudo padrao da Folha de Rosto
-% ------------------------------------------------------------------------
 \makeatletter
 \newcommand{\folhaderostocontent}{
   \begin{center}
-    {\ABNTEXchapterfont\normalfont\large\textsc{\imprimirautor}}
+
+    %\vspace*{1cm}
+    {\ABNTEXchapterfont\large\imprimirautor}
+	
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
       \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
     \end{center}
     \vspace*{\fill}
+	
     \abntex@ifnotempty{\imprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
@@ -1087,24 +1068,24 @@
          \imprimirpreambulo
        \end{minipage}%
        \vspace*{\fill}
-    }
-    \vfill
+    }%
+
     {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
 
     {\large\imprimirorientadorRotulo~\imprimirorientador\par}
     \abntex@ifnotempty{\imprimircoorientador}{%
        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-    }
+    }%
     \vspace*{\fill}
+
     {\large\imprimirlocal}
     \par
     {\large\imprimirdata}
+    \vspace*{1cm}
+
   \end{center}
 }
 \makeatother
-% ------------------------------------------------------------------------
-
-
 
 \newcommand{\imprimirfolhaderostostar}[1]{%
   \begin{folhaderosto*}{#1}
@@ -1123,4 +1104,4 @@
      \imprimirfolhaderostonostar
 }
 \makeatother
-% ------------------------------------------------------------------------
+% ---

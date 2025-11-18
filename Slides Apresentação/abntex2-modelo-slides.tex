@@ -4,18 +4,28 @@
 \usecolortheme{default}
 \usefonttheme[onlymath]{serif}			
 
+
+\definecolor{meucor}{HTML}{1A73E8}
+\definecolor{branco}{HTML}{FFFFFF}
+\definecolor{cinzaclaro}{HTML}{D9D9D9}
+\definecolor{pretoclaro}{HTML}{2A2A2A}
+\definecolor{pretoclaro2}{HTML}{404040}
+
+
+
+
 % -----------------------------------------------------
 % Cores: [fg] significa cor do texto e [bg] é cor do fundo
 % -----------------------------------------------------
-\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{normal text}{fg=pretoclaro2}
 \setbeamercolor{alerted text}{fg=red}
-\setbeamercolor{author}{fg=blue}
-\setbeamercolor{institute}{fg=blue}
-\setbeamercolor{date}{fg=green}
-\setbeamercolor{frametitle}{fg=red}
-\setbeamercolor{framesubtitle}{fg=brown}
-\setbeamercolor{block title}{bg=blue, fg=white}		%Cor do título
-\setbeamercolor{block body}{bg=gray, fg=darkgray}	%Cor do texto 
+\setbeamercolor{author}{fg=meucor}
+\setbeamercolor{institute}{fg=meucor}
+\setbeamercolor{date}{fg=black}
+\setbeamercolor{frametitle}{fg=meucor}
+\setbeamercolor{framesubtitle}{fg=meucor}
+\setbeamercolor{block title}{bg=meucor, fg=branco}		%Cor do título
+\setbeamercolor{block body}{bg=cinzaclaro, fg=black}	%Cor do texto 
 % -----------------------------------------------------
 
 
@@ -28,19 +38,30 @@
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{txfonts}			% Fontes virtuais
+
+
+% -----------------------------------------------------
+% --------------CONFIGURAÇÃO DE FONTE------------------
+% -----------------------------------------------------
+\usepackage{lmodern}     % mantém CM/LM Sans como fonte principal
+\usepackage{tgheros}     % small caps reais
+\DeclareFontFamily{T1}{lmss}{}
+\DeclareFontShape{T1}{lmss}{m}{sc}{<-> s*[1.05] qhv8t}{}
 % -----------------------------------------------------
 
 
 % -----------------------------------------------------
 % ------------ Informações do documento ---------------
 % -----------------------------------------------------
-\title{Modelo de apresentação de slides com Beamer e abnTeX2}
-\author{Fábio Rodrigues Silva}
-\institute{Universidade do Brasil
-	    \par
-	    Faculdade de Arquitetura da Informação}
-\date{\today, v-1.9.7}
+\title{\textsc{Apresentação}}
+\author{\textsc{Wenes Gomes Aquino}}
+
+\institute{
+    \textsc{Universidade Federal do Tocantins\\
+	   Campus Universitário de Palmas}
+}
+
+\date{Palma, \today}
 % -----------------------------------------------------
 
 
