@@ -1,0 +1,84 @@
+\documentclass[svgnames,12pt,aspectratio=169]{beamer}
+\mode<presentation>
+{
+  \usetheme{Boadilla}
+  \setbeamercovered{dynamic}
+}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{Estilo/BeamerLille}
+
+% para melhorar copiar/colar
+\usepackage{cmap}
+\usepackage{lmodern}
+
+\usepackage{graphicx}
+\graphicspath{ {./Imagens/} }
+\usepackage{tikz}
+\usepackage{amssymb,amsfonts}
+
+\author{Wenes Gomes Aquino}
+\title{Título da apresentação}
+\subtitle{Subtítulo da apresentação}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\section*{Sumário}
+\frametitle{Sumário}
+\tableofcontents
+\end{frame}
+
+
+\begin{frame}
+\section{Explicação}
+    \frametitle{Explicação}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+          Primeira coluna para preencher
+    
+    \begin{enumerate}
+        \item Item 1
+        \item Item 2
+        \item Item 3
+    \end{enumerate}
+          \end{column}
+          
+          \begin{column}{0.5\textwidth}
+              Segunda coluna para preencher
+    
+    \begin{itemize}
+        \item Item 1
+        \item Item 2
+        \item Item 3
+    \end{itemize}
+          \end{column}
+        \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \section{Ambientes}
+    \frametitle{Ambientes}
+    \begin{block}{Teste: Bloco}
+        Este é um bloco
+    \end{block}
+    
+    \begin{alertblock}{Teste: Bloco de Alerta}
+        Este é um bloco
+    \end{alertblock}
+    
+    \begin{exampleblock}{Teste: Bloco de Exemplo}
+        Este é um bloco
+    \end{exampleblock}
+    
+    Como pode ver, os \alert{blocos} e \alert{blocos de alerta} são bem parecidos.
+\end{frame}
+
+\end{document} 

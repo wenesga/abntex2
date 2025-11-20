@@ -1,0 +1,149 @@
+\documentclass{beamer}
+
+% --- PACOTES E IDIOMA ---
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{csquotes}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{bbding}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{mwe}
+\usepackage{ragged2e}
+
+
+% para melhorar copiar/colar
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+
+% biblatex
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% --- Ajustar formato da bibliografia para lista itemizada ---
+\renewbibmacro*{finentry}{\finentry\addspace}
+\makeatletter
+\let\blx@env@bibitem\item
+\makeatother
+
+
+
+\setbeamertemplate{bibliography item}{\textbullet} % bullet padrão
+
+
+\setlength{\bibitemsep}{0.3\baselineskip} % Espaço entre itens
+\setbeamersize{text margin left=12mm, text margin right=12mm} % Margens
+
+% --- AJUSTES DE BEAMER E FONTES ---
+\let\Tiny\tiny
+\beamertemplatenavigationsymbolsempty
+
+% --- TEMA E CORES ---
+\usetheme{CambridgeUS}
+\definecolor{Green}{RGB}{43,134,75}
+\usecolortheme{lmugreen}
+\setbeamercolor{item projected}{bg=Green,fg=white}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- INFORMAÇÕES DO TÍTULO ---
+\title[Curso de Licenciatura em Computação]{Título da Apresentação}
+\author[Wenes Gomes Aquino]{Wenes Gomes Aquino}
+
+
+\institute[]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[yshift=-35pt]{\includegraphics[scale=0.024]{imagens/LogoUFTUAB1.pdf}};
+    \end{tikzpicture}
+    \\[7em]
+        {\fontsize{6.5pt}{9pt}\selectfont
+        Universidade Federal do \textbf{Tocantins}\\
+        \textbf{Estágio Supervisionado II}\\
+        Curso de \textbf{Licenciatura em Computação}
+        }
+    \\[3em]
+}
+
+
+% --- CONFIGURAÇÃO DA LOGO NO CABEÇALHO ---
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,yshift=-9pt, xshift=3pt] at (current page.north east) {\includegraphics[scale=0.3]{imagens/LOGOUFT2.png}};
+\end{tikzpicture}
+\vspace{-10pt}
+}
+
+% --- GERAÇÃO DO SUMÁRIO AUTOMÁTICO ---
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% --- SLIDE DE TÍTULO ---
+\frame{\titlepage}
+
+% --- SEÇÕES E CONTEÚDO ---
+\section{Introdução}
+\begin{frame}{Introdução}
+    Texto da introdução.   
+\end{frame}
+
+
+\section{Seção 1}
+\begin{frame}{Seção 1}
+    Texto da seção 01 .
+\end{frame}
+
+
+\section{Seção 2}
+\begin{frame}{Seção 2}
+    Texto da seção 02 
+\end{frame}
+
+
+\section{Conclusão}
+\begin{frame}{Conclusão}
+    Texto da conclusão com citação de site \autocite{openai2025}. \\
+    Texto da conclusão com citação de artigo \autocite{einstein1905}. \\
+    Texto da conclusão com citação de livro \autocite{knuth1984}.
+\end{frame}
+
+
+
+% --- SLIDE DE EXEMPLO DE IMAGEM ---
+\begin{frame}{Exemplo de imagem}
+    \centering
+    \includegraphics[width=0.7\linewidth]{example-image}
+    \newline
+    \textit{Exemplo de imagem}
+\end{frame}
+
+
+
+
+
+\begin{frame}[allowframebreaks]{Referências}
+    \centering
+    \small
+    \justifying
+    \printbibliography[heading=none]
+\end{frame}
+
+
+
+% --- SLIDE DE AGRADECIMENTO ---
+\begin{frame}
+    \Huge{\centerline{Obrigado pela Atenção!}}
+\end{frame}
+
+
+
+\end{document} 

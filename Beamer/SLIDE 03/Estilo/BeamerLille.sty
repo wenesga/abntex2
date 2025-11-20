@@ -1,0 +1,146 @@
+%___________________________________________________________________
+%  Arquivo que define as cores para a apresentação do Beamer no novo
+%  estilo da Université de Lille.
+%  Autor: Gerhard Schaden (gerhard.schaden@univ-lille.fr)
+%  Versão 0.6
+%  10/03/2021
+%___________________________________________________________________
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{BeamerLille}
+
+\RequirePackage{tikz}
+\usetikzlibrary{fadings}
+
+
+% Para colocar imagens:
+\RequirePackage{eso-pic}
+\RequirePackage{transparent}
+
+% Isso colocará o logotipo do Lille no rodapé esquerdo de todas as páginas (até mesmo
+% a página de título - mas como é branco, dificilmente será visto lá
+% verifique se a imagem está em algum lugar que o tex possa encontrar
+
+\newcommand\AtPagemyUpperLeft[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.003\paperwidth},\LenToUnit{0.003\paperheight}){#1}}}
+\AddToShipoutPictureFG{% Add picture to background of every page
+  \ifnum\value{page}>1 % do not put it on the titlepage
+  \AtPagemyUpperLeft{{\includegraphics[width=.45cm]{Imagens/LogoUAB2.png}}}
+  \fi
+}%
+
+% remover símbolos de navegação: eu nunca os uso
+\beamertemplatenavigationsymbolsempty
+
+% Coloque os logotipos na página de título:
+\titlegraphic{% \vfill{}%
+  % \vspace{-2cm}
+  \includegraphics[width=3.5cm]{Imagens/LogoUAB.png}\hspace*{2cm}~%
+  \includegraphics[width=1.73cm]{Imagens/LogoUFT.png}
+}
+
+
+% Defina a cor da Universidade de Lille
+\definecolor{LillePink}{HTML}{1F8389}
+
+% Alterar a cor do tema (qualquer que seja):
+\usecolortheme[named=LillePink]{structure} 
+
+\setbeamercolor{alerted text}{fg=LillePink}
+
+\setbeamercolor{title}{bg=LillePink,fg=white}
+
+% define colors for the background of the frametitle: 
+\colorlet{titleleft}{LillePink!12}
+\colorlet{titleright}{LillePink!35}
+
+% definir uma imagem de fundo
+\usebackgroundtemplate
+{
+  \includegraphics[width=\paperwidth,height=\paperheight]{Imagens/FundoUFT.png}
+}
+
+
+\makeatletter
+\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+    color(0pt)=(frametitle.bg);
+    color(\paperwidth)=(frametitle right.bg)}
+
+\AtBeginDocument{
+    \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+        color(0pt)=(bg);
+        color(4pt)=(black!50!bg)}
+}
+
+\addtobeamertemplate{headline}
+{}
+{
+    \vskip-0.2pt
+    \pgfuseshading{beamer@topshade}
+    \vskip-2pt
+}
+
+
+\setbeamertemplate{frametitle}
+{
+    \nointerlineskip%
+    \vskip-2pt%
+    \hbox{\leavevmode
+        \advance\beamer@leftmargin by -12bp%
+        \advance\beamer@rightmargin by -12bp%
+        \beamer@tempdim=\textwidth%
+        \advance\beamer@tempdim by \beamer@leftmargin%
+        \advance\beamer@tempdim by \beamer@rightmargin%
+        \hskip-\Gm@lmargin\hbox{%
+            \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+                    \vbox{}\vskip-.75ex%
+                    \leftskip0.3cm%
+                    \rightskip0.3cm plus1fil\leavevmode
+                    \insertframetitle%
+                    \ifx\insertframesubtitle\@empty%
+                    \strut\par%
+                    \else
+                    \par{\usebeamerfont*{framesubtitle}{\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\strut\par}%
+                    \fi%
+                    \nointerlineskip
+                    \vbox{}%
+                \end{minipage}}%
+                \beamer@tempdim=\ht\beamer@tempbox%
+                \advance\beamer@tempdim by 2pt%
+                \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\beamer@tempdim}
+                    % we want the whole thing to be slightly transparent
+                    \pgfsetfillopacity{0.6}
+                    \usebeamercolor{frametitle right}
+                    \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\beamer@tempdim}}
+                    \pgfusepath{clip}
+                    \pgftext[left,base]{\pgfuseshading{beamer@frametitleshade}}
+                \end{pgfpicture}
+                \hskip-\paperwidth%
+                \box\beamer@tempbox%
+            }%
+            \hskip-\Gm@rmargin%
+        }%
+        \nointerlineskip
+        \vskip-0.2pt
+        \hbox to\textwidth{\hskip-\Gm@lmargin\pgfuseshading{beamer@topshade}\hskip-\Gm@rmargin}
+        \vskip-2pt
+    }
+\makeatother
+
+\setbeamercolor{section in toc}{fg=LillePink}
+
+%\setbeamercolor{structure}{fg=cyan!80!black}
+%\colorlet{titleleft}{LillePink!12}
+%\colorlet{titleright}{LillePink!35}%0!black}
+
+\setbeamercolor*{frametitle}{fg=LillePink}
+
+\makeatletter
+\pgfdeclarehorizontalshading[titleleft,titleright]{beamer@frametitleshade}{\paperheight}{%
+    color(0pt)=(titleleft);
+    color(\paperwidth)=(titleright)}
+\makeatother
+
+\endinput
+

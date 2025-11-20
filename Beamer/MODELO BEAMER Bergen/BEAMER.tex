@@ -1,0 +1,112 @@
+\documentclass{beamer}
+
+% 1. Codificação de Entrada e Saída
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern} 
+\usepackage{textcomp} 
+\usepackage[brazil]{babel}
+\captionsbrazil
+
+% -------------------------------
+% TEMAS DISPONÍVEIS NO BEAMER
+% -------------------------------
+\usetheme{Bergen}           % Títulos destacados à esquerda
+
+
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+
+
+% Informações da apresentação
+\title[Exemplo Beamer]{Exemplo de Apresentação com Beamer}
+\subtitle{Um exemplo mínimo para iniciantes}
+\author[Um autor]{Um Autor\inst{1} \and Outro Autor\inst{2}}
+\institute[Alguma Universidade]{
+\inst{1} Universidade Exemplar, Departamento de Computação \and
+\inst{2} Universidade Exemplar, Departamento de Física}
+\date[Karlstad, 2025]{Conferência Internacional de Beamer, Karlstad, 2025}
+
+
+
+% --- Solução Definitiva e Isolada para o Tema Bergen ---
+% Redefine os comandos internos que o tema usa para os rótulos na barra lateral.
+\def\insertauthorindicator{Quem?}
+\def\insertinstituteindicator{De onde?}
+\def\insertdateindicator{Quando?}
+% --------------------------------------------------------
+
+
+
+% Início do documento
+\begin{document}
+
+% Primeira página (título)
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Sumário
+\begin{frame}{Sumário}
+\tableofcontents
+\end{frame}
+
+% Primeira seção
+\section{Introdução}
+\begin{frame}{Título do Slide}
+Este é um slide de exemplo.
+Você pode adicionar textos, listas, imagens e muito mais.
+
+\begin{itemize}
+\item Primeiro ponto
+\item Segundo ponto
+\item Terceiro ponto
+\end{itemize}
+\end{frame}
+
+% Segunda seção
+\section{Exemplo de Listas}
+\begin{frame}{Listas em Beamer}
+Você pode criar listas numeradas:
+\begin{enumerate}
+\item Passo um
+\item Passo dois
+\item Passo três
+\end{enumerate}
+\end{frame}
+
+% Terceira seção
+\section{Blocos de Texto}
+\begin{frame}{Exemplo de Blocos}
+\begin{block}{Bloco Normal}
+Texto dentro de um bloco normal.
+\end{block}
+
+\begin{alertblock}{Bloco de Alerta}
+Texto dentro de um bloco de alerta (destaque em vermelho).
+\end{alertblock}
+
+\begin{exampleblock}{Bloco de Exemplo}
+Texto dentro de um bloco de exemplo.
+\end{exampleblock}
+\end{frame}
+
+% Quarta seção
+\section{Conclusão}
+\begin{frame}{Conclusão}
+\begin{itemize}
+\item Beamer facilita a criação de apresentações profissionais.
+\item Diversos temas estão disponíveis.
+\item Você pode incluir fórmulas, imagens e tabelas.
+\end{itemize}
+\end{frame}
+
+% Último slide (agradecimento)
+\begin{frame}
+\centering
+\Huge Obrigado pela atenção!
+\end{frame}
+
+\end{document}
+
