@@ -225,7 +225,7 @@
 %\newcommand{\ABNTEXchapterfont}{\sffamily}                             % TIPO ORIGINAL (abntex2)
 %\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO ORIGINAL (abntex2)
 \newcommand{\ABNTEXchapterfont}{\bfseries}                              % TIPO PERSONALIZADO (volta para o padão latex)
-\newcommand{\ABNTEXchapterfontsize}{\LARGE}                             % TAMANHO MENOR 
+\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO MENOR 
 %\newcommand{\ABNTEXchapterfontsize}{\fontsize{22pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
 % -------------------------------------------------------------------------------
 
