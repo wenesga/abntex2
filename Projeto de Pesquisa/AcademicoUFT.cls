@@ -1,11 +1,11 @@
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-% Declaracao da classe abntex2 como uma extensao da classe memoir
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+% Classe AcademicoUFT baseada em abnTeX2 (extensão da classe memoir)
+% -----------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{abntex2}[2018/11/24 v-1.9.7 abnTeX2]
+\ProvidesClass{AcademicoUFT}[2025/11/25 v1.0 Classe Acadêmica UFT]
 \RequirePackage{ifthen}
+
+
 %
 % Captura as options article e twocolumn
 %
@@ -117,7 +117,13 @@
 % Hifenizacao e caracteres especiais portugues-brasil por padrao
 % ---
 \RequirePackage[brazil]{babel}
-%
+
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
 \newcommand{\folhaderostoname}{Folha de rosto}
 \newcommand{\epigraphname}{Ep\'igrafe}
@@ -128,15 +134,31 @@
 \newcommand{\anexosname}{ANEXOS}
 \newcommand{\apendicename}{AP\^ENDICE}
 \newcommand{\apendicesname}{AP\^ENDICES}
+%------------------------------------------------------------------------
+%-------------------------Nomes padrões----------------------------------
+%------------------------------------------------------------------------
 \newcommand{\orientadorname}{Orientador:}
 \newcommand{\coorientadorname}{Coorientador:}
+\newcommand{\supervisorname}{Prof. Supervisor:}
+\newcommand{\tutoronlinename}{Tutor Online:}
+\newcommand{\tutordopoloname}{Tutor do Polo:}
+\newcommand{\professorname}{Professor:}
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
 \newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
 \newcommand{\resumoname}{Resumo} 
 \newcommand{\listadesiglasname}{Lista de abreviaturas e siglas}
 \newcommand{\listadesimbolosname}{Lista de s\'imbolos}
 \newcommand{\fontename}{Fonte}
 \newcommand{\notaname}{Nota}
-%
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+
+
+
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
   \renewcommand{\bibname}{Refer\^encias}
@@ -222,29 +244,41 @@
 % -------------------------------------------------------------------------------
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 % -------------------------------------------------------------------------------
-%\newcommand{\ABNTEXchapterfont}{\sffamily}                             % TIPO ORIGINAL (abntex2)
-%\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO ORIGINAL (abntex2)
-\newcommand{\ABNTEXchapterfont}{\bfseries}                              % TIPO PERSONALIZADO (volta para o padão latex)
-\newcommand{\ABNTEXchapterfontsize}{\Huge}                             % TAMANHO MENOR 
-%\newcommand{\ABNTEXchapterfontsize}{\fontsize{22pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
+%\newcommand{\ABNTEXchapterfont}{\sffamily}     % TIPO ORIGINAL (abntex2)
+\newcommand{\ABNTEXchapterfont}{\scshape}       % ESTILO VERSALETE
+\newcommand{\ABNTEXchapterfontsize}{\Huge}      % TAMANHO ORIGINAL (abntex2)
+%\newcommand{\ABNTEXchapterfont}{\bfseries}     % TIPO PERSONALIZADO (volta para o padão latex)
+%\newcommand{\ABNTEXchapterfontsize}{\LARGE}    % TAMANHO MENOR 
+%\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
 % -------------------------------------------------------------------------------
 
 
+
+
+
+% -------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------
 \newcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
 \newcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
 
-\newcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
+\newcommand{\ABNTEXsectionfont}{\bfseries}
 \newcommand{\ABNTEXsectionfontsize}{\Large}
 
-\newcommand{\ABNTEXsubsectionfont}{\ABNTEXsectionfont}
+\newcommand{\ABNTEXsubsectionfont}{\normalfont}
 \newcommand{\ABNTEXsubsectionfontsize}{\large}
 
-\newcommand{\ABNTEXsubsubsectionfont}{\ABNTEXsubsectionfont}
+\newcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \newcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
-\newcommand{\ABNTEXsubsubsubsectionfont}{\ABNTEXsubsectionfont}
+\newcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
 \newcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
-% ---
+% -------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------
+
+
+
+
+
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
@@ -499,25 +533,52 @@
     \cftinserthook{toc}{A}}
   %
   \setlength{\cftbeforechapterskip}{1em}
-  %
-  % Fontes das entradas do sumario
-  %
-  \renewcommand{\cftpartfont}{\bfseries\large}
-  %
-  \renewcommand{\cftchapterfont}{\bfseries}
-  \renewcommand{\cftchapterpagefont}{\normalsize\cftchapterfont}
-  %
-  \renewcommand{\cftsectionfont}{\bfseries}
-  \renewcommand{\cftsectionpagefont}{\cftsectionfont}
-  %
-  \renewcommand{\cftsubsectionfont}{\normalsize}
-  \renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
-  %
-  \renewcommand{\cftsubsubsectionfont}{\small}
-  \renewcommand{\cftsubsubsectionpagefont}{\cftsubsubsectionfont}
-  %
-  \renewcommand{\cftparagraphfont}{\footnotesize}
-  \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+% ------------------------------------------------------------------------
+% -------------------Fontes das entradas do sumario-----------------------
+% ------------------------------------------------------------------------
+%
+\renewcommand{\cftpartfont}{\bfseries\large}
+%
+\renewcommand{\cftchapterfont}{\bfseries}
+\renewcommand{\cftchapterpagefont}{\normalsize\cftchapterfont}
+%
+%\renewcommand{\cftsectionfont}{\normalsize}
+\renewcommand{\cftsectionpagefont}{\cftsectionfont}
+
+\renewcommand{\cftsectionpagefont}{\cftsectionfont}
+%
+\renewcommand{\cftsubsectionfont}{\normalsize}
+\renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+%
+\renewcommand{\cftsubsubsectionfont}{\small}
+\renewcommand{\cftsubsubsectionpagefont}{\cftsubsubsectionfont}
+%
+\renewcommand{\cftparagraphfont}{\footnotesize}
+\renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   %
   % Ajusta entrada Referencias
   %
@@ -677,9 +738,21 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
+
+
+% ------------------------------------------------------------------------
+% -------------------CONFIGURAÇÃO DE TILULO-------------------------------
+% ------------------------------------------------------------------------
 % Comandos de dados - titulo do documento
 \newcommand{\titulo}[1]{\title{#1}}
 \newcommand{\imprimirtitulo}{\thetitle}
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+
+
 
 % Comandos de dados - titulo do documento
 \newcommand{\tituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
@@ -708,19 +781,63 @@
 \providecommand{\imprimirpreambulo}{}
 \newcommand{\preambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
 
-% Comandos de dados - orientador
+
+
+
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Orientador-------------------------
+% ------------------------------------------------------------------------
 \providecommand{\imprimirorientadorRotulo}{}
 \providecommand{\imprimirorientador}{}
-\newcommand{\orientador}[2][\orientadorname]%
-  {\renewcommand{\imprimirorientadorRotulo}{#1}%
-   \renewcommand{\imprimirorientador}{#2}}
-
-% Comandos de dados - coorientador
+\newcommand{\orientador}[2][\orientadorname]{%
+  \renewcommand{\imprimirorientadorRotulo}{#1}%
+  \renewcommand{\imprimirorientador}{#2}}
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Coorientador-----------------------
+% ------------------------------------------------------------------------
 \providecommand{\imprimircoorientadorRotulo}{}
 \providecommand{\imprimircoorientador}{}
-\newcommand{\coorientador}[2][\coorientadorname]%
-  {\renewcommand{\imprimircoorientadorRotulo}{#1}%
-   \renewcommand{\imprimircoorientador}{#2}}
+\newcommand{\coorientador}[2][\coorientadorname]{%
+  \renewcommand{\imprimircoorientadorRotulo}{#1}%
+  \renewcommand{\imprimircoorientador}{#2}}
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Supervisor-------------------------
+% ------------------------------------------------------------------------
+\providecommand{\imprimirsupervisorRotulo}{}
+\providecommand{\imprimirsupervisor}{}
+\newcommand{\supervisor}[2][\supervisorname]{%
+  \renewcommand{\imprimirsupervisorRotulo}{#1}%
+  \renewcommand{\imprimirsupervisor}{#2}}
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Tutor Online-----------------------
+% ------------------------------------------------------------------------
+\providecommand{\imprimirtutoronlineRotulo}{}
+\providecommand{\imprimirtutoronline}{}
+\newcommand{\tutoronline}[2][\tutoronlinename]{%
+  \renewcommand{\imprimirtutoronlineRotulo}{#1}%
+  \renewcommand{\imprimirtutoronline}{#2}}
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Tutor do Polo----------------------
+% ------------------------------------------------------------------------
+\providecommand{\imprimirtutordopoloRotulo}{}
+\providecommand{\imprimirtutordopolo}{}
+\newcommand{\tutordopolo}[2][\tutordopoloname]{%
+  \renewcommand{\imprimirtutordopoloRotulo}{#1}%
+  \renewcommand{\imprimirtutordopolo}{#2}}
+% ------------------------------------------------------------------------
+% -----------------Comandos de dados - Professor--------------------------
+% ------------------------------------------------------------------------
+\providecommand{\imprimirprofessorRotulo}{}
+\providecommand{\imprimirprofessor}{}
+\newcommand{\professor}[2][\professorname]{%
+  \renewcommand{\imprimirprofessorRotulo}{#1}%
+  \renewcommand{\imprimirprofessor}{#2}}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+
+
+
 
 % Comandos de dados - tipo de trabalho
 \providecommand{\imprimirtipotrabalho}{}
@@ -1077,7 +1194,7 @@
     {\ABNTEXchapterfont\large\imprimirautor}
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
-      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+      \ABNTEXchapterfont\Large\imprimirtitulo
     \end{center}
     \vspace*{\fill}
     \abntex@ifnotempty{\imprimirpreambulo}{%
@@ -1088,17 +1205,36 @@
        \end{minipage}%
        \vspace*{\fill}
     }
-    \vfill
+%-------------------------------------------------------------------------
+%------------------Impressão (apenas se definido)-------------------------
+%-------------------------------------------------------------------------
     {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
-
+    
     {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+    
     \abntex@ifnotempty{\imprimircoorientador}{%
-       {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+      {\large\imprimircoorientadorRotulo~\imprimircoorientador\par}
     }
+    \abntex@ifnotempty{\imprimirprofessor}{%
+      {\large\imprimirprofessorRotulo~\imprimirprofessor\par}
+    }
+    \abntex@ifnotempty{\imprimirsupervisor}{%
+      {\large\imprimirsupervisorRotulo~\imprimirsupervisor\par}
+    }
+    \abntex@ifnotempty{\imprimirtutoronline}{%
+      {\large\imprimirtutoronlineRotulo~\imprimirtutoronline\par}
+    }
+    \abntex@ifnotempty{\imprimirtutordopolo}{%
+      {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
+    }
+%-------------------------------------------------------------------------
+
     \vspace*{\fill}
-    {\large\imprimirlocal}
+    
+    \large\imprimirlocal
     \par
-    {\large\imprimirdata}
+    \large\imprimirdata
+    \vspace*{-0.85em}
   \end{center}
 }
 \makeatother
@@ -1123,4 +1259,4 @@
      \imprimirfolhaderostonostar
 }
 \makeatother
-
+% ------------------------------------------------------------------------
