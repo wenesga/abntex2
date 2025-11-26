@@ -65,29 +65,33 @@
 % -----------------------------------------------
 
 
-% \bfseries → negrito
-% \itshape → itálico
-% \scshape → versalete
-% \sffamily → sem serifa
-% \rmfamily → com serifa
-
+% -----------------------------------------------
+% -------------ESTILO DE CAPITULO----------------
+% -----------------------------------------------
 % Lenny 
+% Bjornstrup
 % Sonny 
 % Glenn 
 % Conny 
 % Rejne 
 % Bjarne
-
 %\usepackage[Lenny]{fncychap}
 %\ChTitleVar{\LARGE\bfseries}   
+% -----------------------------------------------
 
 
-
-
-
-
-
-
+% -----------------------------------------------
+%-------------ESTILO DE CAPITULO-----------------
+% -----------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filleft}
+  [\vspace{1ex}\titlerule]
+\titlespacing*{\chapter}{0pt}{-1cm}{1.3cm}
+%---------------------------------------------
 
 
 
