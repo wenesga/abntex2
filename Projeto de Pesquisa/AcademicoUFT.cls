@@ -245,7 +245,7 @@
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 % ------------------------------------------------------------------------
 %\newcommand{\ABNTEXchapterfont}{\bfseries}
-\newcommand{\ABNTEXchapterfont}{\scshape}
+\newcommand{\ABNTEXchapterfont}{\bfseries\scshape}
 \newcommand{\ABNTEXchapterfontsize}{\Huge}
 %\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}
 % ------------------------------------------------------------------------
@@ -545,7 +545,7 @@
 
 \renewcommand{\cftsectionpagefont}{\cftsectionfont}
 %
-\renewcommand{\cftsubsectionfont}{\normalsize}
+%\renewcommand{\cftsubsectionfont}{\normalsize}
 \renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
 %
 \renewcommand{\cftsubsubsectionfont}{\small}
