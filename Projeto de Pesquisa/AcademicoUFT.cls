@@ -234,18 +234,34 @@
 % ---
 % abnTeX2 name
 \newcommand{\abnTeX}{abn\TeX2}
-% ---
+% ------------------------------------------------------------------------
 
 
 
 
+
+% ------------------------------------------------------------------------
+%                     Famílias (tipo de fonte):
+% ------------------------------------------------------------------------
+% \rmfamily → serifa
+% \sffamily → sem serifa
+% \ttfamily → monoespaçada (tipo máquina de escrever)
+% ------------------------------------------------------------------------
+%                    Formas (estilo do texto):
+% ------------------------------------------------------------------------
+% \bfseries → negrito
+% \mdseries → médio (normal)
+% \itshape → itálico
+% \slshape → inclinado (slanted)
+% \scshape → versalete (small caps)
+% \upshape → vertical normal (sem inclinação)
+% ------------------------------------------------------------------------
 
 
 % ------------------------------------------------------------------------
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 % ------------------------------------------------------------------------
-%\newcommand{\ABNTEXchapterfont}{\bfseries}
-\newcommand{\ABNTEXchapterfont}{\bfseries\scshape}
+\newcommand{\ABNTEXchapterfont}{\bfseries} 
 \newcommand{\ABNTEXchapterfontsize}{\Huge}
 %\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}
 % ------------------------------------------------------------------------
@@ -418,9 +434,13 @@
 }
 % ---
 
-% -----
+
+
+
+
+% ------------------------------------------------------------------------
 % Configuracoes do TOC
-% -----
+% ------------------------------------------------------------------------
 % nivel de profundidade (implementa o quinto nivel - subsubsubsection)
 \setsecnumdepth{paragraph}
 \settocdepth{paragraph}
@@ -522,14 +542,9 @@
     \cftinserthook{toc}{A}}
   %
   \setlength{\cftbeforechapterskip}{1em}
+% ------------------------------------------------------------------------
   
-  
-  
-  
-  
-  
-  
-  
+
   
 % ------------------------------------------------------------------------
 % -------------------Fontes das entradas do sumario-----------------------
@@ -540,31 +555,21 @@
 \renewcommand{\cftchapterfont}{\bfseries}
 \renewcommand{\cftchapterpagefont}{\normalsize\cftchapterfont}
 %
-%\renewcommand{\cftsectionfont}{\normalsize}
-\renewcommand{\cftsectionpagefont}{\cftsectionfont}
+\renewcommand{\cftsectionfont}{\normalfont}
+\renewcommand{\cftsectionpagefont}{\normalfont}
 
-\renewcommand{\cftsectionpagefont}{\cftsectionfont}
-%
-%\renewcommand{\cftsubsectionfont}{\normalsize}
-\renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+\renewcommand{\cftsubsectionfont}{\normalfont}
+\renewcommand{\cftsubsectionpagefont}{\normalfont}
 %
 \renewcommand{\cftsubsubsectionfont}{\small}
-\renewcommand{\cftsubsubsectionpagefont}{\cftsubsubsectionfont}
+\renewcommand{\cftsubsubsectionpagefont}{\normalfont}
 %
 \renewcommand{\cftparagraphfont}{\footnotesize}
-\renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
+\renewcommand{\cftparagraphpagefont}{\normalfont}
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
 % ------------------------------------------------------------------------
   % Ajusta entrada Referencias
@@ -590,9 +595,12 @@
     \addtocontents{toc}{\vspace{\cftbeforechapterskip}}}{%
     \addtocontents{toc}{\vspace{\cftbeforepartskip}}}%
 }
-% -----
+% ------------------------------------------------------------------------
 
-% ---
+
+
+
+% ------------------------------------------------------------------------
 % Configuracao dos titulos dos capitulos
 % Novo estido do memoir 
 % ABNT NBR 14724-2011 - 5.2.2-5.2.4; ABNT NBR 6024-2003 - 3.1-3.8
@@ -668,11 +676,14 @@
     }
 }
 \chapterstyle{abnt}
-% ---
+% ------------------------------------------------------------------------
 
-% -----
+
+
+
+% ------------------------------------------------------------------------
 % Declaracoes de cabecalhos 
-% -----
+% ------------------------------------------------------------------------
 % Cabecalho padrao
 \makepagestyle{abntheadings}
 \makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit\leftmark}
@@ -682,9 +693,11 @@
 % Cabecalho do inicio do capitulo
 \makepagestyle{abntchapfirst}
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
-% ---
+% ------------------------------------------------------------------------
 
-% ---
+
+
+% ------------------------------------------------------------------------
 % Configura layout para elementos pre-textuais
 \newcommand{\pretextual}{%
   \aliaspagestyle{chapter}{empty}% customizing chapter pagestyle
@@ -696,9 +709,12 @@
 
 % por default, inicializa o documento com elementos \pretextuais
 \AtBeginDocument{\pretextual}
-% ---
+% ------------------------------------------------------------------------
 
-% ---
+
+
+
+% ------------------------------------------------------------------------
 % Configura layout para elementos textuais
 \newcommand{\textual}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
@@ -711,37 +727,30 @@
   \bookmarksetup{startatroot}% 
 }
 \renewcommand{\mainmatter}{\textual}
-% ---
+% ------------------------------------------------------------------------
 
-% ---
+
+% ------------------------------------------------------------------------
 % Configura layout para elementos pos-textuais
 \newcommand{\postextual}{\phantompart}
 \renewcommand{\backmatter}{\postextual}
-% -----
-
 % ------------------------------------------------------------------------
+
+
 % ------------------------------------------------------------------------
 % Comandos de dados para CAPA e FOLHA DE ROSTO 
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
-
-
 % ------------------------------------------------------------------------
 % -------------------CONFIGURAÇÃO DE TILULO-------------------------------
 % ------------------------------------------------------------------------
 % Comandos de dados - titulo do documento
 \newcommand{\titulo}[1]{\title{#1}}
 \newcommand{\imprimirtitulo}{\thetitle}
-
-
-% ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
 
-
-
+% ------------------------------------------------------------------------
 % Comandos de dados - titulo do documento
+% ------------------------------------------------------------------------
 \newcommand{\tituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
 \newcommand{\imprimirtituloestrangeiro}{\theforeigntitle}
 
@@ -767,7 +776,6 @@
 % Comandos de dados - preambulo
 \providecommand{\imprimirpreambulo}{}
 \newcommand{\preambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
-
 
 
 
@@ -1115,14 +1123,12 @@
    % assinatura sem estrela
 \newcommand{\ABNTEXcsign}[1]%
   {\begingroup\par\centering\ABNTEXsign{#1}\par\endgroup}  
-% ---
-
 % ------------------------------------------------------------------------
+
+
+
 % ------------------------------------------------------------------------
 % IMPRESSOES PADROES DE CAPA E FOLHA DE ROSTO
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
 % ------------------------------------------------------------------------
 % Impressão da Capa
 % ------------------------------------------------------------------------
@@ -1154,9 +1160,6 @@
 % ------------------------------------------------------------------------
 
 
-
-
-
 % ------------------------------------------------------------------------
 % Folha de rosto
 %   usar \imprimirfolhaderosto* casodeseje imprimir algo no verso da
@@ -1167,9 +1170,6 @@
 \newenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
 \newenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
 % ------------------------------------------------------------------------
-
-
-
 
 
 % ------------------------------------------------------------------------
@@ -1246,4 +1246,6 @@
      \imprimirfolhaderostonostar
 }
 \makeatother
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
