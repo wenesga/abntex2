@@ -1,14 +1,16 @@
-% -----------------------------------------------------------------------------
+% ------------------------------------------------------------------------
 % Classe AcademicoUFT baseada em abnTeX2 (extensão da classe memoir)
-% -----------------------------------------------------------------------------
+% ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{AcademicoUFT}[2025/11/25 v1.0 Classe Acadêmica UFT]
 \RequirePackage{ifthen}
+% ------------------------------------------------------------------------
 
 
-%
+
+% ------------------------------------------------------------------------
 % Captura as options article e twocolumn
-%
+% ------------------------------------------------------------------------
 \providecommand{\ABNTEXisarticle}{false}
 \DeclareOption{article}{
 	\renewcommand{\ABNTEXisarticle}{true}
@@ -19,15 +21,15 @@
 	\renewcommand{\ABNTEXistwocolumn}{true}
 	\PassOptionsToClass{twocolumn}{memoir}%}
 }
-%	
+% ------------------------------------------------------------------------
 % Opcoes chapter=TITLE, section=TITLE, subsection=TITLE e
 % subsubsection=TITLE: titulos em letras maiusculas
-% 
-\newboolean{ABNTEXupperchapter}     %true=titles of chapter/appendix in uppercase
-\newboolean{ABNTEXuppersection}     %true=titles of sections in uppercase
-\newboolean{ABNTEXuppersubsection}  %true=titles of subsections in uppercase
-\newboolean{ABNTEXuppersubsubsection}  %true=titles of subsubsections in uppercase
-\newboolean{ABNTEXuppersubsubsubsection}  %true=titles of subsubsubsections in uppercase
+% ------------------------------------------------------------------------
+\newboolean{ABNTEXupperchapter}          %true=titles of chapter/appendix in uppercase
+\newboolean{ABNTEXuppersection}          %true=titles of sections in uppercase
+\newboolean{ABNTEXuppersubsection}       %true=titles of subsections in uppercase
+\newboolean{ABNTEXuppersubsubsection}    %true=titles of subsubsections in uppercase
+\newboolean{ABNTEXuppersubsubsubsection} %true=titles of subsubsubsections in uppercase
 \setboolean{ABNTEXupperchapter}{false}
 \setboolean{ABNTEXuppersection}{false}
 \setboolean{ABNTEXuppersubsection}{false}
@@ -38,10 +40,15 @@
 \DeclareOption{subsection=TITLE}{\setboolean{ABNTEXuppersubsection}{true}}
 \DeclareOption{subsubsection=TITLE}{\setboolean{ABNTEXuppersubsubsection}{true}}
 \DeclareOption{subsubsubsection=TITLE}{\setboolean{ABNTEXuppersubsubsubsection}{true}}
-%
+% ------------------------------------------------------------------------
+
+
+
+% ------------------------------------------------------------------------
 % Opções de diagramação de sumários
 % sumario=tradicional    : Sumário tradicional do LaTeX/Memoir
 % sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012
+% ------------------------------------------------------------------------
 \newboolean{ABNTEXsumario-tradicional}     %true=titles of chapter/appendix in uppercase
 \newboolean{ABNTEXsumario-abnt-6027-2012} 
 \setboolean{ABNTEXsumario-tradicional}{false}
@@ -52,9 +59,14 @@
 \DeclareOption{sumario=abnt-6027-2012}{%
   \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
   \setboolean{ABNTEXsumario-tradicional}{false}}
-%
+% ------------------------------------------------------------------------
+
+
+
+  
+% ------------------------------------------------------------------------
 % Repassa demais opcoes a memoir	
-%
+% ------------------------------------------------------------------------
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{memoir}%
 }
@@ -69,62 +81,48 @@
   \setboolean{ABNTEXsumario-tradicional}{true}
   \setboolean{ABNTEXsumario-abnt-6027-2012}{false}
 \fi
-
-
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-% Comandos para tratamento de opcoes proprias
-% ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
-% ---
+
+
+
+% ------------------------------------------------------------------------
 % Comandos para controlar as opcoes de titulos com letras maiusculas 
-% ---
-
+% ------------------------------------------------------------------------
 % pacote que prove \MakeTextUppercase
+% ------------------------------------------------------------------------
 \RequirePackage{textcase}
-
 \newcommand{\ABNTEXchapterupperifneeded}[1]{\ifthenelse{\boolean{ABNTEXupperchapter}}{\MakeTextUppercase{#1}}{#1}}
 \newcommand{\ABNTEXsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersection}}{\MakeTextUppercase}{}}
 \newcommand{\ABNTEXsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsection}}{\MakeTextUppercase}{}}
 \newcommand{\ABNTEXsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsection}}{\MakeTextUppercase}{}}
 \newcommand{\ABNTEXsubsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsubsection}}{\MakeTextUppercase}{}}
-% ---
-
 % ------------------------------------------------------------------------
+
+
+
 % ------------------------------------------------------------------------
 % Pacotes adicionais e customizacoes gerais do memoir
 % ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
-% ---
 % Do pacote de if/them/else
 \newcommand{\abntex@ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
-% ---
-
-% ---
+% ------------------------------------------------------------------------
 % Controla as referencias internas do PDF
 \RequirePackage{hyperref}
 \pdfstringdefDisableCommands{\def\\{, }\def\and{; }}
-% ---
-
-% ---
+% ------------------------------------------------------------------------
 % Controla os bookmarks do PDF
 \RequirePackage{bookmark}   			
-% ---
-
-% ---
+% ------------------------------------------------------------------------
 % Hifenizacao e caracteres especiais portugues-brasil por padrao
-% ---
 \RequirePackage[brazil]{babel}
-
-
-
-
 % ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
+
+
+
 % ------------------------------------------------------------------------
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
+% ------------------------------------------------------------------------
 \newcommand{\folhaderostoname}{Folha de rosto}
 \newcommand{\epigraphname}{Ep\'igrafe}
 \newcommand{\dedicatorianame}{Dedicat\'oria}
@@ -144,7 +142,6 @@
 \newcommand{\tutordopoloname}{Tutor do Polo:}
 \newcommand{\professorname}{Professor:}
 %------------------------------------------------------------------------
-%------------------------------------------------------------------------
 \newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
 \newcommand{\resumoname}{Resumo} 
 \newcommand{\listadesiglasname}{Lista de abreviaturas e siglas}
@@ -152,13 +149,9 @@
 \newcommand{\fontename}{Fonte}
 \newcommand{\notaname}{Nota}
 %------------------------------------------------------------------------
-%------------------------------------------------------------------------
-%------------------------------------------------------------------------
 
 
-
-
-
+% ------------------------------------------------------------------------
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
   \renewcommand{\bibname}{Refer\^encias}
@@ -198,7 +191,9 @@
   \renewcommand{\subsubsectionautorefname}{subsubsection}
   \renewcommand{\paragraphautorefname}{subsubsubsection}
 }
-% ---
+% ------------------------------------------------------------------------
+
+
 
 % ---
 % Customiza listas
@@ -241,23 +236,19 @@
 \newcommand{\abnTeX}{abn\TeX2}
 % ---
 
-% -------------------------------------------------------------------------------
+
+
+
+
+
+% ------------------------------------------------------------------------
 % Fontes padroes de part, chapter, section, subsection e subsubsection
-% -------------------------------------------------------------------------------
-%\newcommand{\ABNTEXchapterfont}{\sffamily}     % TIPO ORIGINAL (abntex2)
-\newcommand{\ABNTEXchapterfont}{\scshape}       % ESTILO VERSALETE
-\newcommand{\ABNTEXchapterfontsize}{\Huge}      % TAMANHO ORIGINAL (abntex2)
-%\newcommand{\ABNTEXchapterfont}{\bfseries}     % TIPO PERSONALIZADO (volta para o padão latex)
-%\newcommand{\ABNTEXchapterfontsize}{\LARGE}    % TAMANHO MENOR 
-%\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}  % TAMNAHO PERSONALIZADO
-% -------------------------------------------------------------------------------
-
-
-
-
-
-% -------------------------------------------------------------------------------
-% -------------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%\newcommand{\ABNTEXchapterfont}{\bfseries}
+\newcommand{\ABNTEXchapterfont}{\scshape}
+\newcommand{\ABNTEXchapterfontsize}{\Huge}
+%\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}
+% ------------------------------------------------------------------------
 \newcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
 \newcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
 
@@ -272,34 +263,27 @@
 
 \newcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
 \newcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
-% -------------------------------------------------------------------------------
-% -------------------------------------------------------------------------------
-
-
-
-
-
-
 % ------------------------------------------------------------------------
+
+
+
+
+
+
 % ------------------------------------------------------------------------
 % Comandos e variaveis privados
 % ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
-% ---
 % Comando para registro do bookmark interno
-% ---
+% ------------------------------------------------------------------------
 \newcounter{abntex@bookmarkcounter}
 \setcounter{abntex@bookmarkcounter}{0}
 \newcommand{\PRIVATEbookmarkthis}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
   \phantomsection\pdfbookmark[0]{#1}{chapterb\arabic{abntex@bookmarkcounter}}
 }
-% ---
-
-% ---
+% ------------------------------------------------------------------------
 % Comando que cria capitulos nao numerados ja com bookmark anotado
-% ---
+% ------------------------------------------------------------------------
 \newcommand{\pretextualchapter}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
   \PRIVATEbookmarkthis{#1}%
@@ -307,11 +291,9 @@
   }
 \provideboolean{abntex@apendiceousecao}
 \setboolean{abntex@apendiceousecao}{false}
-% ---
-
-% ---
+% ------------------------------------------------------------------------
 % cleardoublepage se este documento nao for article
-% ---
+% ------------------------------------------------------------------------
 \newcommand{\PRIVATEclearpageifneeded}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     %
@@ -319,6 +301,13 @@
     \cleardoublepage%
   }
 }  
+% ------------------------------------------------------------------------
+
+
+
+
+
+
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
@@ -566,22 +555,20 @@
 \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 % ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  %
   % Ajusta entrada Referencias
-  %
+% ------------------------------------------------------------------------
   \renewcommand{\bibsection}{%
     \chapter*{\bibname}
     \bibmark
@@ -1145,17 +1132,17 @@
         \vspace*{-2cm}
         \begin{center}
             \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-                \textbf{
-                    UNIVERSIDADE FEDERAL DO TOCANTINS\\[0.15cm]
-                    CAMPUS UNIVERSITÁRIO DE PALMAS\\[0.15cm]
-                    CURSO DE LICENCIATURA EM COMPUTAÇÃO\\
+                \textsc{\large
+                    Universidade Federal do Tocantins\\
+                    Campus Universitário de Palmas\\
+                    Curso de Licenciatura em Computação\\
                 }
         \end{center}
         
         \vspace{3cm}
         
         \begin{center}
-            \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+            \ABNTEXchapterfont\LARGE\imprimirtitulo
         \end{center}
         \vfill
             \ABNTEXchapterfont\large\imprimirautor

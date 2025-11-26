@@ -30,17 +30,14 @@
 
 
 % -----------------------------------------------
-% DEFINIÇÃO DE FONTES: ARIAL OU TIMES N.R.:
-% -----------------------------------------------
-% Times New Roman
-% -----------------------------------------------
 %\usepackage{times}
-%\usepackage{mathptmx}
+%\usepackage{mathptmx} % Times New Roman
 % -----------------------------------------------
-% Para Arial (Helvética)
+%\usepackage{fontspec}
+%\setmainfont{Libertinus Serif} % Libertinus Serif
 % -----------------------------------------------
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{fontspec}
+%\setmainfont{TeX Gyre Pagella} % TeX Gyre Pagella
 % -----------------------------------------------
 
 
@@ -79,13 +76,17 @@
 % -Informações para Folha de Rosto e Contracapa--
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Projeto de Pesquisa em \abnTeX}
-\autor{Editado por Wenes Aquino}
-\professor{Wenes Gomes Aquino}
+\autor{Wenes Gomes Aquino}
+
+\professor{Wenes Aquino}
+\tutoronline{Gomes Aquino}
+\tutordopolo{Aquino Gomes}
+
 \local{Palmas}
-\data{2025, v-1.0}
+\data{2025}
 
 \instituicao{%
-  Universidade Federal do Tocantins - UFT\\
+  Universidade Federal do Tocantins -- UFT\\
   Campus Universitário de Palmas\\
   Curso de Licenciatura em Computação}
   
@@ -112,10 +113,9 @@
 
 
 % -----------------------------------------------
-% ----Espaçamentos entre linhas e parágrafos----- 
+% ----------Espaçamentos e parágrafos------------ 
 % -----------------------------------------------
-\setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
-\setlength{\parskip}{0.2cm}   % Espaçamento entre parágrafo
+\setlength{\parindent}{1.25cm} 
 % -----------------------------------------------
 
 
@@ -452,7 +452,10 @@
 \chapter{Cras non urna. Morbi eros pede}
 
 \section{Nullam at lectus}
-\lipsum[10-11] % Gera texto de exemplo para preencher a página. 
+\lipsum[10] % Gera texto de exemplo para preencher a página. 
+\subsection{Nullam at lectus}
+\lipsum[11] % Gera texto de exemplo para preencher a página. 
+
 
 \section{Praesent pretium}
 \lipsum[12-13] % Gera texto de exemplo para preencher a página. 
