@@ -271,13 +271,13 @@
 \newcommand{\ABNTEXsectionfont}{\bfseries}
 \newcommand{\ABNTEXsectionfontsize}{\Large}
 
-\newcommand{\ABNTEXsubsectionfont}{\normalfont}
+\newcommand{\ABNTEXsubsectionfont}{\bfseries}
 \newcommand{\ABNTEXsubsectionfontsize}{\large}
 
-\newcommand{\ABNTEXsubsubsectionfont}{\normalfont}
+\newcommand{\ABNTEXsubsubsectionfont}{\bfseries}
 \newcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
-\newcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
+\newcommand{\ABNTEXsubsubsubsectionfont}{\bfseries}
 \newcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 % ------------------------------------------------------------------------
 
@@ -549,7 +549,6 @@
 % ------------------------------------------------------------------------
 % -------------------Fontes das entradas do sumario-----------------------
 % ------------------------------------------------------------------------
-%
 \renewcommand{\cftpartfont}{\bfseries\large}
 %
 \renewcommand{\cftchapterfont}{\bfseries}
@@ -561,10 +560,10 @@
 \renewcommand{\cftsubsectionfont}{\normalfont}
 \renewcommand{\cftsubsectionpagefont}{\normalfont}
 %
-\renewcommand{\cftsubsubsectionfont}{\small}
+\renewcommand{\cftsubsubsectionfont}{\normalfont}
 \renewcommand{\cftsubsubsectionpagefont}{\normalfont}
 %
-\renewcommand{\cftparagraphfont}{\footnotesize}
+\renewcommand{\cftparagraphfont}{\normalfont}
 \renewcommand{\cftparagraphpagefont}{\normalfont}
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
