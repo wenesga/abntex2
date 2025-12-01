@@ -2,7 +2,7 @@
 % Classe AcademicoUFT baseada em abnTeX2 (extensão da classe memoir)
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{AcademicoUFT}[2025/11/25 v1.0 Classe Acadêmica UFT]
+\ProvidesClass{AcademicoUFT}[2025/11/25 v-1.1 Classe Acadêmica UFT]
 \RequirePackage{ifthen}
 % ------------------------------------------------------------------------
 
@@ -261,7 +261,7 @@
 % ------------------------------------------------------------------------
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 % ------------------------------------------------------------------------
-\newcommand{\ABNTEXchapterfont}{\bfseries} 
+\newcommand{\ABNTEXchapterfont}{\bfseries\scshape} 
 \newcommand{\ABNTEXchapterfontsize}{\Huge}
 %\newcommand{\ABNTEXchapterfontsize}{\fontsize{24pt}{24pt}\selectfont}
 % ------------------------------------------------------------------------
@@ -1135,26 +1135,27 @@
     \begin{capa}%
         \center
         \vspace*{-2cm}
-        \begin{center}
+        \begin{center}%
             \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-                \textsc{\large
+                \scshape{\large
                     Universidade Federal do Tocantins\\
                     Campus Universitário de Palmas\\
                     Curso de Licenciatura em Computação\\
                 }
-        \end{center}
+        \end{center}%
         
-        \vspace{3cm}
+        \vspace{3cm}%
         
-        \begin{center}
+        \begin{center}%
             \ABNTEXchapterfont\LARGE\imprimirtitulo
-        \end{center}
+        \end{center}%
         \vfill
-            \ABNTEXchapterfont\large\imprimirautor
+            \bfseries\large\imprimirautor
         \vfill
         \large\imprimirlocal\\
         \large\imprimirdata
-    \end{capa}
+        \vspace{1em}
+    \end{capa}%
 }
 % ------------------------------------------------------------------------
 
@@ -1177,7 +1178,7 @@
 \makeatletter
 \newcommand{\folhaderostocontent}{
   \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
+    {\bfseries\large\imprimirautor}
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
       \ABNTEXchapterfont\Large\imprimirtitulo
@@ -1214,13 +1215,9 @@
       {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
     }
 %-------------------------------------------------------------------------
-
-    \vspace*{\fill}
-    
-    \large\imprimirlocal
-    \par
-    \large\imprimirdata
-    \vspace*{-0.85em}
+        \vfill
+        \large\imprimirlocal\\
+        \large\imprimirdata
   \end{center}
 }
 \makeatother

@@ -7,10 +7,10 @@
 % -----------------------------------------------
 \documentclass[
 	12pt,				% Tamanho da fonte
-    oneside,            % Garante margens iguais (não alternadas)
+    oneside,            % Margens iguais (não alternadas)
 	a4paper,			% tamanho do papel. 
 	english,			% idioma adicional para hifenização
-	brazilian,		    % o último idioma é o principal do documento
+	brazilian,		    % Idioma é o principal do documento
 	]{AcademicoUFT}
 % -----------------------------------------------
 
@@ -20,18 +20,22 @@
 % -----------------------------------------------
 \usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage[utf8]{inputenc}		% Codificação do documento
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 % -----------------------------------------------
-%\usepackage{fontspec}
+
+
+
+% -----------------------------------------------
+% FONTES
+% -----------------------------------------------
+\usepackage{fontspec}
+\setmainfont{XCharter}
 %\setmainfont{Calibri} 
-
-
-
-
+% -----------------------------------------------
 
 
 
@@ -63,35 +67,6 @@
 \usepackage{amssymb}      % Necessário para símbolos matemáticos
 \usepackage{amsmath}      % Necessário para comandos como \text{}
 % -----------------------------------------------
-\usepackage{titlesec}
-
-% -----------------------------------------------
-% -------------ESTILO DE CAPITULO----------------
-% -----------------------------------------------
-% Lenny 
-% Bjornstrup
-% Sonny 
-% Glenn 
-% Conny 
-% Rejne 
-% Bjarne
-\usepackage[Lenny]{fncychap}
-\ChTitleVar{\LARGE\bfseries}   
-% -----------------------------------------------
-
-
-% -----------------------------------------------
-%-------------ESTILO DE CAPITULO-----------------
-% -----------------------------------------------
-%\usepackage{titlesec}
-%\titleformat{\chapter}[display]
-%  {\bfseries\Large}
-%  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
-%  {1ex}
-%  {\titlerule\vspace{1ex}\filleft}
-%  [\vspace{1ex}\titlerule]
-%\titlespacing*{\chapter}{0pt}{-1cm}{1.3cm}
-%---------------------------------------------
 
 
 
@@ -100,14 +75,12 @@
 % -Informações para Folha de Rosto e Contracapa--
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Projeto de Pesquisa em \abnTeX}
-\autor{Rafael Augusto Oliveira Martins}
-
-\professor{Fernanda Gomes Carvalho}
-\tutoronline{Mariana Vitória Almeida}
-\tutordopolo{Ana Beatriz Santos Lima}
-
-\local{Arraias -- TO}
-\data{2025}
+\autor{Editado por Wenes Aquino}
+\professor{Fulano Gomes Carvalho}
+\tutoronline{Beltrano Vitória Almeida}
+\tutordopolo{Ciclano Beatriz Santos Lima}
+\local{Palmas}
+\data{2025, v-1.1}
 
 \instituicao{%
   Universidade Federal do Tocantins -- UFT\\

@@ -7,11 +7,11 @@
 % -----------------------------------------------
 \documentclass[
 	12pt,				% Tamanho da fonte
-    oneside,            % Garante margens iguais (não alternadas)
+    oneside,            % Margens iguais (não alternadas)
 	a4paper,			% tamanho do papel. 
 	english,			% idioma adicional para hifenização
-	brazilian,		    % o último idioma é o principal do documento
-	]{abntex2}
+	brazilian,		    % Idioma é o principal do documento
+	]{AcademicoUFT}
 % -----------------------------------------------
 
 
@@ -20,8 +20,8 @@
 % -----------------------------------------------
 \usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage[utf8]{inputenc}		% Codificação do documento
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
@@ -30,19 +30,12 @@
 
 
 % -----------------------------------------------
-% DEFINIÇÃO DE FONTES: ARIAL OU TIMES N.R.:
+% FONTES
 % -----------------------------------------------
-% Times New Roman
+\usepackage{fontspec}
+\setmainfont{XCharter}
+%\setmainfont{Calibri} 
 % -----------------------------------------------
-\usepackage{times}
-\usepackage{mathptmx}
-% -----------------------------------------------
-% Para Arial (Helvética)
-% -----------------------------------------------
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}
-% -----------------------------------------------
-
 
 
 
@@ -83,11 +76,14 @@
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Relatório Técnico em \abnTeX}
 \autor{Editado por Wenes Aquino}
+\professor{Fulano Gomes Carvalho}
+\tutoronline{Beltrano Vitória Almeida}
+\tutordopolo{Ciclano Beatriz Santos Lima}
 \local{Palmas}
-\data{2025, v-1.0}
+\data{2025, v-1.1}
 
 \instituicao{%
-  Universidade Federal do Tocantins - UFT\\
+  Universidade Federal do Tocantins -- UFT\\
   Campus Universitário de Palmas\\
   Curso de Licenciatura em Computação}
   
@@ -116,8 +112,7 @@
 % -----------------------------------------------
 % ----Espaçamentos entre linhas e parágrafos----- 
 % -----------------------------------------------
-\setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
-\setlength{\parskip}{0.2cm}   % Espaçamento entre parágrafo
+\setlength{\parindent}{1.25cm} % O tamanho do parágrafo é dado por:
 % -----------------------------------------------
 
 

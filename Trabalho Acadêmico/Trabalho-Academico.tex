@@ -7,11 +7,11 @@
 % -----------------------------------------------
 \documentclass[
 	12pt,				% Tamanho da fonte
-    oneside,            % Garante margens iguais (não alternadas)
+    oneside,            % Margens iguais (não alternadas)
 	a4paper,			% tamanho do papel. 
 	english,			% idioma adicional para hifenização
-	brazilian,		    % o último idioma é o principal do documento
-	]{abntex2}
+	brazilian,		    % Idioma é o principal do documento
+	]{AcademicoUFT}
 % -----------------------------------------------
 
 
@@ -20,12 +20,23 @@
 % -----------------------------------------------
 \usepackage{lmodern}			% Usa a fonte Latin Modern		
 \usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage[utf8]{inputenc}		% Codificação do documento
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 % -----------------------------------------------
+
+
+
+% -----------------------------------------------
+% FONTES
+% -----------------------------------------------
+\usepackage{fontspec}
+\setmainfont{XCharter}
+%\setmainfont{Calibri} 
+% -----------------------------------------------
+
 
 
 % -----------------------------------------------
@@ -58,16 +69,17 @@
 % -----------------------------------------------
 
 
+
 % -----------------------------------------------
 % -Informações para Folha de Rosto e Contracapa--
 % -----------------------------------------------
 \titulo{Modelo UFT para\\ Trabalha de Conclusão de Curso\\ em \abnTeX}
 \autor{Editado por Wenes Aquino}
+\orientador{Fulano Gomes Carvalho}
+\coorientador{Beltrano Vitória Almeida}
+\tutordopolo{Ciclano Beatriz Santos Lima}
 \local{Palmas}
-\data{2025, v-1.0}
-
-\orientador{Editado por Wenes Aquino}
-\coorientador{Editado por Wenes Aquino}
+\data{2025, v-1.1}
 
 \instituicao{%
   Universidade Federal do Tocantins - UFT\\
@@ -108,8 +120,7 @@
 % -----------------------------------------------
 % ----Espaçamentos entre linhas e parágrafos----- 
 % -----------------------------------------------
-\setlength{\parindent}{1.3cm} % O tamanho do parágrafo é dado por:
-\setlength{\parskip}{0.2cm}   % Espaçamento entre parágrafo
+\setlength{\parindent}{1.25cm} % O tamanho do parágrafo é dado por:
 % -----------------------------------------------
 
 
@@ -233,7 +244,7 @@
 \begin{folhadeaprovacao}
 
   \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
+    {\bfseries\large\imprimirautor}
 
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
