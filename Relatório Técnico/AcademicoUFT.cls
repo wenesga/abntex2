@@ -1137,15 +1137,13 @@
         \vspace*{-2cm}
         \begin{center}%
             \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-                \scshape{\large
-                    Universidade Federal do Tocantins\\
-                    Campus Universitário de Palmas\\
-                    Curso de Licenciatura em Computação\\
-                }
-        \end{center}%
-        
+        \end{center}%    
+        \scshape{\large
+            Universidade Federal do Tocantins\\
+            Campus Universitário de Palmas\\
+            Curso de Licenciatura em Computação\\
+        }
         \vspace{3cm}%
-        
         \begin{center}%
             \ABNTEXchapterfont\LARGE\imprimirtitulo
         \end{center}%
