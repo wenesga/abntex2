@@ -25,7 +25,7 @@ Foram feitos ajustes nos três modelos principais:
 A adaptação ainda está em evolução. Sugestões de melhorias são bem-vindas.
 
 > **Importante:**
-> Para que todas as adaptações funcionem corretamente, mantenha o arquivo `abntex2.cls` na **mesma pasta do arquivo principal `.tex`**.
+> Para que todas as adaptações funcionem corretamente, mantenha o arquivo `AcademicoUFT.cls` na **mesma pasta do arquivo principal `.tex`**.
 > Assim, o projeto sempre usará a versão personalizada da classe, independentemente da instalação global do abnTeX2 no sistema.
 
 
@@ -71,7 +71,7 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ---
 
-![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
+![Projeto de Pesquisa UFT - Referências](Imagens/referencias_academico_uft.png)
 
 ---
 ---
@@ -108,7 +108,7 @@ Nesta edição, foi incluída a configuração para uso do modo `oneside`, mante
 
 ---
 
-![Projeto de Pesquisa UFT - Referências](Imagens/referencias_projeto_uft.png)
+![Projeto de Pesquisa UFT - Referências](Imagens/referencias_academico_uft.png)
 
 
 ---

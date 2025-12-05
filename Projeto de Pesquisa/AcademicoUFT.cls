@@ -1126,6 +1126,30 @@
 
 
 
+% ---------------------------
+% WENES - UFT (Marca TeX)
+% ---------------------------
+\newcommand{\WenesTex}{%
+    Wenes%
+    \raisebox{0ex}{T}\kern-0.168em%
+    \raisebox{-0.5ex}{E}\kern-0.124em%
+    \raisebox{0ex}{X}
+}
+% ---------------------------
+\newcommand{\abnTexUFT}{%
+    abn%
+    \raisebox{0ex}{T}\kern-0.168em%
+    \raisebox{-0.5ex}{E}\kern-0.124em%
+    \raisebox{0ex}{X}%
+    \raisebox{0.4ex}{-}%
+    \raisebox{0.05ex}{U}\kern-0em
+    \raisebox{0.05ex}{F}\kern-0em
+    \raisebox{0.05ex}{T}
+}
+% ---------------------------
+
+
+
 % ------------------------------------------------------------------------
 % IMPRESSOES PADROES DE CAPA E FOLHA DE ROSTO
 % ------------------------------------------------------------------------
