@@ -1133,26 +1133,22 @@
 % ------------------------------------------------------------------------
 \newcommand{\imprimircapa}{%
     \begin{capa}%
-        \center
+        \begin{center}
         \vspace*{-2cm}
-        \begin{center}%
-            \includegraphics[width=0.17\textwidth]{LogoUFT.pdf} \\[0.15cm]
-        \end{center}%    
-        \scshape{\large
-            Universidade Federal do Tocantins\\
-            Campus Universitário de Palmas\\
+        \includegraphics[width=0.17\textwidth]{LogoUFT.pdf}\\ 
+        {\linespread{1.1}\selectfont\scshape\large
+            Universidade Federal do Tocantins \\
+            Campus Universitário de Palmas \\
             Curso de Licenciatura em Computação\\
         }
-        \vspace{3cm}%
-        \begin{center}%
-            \ABNTEXchapterfont\LARGE\imprimirtitulo
-        \end{center}%
+        \vfill\vspace*{-2em}
+        \bfseries\large\imprimirautor%
         \vfill
-            \bfseries\large\imprimirautor
-        \vfill
+        \ABNTEXchapterfont\LARGE\imprimirtitulo%
+        \vfill\vfill\vfill\vfill
         \large\imprimirlocal\\
         \large\imprimirdata
-        \vspace{1em}
+        \end{center}
     \end{capa}%
 }
 % ------------------------------------------------------------------------
@@ -1175,48 +1171,48 @@
 % ------------------------------------------------------------------------
 \makeatletter
 \newcommand{\folhaderostocontent}{
-  \begin{center}
-    {\bfseries\large\imprimirautor}
-    \vspace*{\fill}\vspace*{\fill}
     \begin{center}
-      \ABNTEXchapterfont\Large\imprimirtitulo
-    \end{center}
-    \vspace*{\fill}
-    \abntex@ifnotempty{\imprimirpreambulo}{%
-      \hspace{.45\textwidth}
-      \begin{minipage}{.5\textwidth}
-      	\SingleSpacing
-         \imprimirpreambulo
-       \end{minipage}%
-       \vspace*{\fill}
-    }
-%-------------------------------------------------------------------------
-%------------------Impressão (apenas se definido)-------------------------
-%-------------------------------------------------------------------------
-    {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
-    
-    {\large\imprimirorientadorRotulo~\imprimirorientador\par}
-    
-    \abntex@ifnotempty{\imprimircoorientador}{%
-      {\large\imprimircoorientadorRotulo~\imprimircoorientador\par}
-    }
-    \abntex@ifnotempty{\imprimirprofessor}{%
-      {\large\imprimirprofessorRotulo~\imprimirprofessor\par}
-    }
-    \abntex@ifnotempty{\imprimirsupervisor}{%
-      {\large\imprimirsupervisorRotulo~\imprimirsupervisor\par}
-    }
-    \abntex@ifnotempty{\imprimirtutoronline}{%
-      {\large\imprimirtutoronlineRotulo~\imprimirtutoronline\par}
-    }
-    \abntex@ifnotempty{\imprimirtutordopolo}{%
-      {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
-    }
-%-------------------------------------------------------------------------
+        {\bfseries\large\imprimirautor}
+        \vfill\vfill
+        \begin{center}
+            \ABNTEXchapterfont\Large\imprimirtitulo
+        \end{center}
+        \vfill
+        \abntex@ifnotempty{\imprimirpreambulo}{%
+            \hspace{.45\textwidth}
+            \begin{minipage}{.5\textwidth}
+                \SingleSpacing
+                \imprimirpreambulo
+            \end{minipage}%
+            \vfill
+        }%
+        %-------------------------------------------------------------------------
+        %------------------Impressão (apenas se definido)-------------------------
+        %-------------------------------------------------------------------------
+        {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+        
+        {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+        
+        \abntex@ifnotempty{\imprimircoorientador}{%
+          {\large\imprimircoorientadorRotulo~\imprimircoorientador\par}
+        }
+        \abntex@ifnotempty{\imprimirprofessor}{%
+          {\large\imprimirprofessorRotulo~\imprimirprofessor\par}
+        }
+        \abntex@ifnotempty{\imprimirsupervisor}{%
+          {\large\imprimirsupervisorRotulo~\imprimirsupervisor\par}
+        }
+        \abntex@ifnotempty{\imprimirtutoronline}{%
+          {\large\imprimirtutoronlineRotulo~\imprimirtutoronline\par}
+        }
+        \abntex@ifnotempty{\imprimirtutordopolo}{%
+          {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
+        }
+        %-------------------------------------------------------------------------
         \vfill
         \large\imprimirlocal\\
         \large\imprimirdata
-  \end{center}
+    \end{center}
 }
 \makeatother
 % ------------------------------------------------------------------------
