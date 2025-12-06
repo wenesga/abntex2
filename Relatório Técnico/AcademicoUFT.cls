@@ -1171,7 +1171,7 @@
         \ABNTEXchapterfont\LARGE\imprimirtitulo%
         \vfill\vfill\vfill\vfill
         \large\imprimirlocal\\
-        \large\imprimirdata
+        \imprimirdata
         \end{center}
     \end{capa}%
 }
@@ -1194,27 +1194,21 @@
 % Conteudo padrao da Folha de Rosto
 % ------------------------------------------------------------------------
 \makeatletter
-\newcommand{\folhaderostocontent}{
+\newcommand{\folhaderostocontent}{%
     \begin{center}
-        {\bfseries\large\imprimirautor}
+        {\bfseries\large\imprimirautor\par}%
         \vfill\vfill
-        \begin{center}
-            \ABNTEXchapterfont\Large\imprimirtitulo
-        \end{center}
+        {\ABNTEXchapterfont\Large\imprimirtitulo\par}%
         \vfill
         \abntex@ifnotempty{\imprimirpreambulo}{%
             \hspace{.45\textwidth}
             \begin{minipage}{.5\textwidth}
                 \SingleSpacing
                 \imprimirpreambulo
-            \end{minipage}%
-            \vfill
-        }%
-        %-------------------------------------------------------------------------
-        %------------------Impressão (apenas se definido)-------------------------
-        %-------------------------------------------------------------------------
-        {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
-        
+            \end{minipage}}%
+        \vfill
+        {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao}}%
+        \vfill
         {\large\imprimirorientadorRotulo~\imprimirorientador\par}
         
         \abntex@ifnotempty{\imprimircoorientador}{%
@@ -1232,7 +1226,6 @@
         \abntex@ifnotempty{\imprimirtutordopolo}{%
           {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
         }
-        %-------------------------------------------------------------------------
         \vfill
         \large\imprimirlocal\\
         \large\imprimirdata
