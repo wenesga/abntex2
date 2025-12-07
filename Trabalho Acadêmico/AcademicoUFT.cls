@@ -1166,12 +1166,12 @@
             Curso de Licenciatura em Computação\\
         }
         \vfill\vspace*{-2em}
-        \bfseries\large\imprimirautor%
+        {\bfseries\large\imprimirautor\par}%
         \vfill
-        \ABNTEXchapterfont\LARGE\imprimirtitulo%
+        {\ABNTEXchapterfont\LARGE\imprimirtitulo\par}%
         \vfill\vfill\vfill\vfill
-        \large\imprimirlocal\\
-        \imprimirdata
+        {\large\imprimirlocal\\
+        \imprimirdata}
         \end{center}
     \end{capa}%
 }
@@ -1227,8 +1227,8 @@
           {\large\imprimirtutordopoloRotulo~\imprimirtutordopolo\par}
         }
         \vfill
-        \large\imprimirlocal\\
-        \large\imprimirdata
+        {\large\imprimirlocal\\
+        \imprimirdata}
     \end{center}
 }
 \makeatother
